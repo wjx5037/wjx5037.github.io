@@ -1,0 +1,4 @@
+baseURL = 'https://wjx5037.github.io/'
+languageCode = 'en-us'
+title = 'Wenbo Xu'
+theme = 'beautifulhugo'

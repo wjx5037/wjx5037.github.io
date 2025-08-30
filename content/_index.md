@@ -1,12 +1,17 @@
 +++
 title = ''
 +++
-### About me
+## About me
+### Gradute
 
-Senior student at The Pennsylvania State University(PSU)  
-B.S. Major in Mechanical Engineering
-& Minor in Engineering Mechanics
+University of Pennsylvania 08/2025-present
 
+Program: Mechanical Engineering & Applied Mechanics, MSE
+
+### Undergradute
+The Pennsylvania State University                                                                08/2021-05/2025
+
+Program: B.S. Major in Mechanical Engineering
 #### CGPA
 
 3.86/4.00

@@ -3,15 +3,16 @@ title = 'R&D of a Semi-assembled Concrete Guardrail Intelligent Transporter '
 date = 2024-08-11
 summary = """
 ![一种搬运安装空心混凝土护栏的叉车属具结构图](posts/project5/p5.3.png)
+*Research Assistant to Prof. Zhanlong Li at Taiyuan University of Science and Technology* 
 
-The project focuses on developing an intelligent transporter for semi-assembled concrete guardrails, combining automation, precision mechanical design, IoT, and AI to streamline the grasping, transportation, and installation processes. The transporter features six degrees of freedom, including main frame lifting, horizontal rotation, and forward/backward swing, allowing it to adapt to various site conditions. It boasts a maximum lifting capacity of over 10 tons and a lifting height exceeding 4500 mm. Recent improvements enhance structural integrity and flexibility, such as repositioning the cockpit for better balance and adding support arms for increased strength. The project is currently in the testing phase, aiming to create a robust and efficient solution for intelligent guardrail installation.
-
-
-
+This project focuses on developing an intelligent transporter for semi-assembled concrete guardrails, integrating automation, precision mechanical design, and multi-DOF motion control to enable efficient grasping, transport, and installation on construction sites. The machine features six degrees of freedom—lifting, translation, rotation, and swing—to adapt to complex terrain while supporting loads over 10 tons. In this project, I contributed to literature research, SolidWorks CAD modeling, and motion simulation, and later led key structural optimizations, including redesigning the cockpit mounting system, adding interchangeable side interfaces, and reinforcing the frame with triangular support arms to enhance mechanical strength and operational flexibility.
+#### ⬇️*Click*⬇️ { .text-right }
 """
 
 +++
 
+*Research Assistant to Prof. Zhanlong Li at Taiyuan University of Science and Technology*  
+08/2024-12/2024
 ## Research Objective
 To develop a device that integrates automation control, precision mechanical design, IoT technology and artificial intelligence algorithms to accurately and quickly locate the guardrail under the guidance of construction vehicles, and automatically complete the grasping, transportation and installation, realizing the intelligent and automated installation of semi-assembled hollow-core concrete guardrail.
 ## Current Research Plan

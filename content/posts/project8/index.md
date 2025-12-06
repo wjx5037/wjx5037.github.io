@@ -3,19 +3,18 @@ title = 'Adjustable Diffuser Wall Geometry for Turbomachinery Testing           
 date = 2025-05-03
 summary = """
 ![一种搬运安装空心混凝土护栏的叉车属具结构图](posts/project8/p1.png)
+*Advised by Dr. Chaoyang Wang at Pennsylvania State University & (sponsored by Fox Rotating Equipment Solutions)*
 
-As part of my Capstone Design Project sponsored by Fox Rotating Equipment Solutions, our team developed a novel adjustable diffuser wall to enhance centrifugal compressor testing efficiency. The diffuser plays a critical role in converting kinetic energy to static pressure, yet conventional designs require costly and time-consuming manufacturing of new shroud walls for each test.
+This capstone project, sponsored by Fox Rotating Equipment Solutions, focuses on developing an adjustable diffuser wall for centrifugal compressor testing to reduce lead time and increase aerodynamic testing flexibility. Our team designed a movable diffuser insert capable of varying the wall angle between 0° and 3°, eliminating the need to fabricate new fixed shroud walls for each experiment. My primary contributions involved SolidWorks CAD modeling, motion simulation, and proposing an internal drive ring actuation mechanism to ensure precise and structurally feasible adjustment. Due to sponsor confidentiality requirements, detailed design drawings cannot be publicly disclosed.
 
-To address this challenge, we designed a movable diffuser wall insert capable of adjusting its angle between 0° and 3°. My primary responsibility was CAD design and motion simulation in SolidWorks, ensuring structural feasibility and actuation accuracy. I proposed and implemented an internal drive ring mechanism to push the diffuser wall and achieve precise angle variation while maintaining compatibility with existing instrumentation.
-
-This project not only reduced lead time and cost for diffuser testing but also provided a flexible platform for aerodynamic experimentation. It strengthened my expertise in CAD modeling, mechanical simulation, and design for manufacturability, while demonstrating how engineering innovation can directly support industrial research and development.
-
+#### ⬇️*Click*⬇️ { .text-right }
 """
 
 +++
-
+*Advised by Dr. Chaoyang Wang at Pennsylvania State University & (sponsored by Fox Rotating Equipment Solutions)*
 {{< figure src="p1.png" title="Adjustable diffuser wall final project " >}}
 
+**Due to confidentiality requirements from the project sponsor, I am unable to publicly share detailed designs or technical drawings for this project. Thanks for understanding!*
 
 ## Program Objectives
 The goal of this project was to design and develop an adjustable diffuser wall for centrifugal compressor testing that could vary its angle between 0° and 3°. By replacing fixed shroud walls with a movable geometry insert, the project aimed to reduce manufacturing lead time and costs, increase testing flexibility, and enable more efficient aerodynamic experimentation for turbomachinery applications.

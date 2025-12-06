@@ -1,25 +1,87 @@
 +++
 title = ''
 +++
-## About me
-### Gradute
 
-University of Pennsylvania 08/2025-present
 
-Program: Mechanical Engineering & Applied Mechanics, MSE
+# Welcome to my Portfolio! { .text-center }
 
-### Undergradute
-The Pennsylvania State University                                                                08/2021-05/2025
+---
 
-Program: B.S. Major in Mechanical Engineering
-#### CGPA
+## Education
 
-3.87/4.00
+### University of Pennsylvania  
+**MSE in Mechanical Engineering & Applied Mechanics**  
+*Aug 2025 – Present*  
+**Concentration:** Mechatronics & Robotic Systems
 
-#### Core-coursework
+---
 
-CALC ANLY GEOM I & II (A),Mechanics (A), Elect. And Mag. (A), Statics (A), Ord and Part Diff Equation (A), Dynamics (A), Strength Materials (A), Matrices (A), Engr Thermo I (A-), Mechanical Design (A), Fluid Flow (A), Computational Tools (A), Me Design Method (A), Prod Dsgn Mfg Proc (A), Circuits Instruments and Stat (A), Vibration Mech Sys (A), Heat Transfer (A), Mechanical Systems Design (A), Mechatronics (A-), Modeling of Dynamic Systems (A), Mechanical Engineering Systems Lab (A)
+### The Pennsylvania State University  
+**B.S. in Mechanical Engineering**  
+*Aug 2021 – May 2025*  
+**CGPA:** 3.87 / 4.00  
+**Achievements:** 8× Dean’s List Honors
 
-#### Achievements
-Obtained 8 Dean’s List Honors throughout Undergraduate Studies
+---
+
+## Professional Skills
+
+**Computer & Software**  
+- C++, Python, MATLAB, ROS (robot operating system)  
+- Git, LaTeX  
+
+**Mechanical Design**  
+- SolidWorks (3D modeling, simulation, mechanism design)  
+- Motion studies, structural evaluation, rapid prototyping  
+
+**Mechatronics & Control**  
+- Embedded systems, sensor integration  
+- Motor control, PID/PI control, actuator design  
+
+**Manufacturing & Fabrication**  
+- 3D printing
+- Laser cutting  
+- Metal casting & forming, injection molding  
+- Drilling, orthogonal cutting  
+- Welding & joining (AC, DCRP, DCSP, MIG, FCAW, SMAW)
+
+---
+
+## Projects I did { .text-center }
+
+**Four-Wheel Wi-Fi Controlled Robot Car** (2025)  
+*Embedded Control · ESP32 · PI Feedback System*  
+
+**Waldo System — 2-DOF Teleoperated Arm** (2025)   
+*Embedded Control · ATmega32U4 · ADC-to-PWM · Laser-Cut Prototyping*  
+
+**Adjustable Diffuser Wall for Turbomachinery Testing**(2025)    
+*SolidWorks · Mechanism Design · Sponsored Project*  
+
+**RFID-Assisted Baggage Visibility System (ACRP Competition)**(2024)   
+*SolidWorks · Structural Simulation*   
+
+**R&D of a Semi-Assembled Concrete Guardrail Intelligent Transporter**(2024)    
+*SolidWorks · 6-DOF Motion Study*  
+
+**R&D of Intelligent Forklift Attachment for Concrete Guardrail Handling**(2024)  
+*SolidWorks · Adaptive Mechanism Design*  
+
+**Discovery Space Museum Exhibit — “Exciting Pass”**(2023)    
+*Mechanical Prototyping · SolidWorks · AHP Concept Evaluation*  
+
+**Goodwill E-Bins Design Project**(2022)    
+*Mechanical Prototyping*  
+
+## ⬇️Below are the details⬇️ { .text-center }
+
+
+
+
+
+
+
+
+
+
 

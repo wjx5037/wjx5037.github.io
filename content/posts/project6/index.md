@@ -3,19 +3,16 @@ title = 'E-bins for Future of Goodwill Donations'
 date = 2022-01-08
 summary = """
 ![一种搬运安装空心混凝土护栏的叉车属具结构图](posts/project6/p6.15.png)
+*Instructed by Assistant Dr. Tianliang Yu at PSU* 
 
-The project, “E-bin: The Future of Goodwill Giving,” aimed to improve the efficiency of Goodwill's donation collection and reduce operational costs by designing an innovative donation system that leverages advanced technologies, such as a weight measurement system and a mobile application, to optimize the use of donation bins.
-
-During the design process, we began by identifying inefficiencies, aesthetics, and high operational costs associated with existing donation bins, and identified key stakeholders, including donors, transporters, Goodwill employees, and consumers. After several design iterations, we ultimately chose smart garbage cans as the final solution. In the first iteration, we generated multiple concepts and ultimately selected the Smart Bin. In the second iteration, we further refined the design with a focus on technology integration and meeting stakeholder needs, and conducted prototype testing to validate the physical design, application functionality, cost savings, and feasibility of the sensor system.
-
-The final design utilizes a metal structure and imitates the appearance of wood, complete with a weight measurement system and mobility features. It also includes a garden component that utilizes a rainwater harvesting system to support plant growth and uses recycled materials, enhancing the product's sustainability and durability.The E-bin can be seamlessly integrated into Goodwill's existing donation process, as its aesthetically pleasing design lends itself to placement in the community. The E-bin is expected to cost less than $1,000 per E-bin and save Goodwill up to $250 per month in operating expenses by reducing the number of pickups of donation boxes. By increasing the quality and quantity of donations, the E-bin not only contributes to Goodwill's financial health, but also promotes community sustainability.
-
-Future recommendations include building a full-size model of the E-bin and testing all of its components in a real-world environment to ensure the design is comprehensive and practical. Through these innovative designs and improvements, the E-bin project is expected to bring significant economic and social benefits to Goodwill, driving modernization and efficiency in the donation process.
-
+E-bin: The Future of Goodwill Donations is a smart donation-bin redesign project aimed at improving Goodwill’s collection efficiency, reducing pickup costs, and increasing donation quality through technology-enabled features such as a weight-based fullness detection system, app integration, and a more durable, community-friendly physical design. In this project, I contributed to needfinding, concept development, and design iteration, and helped refine the final smart-bin concept through CAD modeling, prototype evaluation, and feasibility analysis of sensor systems, aesthetics, transportation mechanisms, and cost-saving potential.
+#### ⬇️*Click*⬇️ { .text-right }
 """
 
 +++
 
+*Instructed by Assistant Dr. Tianliang Yu at PSU*  
+01/2022-05/2022
 ## Problem Understanding
 ### Background Research 
 Our initial research focused on Goodwill’s current clothing donation dumpsters. We looked into components and problems associated with them. These problems overlap with issues created by all types of dumpsters, not just Goodwill dumpsters (there is a lot more available information about regular dumpsters). Issues we discovered include dumpsters being unattractive and unsanitary, dumpsters that are too heavy and big to move, Goodwill dumpsters precisely not being placed in the most efficient/beneficial locations, and Goodwill wasting money on too frequent pickups.

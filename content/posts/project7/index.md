@@ -3,15 +3,16 @@ title = 'Airport Cooperative Research Program (ACRP)'
 date = 2024-08-31
 summary = """
 ![一种搬运安装空心混凝土护栏的叉车属具结构图](posts/project7/p7.3.jpg)
+*Advised by Dr. Denise Turso at Pennsylvania State University*
 
-I am participating in the ACRP challenge with my team, focusing on enhancing the passenger experience at airports, particularly by using technological innovations to reduce baggage handling issues. Research shows that most baggage problems arise from transfer delays, and current airport infrastructure and technology can't keep up with the growing travel demand. We are concentrating on optimizing baggage sorting, using RFID for tracking, redesigning airport layouts to improve efficiency, and reducing human error through automation. After brainstorming and using a decision matrix, we found that the "end-to-end visibility tracking and updates" solution has the most potential, so we've decided to prioritize its implementation. Next, we'll develop prototypes ranging from sketches to detailed models, considering practical factors like time and budget, and collaborate with industry experts to ensure the design's practicality. Through testing and feedback, we aim to refine the design, build stakeholder confidence, and demonstrate a viable solution that can be further developed.
-**More details below**
+Airport Cooperative Research Program (ACRP) project, advised by Dr. Denise Turso, where our team designed LuggageLocator, an RFID-based end-to-end baggage visibility system to reduce mishandled luggage and improve passenger experience. We combined a U-shaped RFID scanning station with a data dashboard and database backend to give airlines and airports real-time baggage status and bottleneck insights. I contributed to problem framing and literature review, concept evaluation using a decision matrix, CAD modeling and structural analysis of the RFID scanner, and testing the web/database prototype to ensure the solution is technically feasible, scalable, and operationally valuable.
 
-
-
+#### ⬇️*Click*⬇️ { .text-right }
 """
 
 +++
+
+*Advised by Dr. Denise Turso at Pennsylvania State University*
 
 ### Executive Summary
 

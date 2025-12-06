@@ -3,12 +3,15 @@ title = 'Design Project for Discovery Space Museum Exhibit '
 date = 2023-12-12
 summary = """
 ![一种搬运安装空心混凝土护栏的叉车属具结构图](posts/project3/e1.jpg)
-Designing and producing exhibits for the Discovery Space Children's Museum in State College, USA, requires careful consideration of the user experience, especially for children aged 2-12. The exhibits should create an engaging and interactive experience that simultaneously entertains and educates children about physics or science principles, inspiring them to pursue careers in engineering and science. These exhibits aim to foster holistic development in children, including cognitive, academic, and physical abilities, while addressing the gap in early education regarding basic electricity knowledge, enhancing their curiosity, confidence, and problem-solving skills.
+*Instructed by Dr. Jason Moore, Professor of Mechanical Engineering at PSU*
 
-
+Exciting Pass is an interactive exhibit designed for the Discovery Space Museum to help children learn basic electricity and physics through a hands-on metal-path challenge with buzzer and LED feedback. I contributed to the full design cycle—including concept generation with AHP analysis, SolidWorks CAD modeling, and fabrication of Alpha prototypes—while improving safety, durability, and usability through 3D-printed components, structural refinements, and a maintainable wooden base.
+#### ⬇️*Click*⬇️ { .text-right }
 """
 +++
 
+*Instructed by Dr. Jason Moore, Professor of Mechanical Engineering at PSU*   
+09/2023-12/2023 
 {{< figure src="e1.jpg" title="Image of Exciting Pass" >}}
 
 

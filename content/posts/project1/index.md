@@ -1,13 +1,17 @@
 +++
-title = 'R&D of Highly Efficient and Reliable Intelligent Handling and Assembly Equipment for Semi-Assembled Concrete Guardrail'
+title = 'R&D of Intelligent Forklift Attachment for Concrete Guardrail Handling'
 date = 2024-07-01
 summary = """
 ![一种搬运安装空心混凝土护栏的叉车属具结构图](posts/project1/横向夹取.png)
-This research addresses the challenges of ensuring safety, convenience, and efficiency in the loading, unloading, and assembly of new semi-prefabricated high-strength concrete barriers by developing intelligent equipment for efficient and reliable loading and assembly of these barriers. Utilizing vacuum lifting technology, multi-degree-of-freedom composite mechanisms, universal modular gripper designs, and miniaturized vehicle structures, the project aims to sustainably and stably perform loading and assembly tasks. The developed equipment can quickly and safely load and unload various models of ultra-high performance concrete (UHPC) semi-prefabricated barriers, ensure precise positioning and assembly, and minimize physical damage to the barriers during the process, significantly enhancing efficiency and safety.
+*Research Assistant to Prof. Zhanlong Li at Taiyuan University of Science and Technology* 
 
+This project develops a forklift attachment that enables safe, efficient, and damage-free handling of hollow concrete guardrails. I designed the transverse-gripping mechanism, built the full CAD model with motion simulations.  
+#### ⬇️*Click*⬇️ { .text-right }
 """
 +++
 
+*Research Assistant to Prof. Zhanlong Li at Taiyuan University of Science and Technology*    
+06/2024-09/2024         
 
 {{< figure src="横向夹取.png" title="Structure of a forklift attachment for handling and installing hollow concrete guardrail" >}}
 
@@ -16,8 +20,9 @@ This research addresses the challenges of ensuring safety, convenience, and effi
 To address the challenges of ensuring safety, convenience, and efficiency simultaneously during the loading, unloading, and assembly of new semi-prefabricated high-strength concrete barriers, this research focuses on developing intelligent equipment for efficient and reliable loading and assembly of semi-prefabricated concrete barriers. By employing vacuum lifting technology, multi-degree-of-freedom composite mechanisms, universal modular gripper designs, and miniaturized vehicle structures, the project aims to sustainably and stably perform the loading and assembly tasks of semi-prefabricated concrete barriers. The equipment developed through this project can quickly and safely load and unload various models of UHPC semi-prefabricated concrete barriers, ensure precise positioning and assembly, and minimize physical damage to the barriers during the loading and assembly process, significantly improving efficiency and safety.
 
 
-{{< figure src="空心混凝土护栏.png" title="Semi-Assembled Hollow Concrete Guardrail (SolidWorks)" >}}
-{{< figure src="护栏实物.png" title="Semi-Assembled Hollow Concrete Guardrail (Real)" >}}
+{{< figure src="空心混凝土护栏.png" title="Semi-Assembled Hollow Concrete Guardrail (SolidWorks)" width="50%" >}}
+
+{{< figure src="护栏实物.png" title="Semi-Assembled Hollow Concrete Guardrail (Real)" width="50%" >}}
 
 
 ## Research approach

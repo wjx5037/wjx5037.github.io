@@ -49,6 +49,9 @@ title = ''
 
 ## Projects I did { .text-center }
 
+**Autonomous Robotic Manipulation System (Franka Emika Panda)** (2025)  
+*ROS System* 
+
 **Four-Wheel Wi-Fi Controlled Robot Car** (2025)  
 *Embedded Control · ESP32 · PI Feedback System*  
 

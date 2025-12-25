@@ -19,7 +19,7 @@ title = ''
 ### The Pennsylvania State University  
 **B.S. in Mechanical Engineering**  
 *Aug 2021 – May 2025*  
-**CGPA:** 3.87 / 4.00  
+**CGPA:** 3.85 / 4.00  
 **Achievements:** 8× Dean’s List Honors
 
 ---

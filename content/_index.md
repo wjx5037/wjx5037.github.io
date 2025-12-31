@@ -12,6 +12,7 @@ title = ''
 ### University of Pennsylvania  
 **MSE in Mechanical Engineering & Applied Mechanics**  
 *Aug 2025 – Present*  
+**CGPA:** 4.00 / 4.00  
 **Concentration:** Mechatronics & Robotic Systems
 
 ---

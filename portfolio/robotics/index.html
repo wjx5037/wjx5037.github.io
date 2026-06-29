@@ -3,88 +3,32 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Wenbo Xu robotics portfolio - manipulation, autonomy, control, mechanical design, and software projects.">
-    <meta property="og:title" content="Wenbo Xu Robotics">
-    <meta property="og:description" content="Project notes, media, and technical summaries for robotics work.">
+    <meta name="description" content="Wenbo Xu portfolio - robotics, mechatronics, mechanical design, control, and software projects.">
+    <meta property="og:title" content="Wenbo Xu Personal Projects">
+    <meta property="og:description" content="Personal projects in autonomous systems, mechatronics, mechanical design, and full-stack engineering.">
     <meta property="og:type" content="website">
-    <title>Wenbo Xu Robotics</title>
+    <title>Wenbo Xu | Personal Projects</title>
     <link rel="stylesheet" href="../assets/css/site.css">
   </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="../index.html" aria-label="WJX home">
-        <span class="brand-mark">W</span>
-        <span class="brand-text">Wenbo Xu</span>
-      </a>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a href="../index.html" data-i18n="nav_home">Home</a>
-        <a href="index.html" data-i18n="nav_robotics">Robotics</a>
-        <a href="#contact" data-i18n="nav_contact">Contact</a>
-      </nav>
-      <div class="header-actions">
-        <button class="icon-button" type="button" data-theme-toggle aria-label="Toggle theme" title="Toggle theme">
-          <span aria-hidden="true">◐</span>
-        </button>
-        <div class="lang-switch" aria-label="Language">
-          <button class="lang-option is-active" type="button" data-lang="en">EN</button>
-          <button class="lang-option" type="button" data-lang="zh">中</button>
-        </div>
+  <body class="projects-page">
+    <header class="projects-top">
+      <div class="lang-switch" aria-label="Language">
+        <button class="lang-option is-active" type="button" data-lang="en">EN</button>
+        <button class="lang-option" type="button" data-lang="zh">中文</button>
       </div>
+      <h1 data-i18n="page_title">Personal Projects</h1>
+      <p class="project-tagline" data-i18n="page_tagline">Autonomous Systems · Mechatronics · Mechanical Design · Full-Stack Engineering</p>
+      <p class="project-contact"><span data-i18n="contact_label">Contact:</span> <a href="mailto:wjx5037@users.noreply.github.com">wjx5037@users.noreply.github.com</a></p>
+      <nav class="project-index" aria-label="Project quick navigation" data-project-nav></nav>
     </header>
 
-    <main>
-      <section class="robotics-hero">
-        <div class="robotics-hero-text">
-          <a class="back-link" href="../index.html" data-i18n="back_home">← Home</a>
-          <p class="eyebrow" data-i18n="robotics_eyebrow">Robotics / Autonomous Systems</p>
-          <h1 data-i18n="robotics_title">Projects organized like engineering notebooks.</h1>
-          <p class="hero-lede" data-i18n="robotics_lede">
-            Each project is presented with media, the system problem, technical stack, and what was actually built.
-          </p>
-        </div>
-        <nav class="quick-nav" aria-label="Project quick navigation" data-project-nav></nav>
-      </section>
-
-      <section class="robotics-layout">
-        <div class="robotics-grid" data-project-list></div>
-      </section>
-
-      <section class="notes-section">
-        <div class="section-heading">
-          <p class="eyebrow" data-i18n="notes_eyebrow">Build Notes</p>
-          <h2 data-i18n="notes_title">What this site architecture is optimized for</h2>
-        </div>
-        <div class="notes-grid">
-          <article class="note-card">
-            <h3 data-i18n="note_1_title">Static deployment</h3>
-            <p data-i18n="note_1_text">Everything runs directly on GitHub Pages without a backend or build step.</p>
-          </article>
-          <article class="note-card">
-            <h3 data-i18n="note_2_title">Project data file</h3>
-            <p data-i18n="note_2_text">New projects are added in one JavaScript data file instead of duplicating page markup.</p>
-          </article>
-          <article class="note-card">
-            <h3 data-i18n="note_3_title">Media-first layout</h3>
-            <p data-i18n="note_3_text">The design expects real photos, CAD exports, simulation screenshots, and demo videos.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="contact-strip" id="contact">
-        <div>
-          <p class="eyebrow" data-i18n="contact_eyebrow">Contact</p>
-          <h2 data-i18n="contact_title">Open to robotics, autonomy, and control projects.</h2>
-        </div>
-        <div class="contact-links">
-          <a href="https://github.com/wjx5037" target="_blank" rel="noopener">GitHub</a>
-          <a href="mailto:wjx5037@users.noreply.github.com">Email</a>
-        </div>
-      </section>
+    <main class="projects-main">
+      <div class="showcase-list" data-project-list></div>
     </main>
 
     <footer class="site-footer">
       <span>© <span data-year></span> Wenbo Xu</span>
-      <span data-i18n="footer_note">Built as a static GitHub Pages portfolio.</span>
+      <span data-i18n="footer_note">Static GitHub Pages portfolio.</span>
     </footer>
 
     <script src="../assets/js/projects.js"></script>

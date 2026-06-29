@@ -32,7 +32,7 @@ window.PORTFOLIO_PROJECTS = [
   {
     id: "wifi-robot-car",
     featured: true,
-    media: ["posts/project4/finalcar1.jpg", "posts/project4/finalcar2.jpg", "posts/project4/finalcar3.jpg"],
+    media: ["posts/project4/finalcar1.jpg", "posts/project4/finalcar2.jpg", "posts/project4/finalcar3.jpg", "posts/project4/finalcar4.jpg", "posts/project4/1.png", "posts/project4/2.png", "posts/project4/3.png"],
     mediaAlt: {
       en: "Four-wheel Wi-Fi controlled robot car",
       zh: "四轮 Wi-Fi 控制机器人车"
@@ -122,7 +122,7 @@ window.PORTFOLIO_PROJECTS = [
   {
     id: "forklift-attachment",
     featured: false,
-    media: ["posts/project1/横向夹取.png", "posts/project1/空心混凝土护栏.png", "posts/project1/护栏实物.png"],
+    media: ["posts/project1/横向夹取.png", "posts/project1/空心混凝土护栏.png", "posts/project1/护栏实物.png", "posts/project1/figure1.png", "posts/project1/figure2.png", "posts/project1/figure3.png", "posts/project1/figure4.png", "posts/project1/figure5.png", "posts/project1/figure6.png"],
     mediaAlt: {
       en: "Forklift attachment for concrete guardrail handling",
       zh: "混凝土护栏搬运叉车属具"
@@ -182,7 +182,7 @@ window.PORTFOLIO_PROJECTS = [
   {
     id: "acrp-luggage",
     featured: false,
-    media: ["posts/project7/p7.1.png", "posts/project7/p7.6.png", "posts/project7/p7.8.png"],
+    media: ["posts/project7/p7.1.png", "posts/project7/p7.6.png", "posts/project7/p7.8.png", "posts/project7/p7.2.png", "posts/project7/p7.3.jpg", "posts/project7/p7.4.png", "posts/project7/p7.5.png", "posts/project7/p7.7.png", "posts/project7/p7.9.png"],
     mediaAlt: {
       en: "RFID-assisted baggage visibility system",
       zh: "RFID 辅助行李可视化系统"
@@ -212,7 +212,7 @@ window.PORTFOLIO_PROJECTS = [
   {
     id: "museum-exhibit",
     featured: false,
-    media: ["posts/project3/e1.jpg", "posts/project3/e2.png", "posts/project3/e11.jpg"],
+    media: ["posts/project3/e1.jpg", "posts/project3/e2.png", "posts/project3/e11.jpg", "posts/project3/e3.png", "posts/project3/e4.png", "posts/project3/e5.png", "posts/project3/e6.png", "posts/project3/e7.png", "posts/project3/e8.png"],
     mediaAlt: {
       en: "Discovery Space Museum Exciting Pass exhibit",
       zh: "Discovery Space Museum Exciting Pass 展品"
@@ -242,7 +242,7 @@ window.PORTFOLIO_PROJECTS = [
   {
     id: "goodwill-ebins",
     featured: false,
-    media: ["posts/project6/p6.1.png", "posts/project6/p6.5.png", "posts/project6/p6.14.jpg"],
+    media: ["posts/project6/p6.1.png", "posts/project6/p6.5.png", "posts/project6/p6.14.jpg", "posts/project6/p6.2.png", "posts/project6/p6.3.png", "posts/project6/p6.4.png", "posts/project6/p6.6.png", "posts/project6/p6.7.png", "posts/project6/p6.8.png"],
     mediaAlt: {
       en: "Goodwill E-bins donation redesign project",
       zh: "Goodwill 智能捐赠箱设计项目"

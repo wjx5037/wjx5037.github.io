@@ -187,16 +187,16 @@ DETAIL_TEMPLATE = """<!doctype html>
         <span class="brand-text">Wenbo Xu</span>
       </a>
       <nav class="site-nav" aria-label="Primary navigation">
-        <a href="../../index.html">Home</a>
+        <a href="../../">Projects</a>
         <a href="../../robotics/">Robotics</a>
       </nav>
       <div class="header-actions">
-        <a class="button secondary compact-button" href="../../robotics/">All Projects</a>
+        <a class="button secondary compact-button" href="../../">All Projects</a>
       </div>
     </header>
     <main>
       <article class="detail-page">
-        <a class="back-link" href="../../robotics/">← Robotics</a>
+        <a class="back-link" href="../../">← Projects</a>
         <p class="eyebrow">{date}</p>
         <h1>{title}</h1>
         <div class="detail-content">

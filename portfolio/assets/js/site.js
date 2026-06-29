@@ -21,9 +21,9 @@
     }
   };
 
-  function text(projectField, lang) {
-    if (!projectField) return "";
-    return projectField[lang] || projectField.en || "";
+  function text(field, lang) {
+    if (!field) return "";
+    return field[lang] || field.en || "";
   }
 
   function isExternal(url) {
@@ -37,23 +37,6 @@
   function mediaItems(project) {
     const items = Array.isArray(project.media) ? project.media : [project.media];
     return items.filter(Boolean);
-  }
-
-  function mediaElement(project, src, index, lang) {
-    const alt = `${text(project.mediaAlt, lang)}${index ? ` ${index + 1}` : ""}`;
-    const caption = index === 0 ? text(project.title, lang) : `${text(project.title, lang)} · ${index + 1}`;
-    const path = withBase(src);
-    const isVideo = /\.(mp4|mov|webm)$/i.test(src);
-    const media = isVideo
-      ? `<video src="${path}" muted playsinline controls preload="metadata"></video>`
-      : `<img src="${path}" alt="${alt}" loading="lazy">`;
-
-    return `
-      <figure class="media-slide">
-        ${media}
-        <figcaption>${caption}</figcaption>
-      </figure>
-    `;
   }
 
   function tags(project) {
@@ -74,27 +57,43 @@
     `;
   }
 
-  function projectSection(project, lang) {
-    const body = text(project.body, lang);
-    const bodyHtml = Array.isArray(body) ? body.map((paragraph) => `<p>${paragraph}</p>`).join("") : "";
-    const media = mediaItems(project);
-    const slideHtml = media.map((src, index) => mediaElement(project, src, index, lang)).join("");
+  function topCarousel(lang) {
+    const slides = projects.map((project) => {
+      const src = mediaItems(project)[0];
+      return `
+        <a class="featured-slide" href="#${project.id}">
+          <img src="${withBase(src)}" alt="${text(project.mediaAlt, lang)}" loading="lazy">
+          <span>${text(project.title, lang)}</span>
+        </a>
+      `;
+    }).join("");
 
     return `
-      <article class="showcase-project" id="${project.id}">
-        <h2>${text(project.title, lang)}</h2>
-        <div class="showcase-carousel" data-carousel>
-          <button class="carousel-button carousel-button--prev" type="button" aria-label="Previous images" data-carousel-dir="-1">‹</button>
-          <div class="media-scroller" tabindex="0">
-            ${slideHtml}
-          </div>
-          <button class="carousel-button carousel-button--next" type="button" aria-label="Next images" data-carousel-dir="1">›</button>
+      <button class="strip-button strip-button--prev" type="button" aria-label="Previous projects" data-strip-dir="-1">‹</button>
+      <div class="featured-scroller" tabindex="0">${slides}</div>
+      <button class="strip-button strip-button--next" type="button" aria-label="Next projects" data-strip-dir="1">›</button>
+    `;
+  }
+
+  function projectCard(project, lang) {
+    const media = mediaItems(project).slice(0, 3);
+    const body = text(project.body, lang);
+    const bodyHtml = Array.isArray(body) ? body.map((paragraph) => `<p>${paragraph}</p>`).join("") : "";
+    const mediaHtml = media.map((src, index) => `
+      <img src="${withBase(src)}" alt="${text(project.mediaAlt, lang)}${index ? ` ${index + 1}` : ""}" loading="lazy">
+    `).join("");
+
+    return `
+      <article class="project-card" id="${project.id}">
+        <div class="project-media${media.length > 1 ? " project-media--gallery" : ""}">
+          ${mediaHtml}
         </div>
-        <div class="project-summary">
-          <div class="project-meta">
+        <div class="project-content">
+          <div class="project-kicker">
             <span>${project.year}</span>
             <div class="project-tags">${tags(project)}</div>
           </div>
+          <h2>${text(project.title, lang)}</h2>
           <p class="project-subtitle">${text(project.subtitle, lang)}</p>
           <div class="project-body">${bodyHtml}</div>
           ${links(project, lang)}
@@ -106,14 +105,51 @@
   function renderProjects(lang) {
     const list = document.querySelector("[data-project-list]");
     const nav = document.querySelector("[data-project-nav]");
-
-    if (list) {
-      list.innerHTML = projects.map((project) => projectSection(project, lang)).join("");
-    }
+    const carousel = document.querySelector("[data-project-carousel]");
 
     if (nav) {
       nav.innerHTML = projects.map((project) => `<a href="#${project.id}">${text(project.title, lang)}</a>`).join("");
     }
+
+    if (carousel) {
+      carousel.innerHTML = topCarousel(lang);
+    }
+
+    if (list) {
+      list.innerHTML = projects.map((project) => projectCard(project, lang)).join("");
+    }
+
+    setupAutoStrip();
+  }
+
+  function setupAutoStrip() {
+    document.querySelectorAll(".featured-scroller").forEach((scroller) => {
+      if (scroller.dataset.autoScrollReady === "true") return;
+      scroller.dataset.autoScrollReady = "true";
+
+      let paused = false;
+      const pause = () => {
+        paused = true;
+      };
+      const resume = () => {
+        paused = false;
+      };
+
+      scroller.addEventListener("mouseenter", pause);
+      scroller.addEventListener("focusin", pause);
+      scroller.addEventListener("mouseleave", resume);
+      scroller.addEventListener("focusout", resume);
+
+      window.setInterval(() => {
+        if (paused || scroller.scrollWidth <= scroller.clientWidth) return;
+        const step = Math.max(scroller.clientWidth * 0.42, 180);
+        const nearEnd = scroller.scrollLeft + scroller.clientWidth >= scroller.scrollWidth - 8;
+        scroller.scrollTo({
+          left: nearEnd ? 0 : scroller.scrollLeft + step,
+          behavior: "smooth"
+        });
+      }, 2600);
+    });
   }
 
   function setLanguage(lang) {
@@ -134,14 +170,13 @@
   }
 
   document.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-carousel-dir]");
+    const button = event.target.closest("[data-strip-dir]");
     if (!button) return;
-    const carousel = button.closest("[data-carousel]");
-    const scroller = carousel?.querySelector(".media-scroller");
+    const strip = button.closest("[data-project-carousel]");
+    const scroller = strip?.querySelector(".featured-scroller");
     if (!scroller) return;
-    const dir = Number(button.dataset.carouselDir);
     scroller.scrollBy({
-      left: dir * Math.max(scroller.clientWidth * 0.86, 320),
+      left: Number(button.dataset.stripDir) * Math.max(scroller.clientWidth * 0.78, 320),
       behavior: "smooth"
     });
   });

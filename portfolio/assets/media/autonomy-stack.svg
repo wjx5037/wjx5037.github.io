@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 780" role="img" aria-labelledby="title desc">
+  <title id="title">Autonomy stack</title>
+  <desc id="desc">A layered autonomy stack for perception, planning, control, and actuation.</desc>
+  <rect width="1200" height="780" fill="#151817"/>
+  <rect x="76" y="76" width="1048" height="130" fill="#f7f7f2"/>
+  <rect x="76" y="236" width="1048" height="130" fill="#43c698"/>
+  <rect x="76" y="396" width="1048" height="130" fill="#75a9ea"/>
+  <rect x="76" y="556" width="1048" height="130" fill="#ff866b"/>
+  <text x="118" y="158" fill="#151817" font-family="Arial, sans-serif" font-size="42" font-weight="700">PERCEPTION</text>
+  <text x="118" y="318" fill="#151817" font-family="Arial, sans-serif" font-size="42" font-weight="700">STATE + PLANNING</text>
+  <text x="118" y="478" fill="#151817" font-family="Arial, sans-serif" font-size="42" font-weight="700">CONTROL LOOP</text>
+  <text x="118" y="638" fill="#151817" font-family="Arial, sans-serif" font-size="42" font-weight="700">ACTUATION</text>
+  <circle cx="980" cy="141" r="36" fill="#f26b4f"/>
+  <circle cx="980" cy="301" r="36" fill="#151817"/>
+  <circle cx="980" cy="461" r="36" fill="#151817"/>
+  <circle cx="980" cy="621" r="36" fill="#151817"/>
+  <path d="M980 177 V265 M980 337 V425 M980 497 V585" stroke="#f7f7f2" stroke-width="12" stroke-linecap="round"/>
+</svg>

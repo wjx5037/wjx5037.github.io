@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Robotics control console</title>
+  <desc id="desc">A stylized interface showing robot telemetry, camera frames, and control traces.</desc>
+  <rect width="900" height="1100" fill="#151817"/>
+  <rect x="62" y="70" width="776" height="92" fill="#f7f7f2"/>
+  <text x="96" y="128" fill="#151817" font-family="Arial, sans-serif" font-size="34" font-weight="700">ROBOTICS SYSTEM / LIVE</text>
+  <rect x="62" y="202" width="360" height="270" fill="#26312c" stroke="#617268" stroke-width="2"/>
+  <circle cx="242" cy="337" r="80" fill="none" stroke="#43c698" stroke-width="16"/>
+  <path d="M242 337 L305 288" stroke="#ff866b" stroke-width="14" stroke-linecap="round"/>
+  <path d="M242 337 L196 398" stroke="#75a9ea" stroke-width="14" stroke-linecap="round"/>
+  <rect x="470" y="202" width="368" height="270" fill="#f7f7f2"/>
+  <path d="M520 395 C575 250 670 250 785 325" fill="none" stroke="#151817" stroke-width="10"/>
+  <circle cx="520" cy="395" r="20" fill="#f26b4f"/>
+  <circle cx="650" cy="285" r="20" fill="#1f9d74"/>
+  <circle cx="785" cy="325" r="20" fill="#2c6fbb"/>
+  <rect x="62" y="524" width="776" height="250" fill="#f7f7f2"/>
+  <path d="M98 705 L160 610 L226 664 L294 555 L370 642 L450 588 L530 694 L610 612 L686 650 L802 560" fill="none" stroke="#151817" stroke-width="8"/>
+  <path d="M98 724 L160 690 L226 716 L294 684 L370 728 L450 672 L530 732 L610 690 L686 710 L802 668" fill="none" stroke="#f26b4f" stroke-width="8"/>
+  <rect x="62" y="822" width="224" height="174" fill="#43c698"/>
+  <rect x="338" y="822" width="224" height="174" fill="#75a9ea"/>
+  <rect x="614" y="822" width="224" height="174" fill="#ff866b"/>
+  <text x="94" y="922" fill="#151817" font-family="Arial, sans-serif" font-size="28" font-weight="700">FK / IK</text>
+  <text x="376" y="922" fill="#151817" font-family="Arial, sans-serif" font-size="28" font-weight="700">VISION</text>
+  <text x="652" y="922" fill="#151817" font-family="Arial, sans-serif" font-size="28" font-weight="700">CONTROL</text>
+</svg>

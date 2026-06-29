@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 780" role="img" aria-labelledby="title desc">
+  <title id="title">Robotics software tools</title>
+  <desc id="desc">A stylized software workspace with terminal, plots, and experiment logs.</desc>
+  <rect width="1200" height="780" fill="#f7f7f2"/>
+  <rect x="70" y="70" width="1060" height="640" fill="#151817"/>
+  <rect x="100" y="110" width="480" height="250" fill="#26312c" stroke="#617268" stroke-width="3"/>
+  <text x="132" y="166" fill="#43c698" font-family="Consolas, monospace" font-size="30">$ run experiment</text>
+  <text x="132" y="220" fill="#f7f7f2" font-family="Consolas, monospace" font-size="25">fk.solve(q)</text>
+  <text x="132" y="270" fill="#f7f7f2" font-family="Consolas, monospace" font-size="25">ik.plan(target)</text>
+  <text x="132" y="320" fill="#ff866b" font-family="Consolas, monospace" font-size="25">status: stable</text>
+  <rect x="622" y="110" width="408" height="250" fill="#f7f7f2"/>
+  <path d="M665 305 L720 232 L775 260 L830 170 L885 218 L940 150 L995 190" fill="none" stroke="#151817" stroke-width="10"/>
+  <path d="M665 320 H1000" stroke="#d9ddd5" stroke-width="5"/>
+  <rect x="100" y="410" width="930" height="60" fill="#43c698"/>
+  <rect x="100" y="500" width="720" height="60" fill="#75a9ea"/>
+  <rect x="100" y="590" width="840" height="60" fill="#ff866b"/>
+  <text x="132" y="450" fill="#151817" font-family="Arial, sans-serif" font-size="26" font-weight="700">calibration logs</text>
+  <text x="132" y="540" fill="#151817" font-family="Arial, sans-serif" font-size="26" font-weight="700">trajectory plots</text>
+  <text x="132" y="630" fill="#151817" font-family="Arial, sans-serif" font-size="26" font-weight="700">debug notebooks</text>
+</svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 780" role="img" aria-labelledby="title desc">
+  <title id="title">Franka manipulation system</title>
+  <desc id="desc">A technical composition representing a robot arm, camera transform, and block manipulation pipeline.</desc>
+  <rect width="1200" height="780" fill="#f7f7f2"/>
+  <rect x="52" y="54" width="1096" height="672" fill="#ffffff" stroke="#d9ddd5" stroke-width="3"/>
+  <rect x="92" y="92" width="290" height="190" fill="#151817"/>
+  <text x="122" y="146" fill="#43c698" font-family="Arial, sans-serif" font-size="30" font-weight="700">CAMERA</text>
+  <path d="M130 220 L198 170 L280 235 L340 190" fill="none" stroke="#f7f7f2" stroke-width="8"/>
+  <rect x="444" y="92" width="316" height="190" fill="#26312c"/>
+  <text x="474" y="146" fill="#ff866b" font-family="Arial, sans-serif" font-size="30" font-weight="700">WORLD FRAME</text>
+  <path d="M500 230 H690 M500 230 V140" stroke="#f7f7f2" stroke-width="8" stroke-linecap="round"/>
+  <path d="M690 230 l-28 -18 v36 z" fill="#f7f7f2"/>
+  <path d="M500 140 l-18 28 h36 z" fill="#f7f7f2"/>
+  <rect x="822" y="92" width="286" height="190" fill="#151817"/>
+  <text x="852" y="146" fill="#75a9ea" font-family="Arial, sans-serif" font-size="30" font-weight="700">BLOCKS</text>
+  <rect x="858" y="198" width="54" height="54" fill="#ff866b"/>
+  <rect x="930" y="178" width="54" height="54" fill="#43c698"/>
+  <rect x="1002" y="214" width="54" height="54" fill="#75a9ea"/>
+  <circle cx="310" cy="588" r="58" fill="#151817"/>
+  <path d="M310 588 C400 520 435 450 500 405" fill="none" stroke="#151817" stroke-width="28" stroke-linecap="round"/>
+  <path d="M500 405 C590 340 660 365 720 420" fill="none" stroke="#151817" stroke-width="24" stroke-linecap="round"/>
+  <path d="M720 420 C770 462 820 455 858 420" fill="none" stroke="#151817" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="500" cy="405" r="38" fill="#f26b4f"/>
+  <circle cx="720" cy="420" r="34" fill="#1f9d74"/>
+  <rect x="858" y="398" width="62" height="62" fill="#75a9ea"/>
+  <path d="M168 650 H1036" stroke="#d9ddd5" stroke-width="10"/>
+  <text x="92" y="350" fill="#151817" font-family="Arial, sans-serif" font-size="28" font-weight="700">Detection → Transform → IK → Motion</text>
+  <path d="M92 382 H572" stroke="#f26b4f" stroke-width="7"/>
+</svg>

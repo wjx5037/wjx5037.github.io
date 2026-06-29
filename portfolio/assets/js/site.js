@@ -1,23 +1,44 @@
 (function () {
   const root = document.documentElement;
   const storageKey = "wjx-portfolio-lang";
+  const themeKey = "wjx-portfolio-theme";
   const basePrefix = location.pathname.includes("/robotics/") ? "../" : "";
   const projects = window.PORTFOLIO_PROJECTS || [];
+  const projectGroups = [
+    {
+      key: "robotics_group",
+      ids: ["franka-manipulation", "wifi-robot-car", "waldo-arm"]
+    },
+    {
+      key: "competition_group",
+      ids: ["acrp-luggage", "goodwill-ebins"]
+    },
+    {
+      key: "company_group",
+      ids: ["diffuser-wall", "museum-exhibit", "forklift-attachment", "guardrail-transporter"]
+    }
+  ];
 
   const dictionary = {
     en: {
       page_title: "Personal Projects",
-      page_tagline: "Autonomous Systems · Mechatronics · Mechanical Design · Full-Stack Engineering",
+      page_tagline: "Robotics · Mechatronics · Mechanical Design · Product Design",
       contact_label: "Contact:",
       footer_note: "Static GitHub Pages portfolio.",
-      details_label: "Details"
+      details_label: "Details",
+      robotics_group: "Robotics",
+      competition_group: "Competition Projects",
+      company_group: "Delivered Company Projects"
     },
     zh: {
       page_title: "个人作品集",
-      page_tagline: "自主系统 · 机电一体化 · 机械设计 · 全栈工程",
+      page_tagline: "机器人 · 机电一体化 · 机械设计 · 产品设计",
       contact_label: "联系:",
       footer_note: "静态 GitHub Pages 作品集。",
-      details_label: "项目详情"
+      details_label: "项目详情",
+      robotics_group: "Robotics",
+      competition_group: "Competition Projects",
+      company_group: "Delivered Company Projects"
     }
   };
 
@@ -75,6 +96,23 @@
     `;
   }
 
+  function groupedNav(lang) {
+    const byId = new Map(projects.map((project) => [project.id, project]));
+    return projectGroups.map((group) => {
+      const links = group.ids
+        .map((id) => byId.get(id))
+        .filter(Boolean)
+        .map((project) => `<a href="#${project.id}">${text(project.title, lang)}</a>`)
+        .join("");
+      return `
+        <section class="project-index-group">
+          <h2>${dictionary[lang][group.key]}</h2>
+          <div class="project-index-links">${links}</div>
+        </section>
+      `;
+    }).join("");
+  }
+
   function projectCard(project, lang) {
     const media = mediaItems(project).slice(0, 3);
     const body = text(project.body, lang);
@@ -108,7 +146,7 @@
     const carousel = document.querySelector("[data-project-carousel]");
 
     if (nav) {
-      nav.innerHTML = projects.map((project) => `<a href="#${project.id}">${text(project.title, lang)}</a>`).join("");
+      nav.innerHTML = groupedNav(lang);
     }
 
     if (carousel) {
@@ -169,6 +207,16 @@
     renderProjects(nextLang);
   }
 
+  function setTheme(theme) {
+    const nextTheme = theme === "light" ? "light" : "dark";
+    root.dataset.theme = nextTheme;
+    localStorage.setItem(themeKey, nextTheme);
+    document.querySelectorAll("[data-theme-toggle]").forEach((button) => {
+      button.textContent = nextTheme === "light" ? "●" : "○";
+      button.setAttribute("aria-pressed", String(nextTheme === "light"));
+    });
+  }
+
   document.addEventListener("click", (event) => {
     const button = event.target.closest("[data-strip-dir]");
     if (!button) return;
@@ -185,10 +233,16 @@
     button.addEventListener("click", () => setLanguage(button.dataset.lang));
   });
 
+  document.querySelectorAll("[data-theme-toggle]").forEach((button) => {
+    button.addEventListener("click", () => {
+      setTheme(root.dataset.theme === "light" ? "dark" : "light");
+    });
+  });
+
   document.querySelectorAll("[data-year]").forEach((node) => {
     node.textContent = String(new Date().getFullYear());
   });
 
-  root.dataset.theme = "dark";
+  setTheme(localStorage.getItem(themeKey) || "dark");
   setLanguage(localStorage.getItem(storageKey) || "en");
 })();

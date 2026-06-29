@@ -191,6 +191,7 @@ DETAIL_TEMPLATE = """<!doctype html>
         <a href="../../robotics/">Robotics</a>
       </nav>
       <div class="header-actions">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle black and white mode">◐</button>
         <a class="button secondary compact-button" href="../../">All Projects</a>
       </div>
     </header>
@@ -211,6 +212,7 @@ DETAIL_TEMPLATE = """<!doctype html>
     <script>
       window.MathJax = {{ tex: {{ inlineMath: [['\\\\(', '\\\\)']], displayMath: [['\\\\[', '\\\\]']] }} }};
     </script>
+    <script src="../../assets/js/site.js"></script>
     <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   </body>
 </html>

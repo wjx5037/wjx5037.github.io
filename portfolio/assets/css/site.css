@@ -337,8 +337,8 @@ h3 {
 }
 
 .project-media--duo {
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
   height: 100%;
   min-height: 100%;
 }
@@ -350,7 +350,12 @@ h3 {
 .project-media--duo > * {
   display: block;
   height: 100%;
-  min-height: 100%;
+  min-height: 0;
+}
+
+.project-media--duo video {
+  object-fit: contain;
+  background: #050606;
 }
 
 .project-media--gallery img,

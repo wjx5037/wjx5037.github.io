@@ -2,14 +2,15 @@ window.PORTFOLIO_PROJECTS = [
   {
     id: "franka-manipulation",
     featured: true,
-    media: ["posts/project9/Dynamic_Success.mp4", "posts/project9/1.jpg"],
+    thumbnail: "posts/project9/1.jpg",
+    media: ["posts/project9/Dynamic_Success.mp4", "posts/project9/Static_Simulation.mp4"],
     mediaAlt: {
       en: "Franka Emika Panda robot grasping blocks",
       zh: "Franka Emika Panda 机械臂抓取积木"
     },
     title: {
       en: "Autonomous Robotic Manipulation System",
-      zh: "自主机器人操作系统"
+      zh: "机器人自动抓取操作系统"
     },
     subtitle: {
       en: "Autonomous pick-and-place pipeline for static blocks and moving turntable targets on a 7-DOF Franka Panda.",
@@ -24,13 +25,15 @@ window.PORTFOLIO_PROJECTS = [
     ],
     body: {
       en: [
-        "I built the high-level manipulation logic around four modules: AprilTag perception, frame transformation, IK-based motion generation, and gripper-state verification.",
-        "Static blocks are grasped through pose-aware top-down alignment. Dynamic blocks are modeled in polar coordinates around the turntable and intercepted with an empirically tuned lead-angle trigger to compensate for sensing and actuation delay.",
+        "The grasping pipeline is organized around four core modules: AprilTag perception, coordinate-frame transformation, IK-based motion generation, and gripper-state verification. Detected block poses are first transformed into the world frame, then converted into either a static grasp plan or a dynamic interception plan.",
+        "For dynamic blocks on the rotating turntable, I avoided a purely time-based open-loop prediction method. Instead, I designed a polling-based angular tracking strategy: the system continuously updates the target block's real-time polar angle and triggers the grasp only when the block enters the predefined grasp-angle window. Compared with estimating arrival time once, this closed-loop angle check is much more robust to turntable speed variation, perception delay, and actuation latency.",
+        "Static blocks are handled with pose estimation and top-down gripper-yaw alignment. Dynamic blocks are handled with radius filtering, real-time angular polling, lead-angle triggering, and gripper-feedback validation.",
         "Tech stack: Python, ROS, NumPy, Franka Panda interfaces, forward kinematics, inverse kinematics, homogeneous transforms, and feedback-based grasp validation."
       ],
       zh: [
-        "我把系统拆成四个核心模块：AprilTag 感知、坐标变换、基于 IK 的运动生成、以及基于夹爪状态的抓取验证。",
-        "静态积木通过姿态估计和自上而下对齐抓取；动态积木转换到转盘极坐标，并使用提前角触发策略补偿感知和执行延迟。",
+        "抓取逻辑由四个核心模块构成：AprilTag 感知、坐标变换、基于 IK 的运动生成，以及基于夹爪状态的抓取验证。系统先将相机检测到的积木位姿转换到世界坐标系，再根据任务类型生成静态抓取或动态拦截动作。",
+        "针对转盘上的动态积木，我没有采用常见的基于时间估计的开环预测方法，而是设计了一个角度轮询跟踪策略：系统持续检测目标积木的实时极坐标角度，并在它进入预设抓取角窗口时立即触发抓取。相比单纯计算到达时间，这种方法能显著降低转速波动、检测延迟和执行误差带来的影响。",
+        "静态积木通过姿态估计和自上而下的 gripper yaw 对齐完成抓取；动态积木则通过半径筛选、实时角度跟踪、提前角触发和夹爪反馈验证完成拦截。",
         "技术栈：Python、ROS、NumPy、Franka Panda 接口、正运动学、逆运动学、齐次变换和反馈式抓取验证。"
       ]
     }

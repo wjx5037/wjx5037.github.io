@@ -1,24 +1,12 @@
 +++
 title = 'Autonomous Robotic Manipulation System (Franka Emika Panda)'
 date = 2025-12-20
-summary = """
-![Franka Emika Panda autonomous manipulation demo](posts/project9/1.jpg)
-*MEAM 5200 Robotics, University of Pennsylvania*
-
-End-to-end autonomous manipulation pipeline for a 7-DOF Franka Emika Panda. The system combines AprilTag perception, camera-to-world coordinate transforms, custom IK-based motion generation, dynamic turntable interception, and gripper-feedback validation for static and moving block pick-and-place.
-#### ⬇️*Click*⬇️ { .text-right }
-"""
 +++
-
-*MEAM 5200 Robotics, University of Pennsylvania*  
-11/2025-12/2025
 
 [[button:GitHub Repository](https://github.com/wjx5037/Franka-Robot-Manipulation-System-Control)]
 [[button:Real Robot Grasping Video](https://drive.google.com/file/d/1aUSOK_oHtc0gYIpPaPrK1bFyV4XfTu81/view?usp=drive_link)]
 
 {{< video src="Dynamic_Success.mp4" title="Dynamic grasp demo" >}}
-
-{{< figure src="1.jpg" title="Franka Panda grasping setup with AprilTag blocks" >}}
 
 ## Project Goal
 
@@ -53,30 +41,32 @@ flowchart TD
     Q --> M
 ```
 
-## Algorithm Structure
+## Polling-Based Dynamic Interception Strategy
+
+Instead of estimating a single arrival time for a moving block, the dynamic grasp mode uses a closed-loop angular polling strategy. The system repeatedly re-detects the target, converts its position into turntable polar coordinates, and triggers the grasp only when the block enters the predefined grasp-angle window.
+
+This makes the interception less sensitive to turntable speed drift, AprilTag detection delay, and robot actuation latency than a pure time-based open-loop prediction.
 
 ```mermaid
-flowchart LR
-    P["AprilTag perception"] --> T["Homogeneous transforms"]
-    T --> W["World-frame block pose"]
-    W --> S["Static strategy"]
-    W --> D["Dynamic strategy"]
-
-    S --> S1["Extract block planar edge"]
-    S1 --> S2["Compute gripper yaw"]
-    S2 --> S3["Pre-grasp -> descent -> close gripper"]
-
-    D --> D1["Convert x,y to r, theta"]
-    D1 --> D2["Check radius reachability"]
-    D2 --> D3["Lead-angle trigger"]
-    D3 --> D4["Intercept at fixed grasp line"]
-
-    S3 --> V["Gripper feedback verification"]
-    D4 --> V
-    V --> R{"Success?"}
-    R -- Yes --> G["Place block on stack"]
-    R -- No --> F["Return to observation pose and retry"]
+flowchart TD
+    A["Observe rotating turntable"] --> B["Detect AprilTag block pose"]
+    B --> C["Transform camera pose to world frame"]
+    C --> D["Convert block center to polar coordinates: r, theta"]
+    D --> E{"Radius inside reachable band?"}
+    E -- No --> A
+    E -- Yes --> F["Poll current theta again"]
+    F --> G["Compute wrapped angular error to grasp line"]
+    G --> H{"Inside lead-angle trigger window?"}
+    H -- No --> F
+    H -- Yes --> I["Freeze target pose and solve IK"]
+    I --> J["Execute approach, descend, and close gripper"]
+    J --> K["Verify grasp with gripper feedback"]
+    K --> L{"Block secured?"}
+    L -- Yes --> M["Place block on stack"]
+    L -- No --> A
 ```
+
+{{< video src="Polling_simulation.mp4" title="Polling-based angular tracking simulation" >}}
 
 ## Core Methods
 
@@ -156,6 +146,8 @@ If the grasp is verified, the robot places the block onto the goal stack. If not
 - `ArmController`: safe joint-space motion, gripper command, and gripper feedback.
 
 ## Results
+
+{{< video src="Static_Simulation.mp4" title="Static grasp simulation" >}}
 
 - Static grasping: orientation-aware top-down grasp with gripper yaw alignment.
 - Dynamic grasping: turntable interception using radius filtering and lead-angle timing.

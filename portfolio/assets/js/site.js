@@ -26,7 +26,7 @@
       contact_label: "Contact:",
       footer_note: "Static GitHub Pages portfolio.",
       details_label: "Details",
-      robotics_group: "Robotics",
+      robotics_group: "Robotics Projects",
       competition_group: "Competition Projects",
       company_group: "Delivered Company Projects"
     },
@@ -36,9 +36,9 @@
       contact_label: "联系:",
       footer_note: "静态 GitHub Pages 作品集。",
       details_label: "项目详情",
-      robotics_group: "Robotics",
-      competition_group: "Competition Projects",
-      company_group: "Delivered Company Projects"
+      robotics_group: "机器人项目",
+      competition_group: "竞赛项目",
+      company_group: "已交付公司项目"
     }
   };
 
@@ -58,6 +58,11 @@
   function mediaItems(project) {
     const items = Array.isArray(project.media) ? project.media : [project.media];
     return items.filter(Boolean);
+  }
+
+  function carouselImage(project) {
+    const image = project.thumbnail || mediaItems(project).find((src) => !/\.(mp4|mov|webm)$/i.test(src));
+    return image || mediaItems(project)[0];
   }
 
   function tags(project) {
@@ -80,7 +85,7 @@
 
   function topCarousel(lang) {
     const slides = projects.map((project) => {
-      const src = mediaItems(project)[0];
+      const src = carouselImage(project);
       const media = mediaTag(src, text(project.mediaAlt, lang), "featured");
       return `
         <a class="featured-slide" href="#${project.id}">
@@ -122,7 +127,7 @@
 
     return `
       <article class="project-card" id="${project.id}">
-        <div class="project-media${media.length > 1 ? " project-media--gallery" : ""}">
+        <div class="project-media${media.length > 1 ? " project-media--gallery" : ""}${media.length === 2 ? " project-media--duo" : ""}">
           ${mediaHtml}
         </div>
         <div class="project-content">

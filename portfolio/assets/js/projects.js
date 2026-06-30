@@ -3,7 +3,7 @@ window.PORTFOLIO_PROJECTS = [
     id: "franka-manipulation",
     featured: true,
     thumbnail: "posts/project9/1.jpg",
-    media: ["posts/project9/Dynamic_Success.mp4", "posts/project9/Static_Simulation.mp4"],
+    media: ["posts/project9/Dynamic_Success.mp4", "posts/project9/Static.mp4"],
     mediaAlt: {
       en: "Franka Emika Panda robot grasping blocks",
       zh: "Franka Emika Panda 机械臂抓取积木"

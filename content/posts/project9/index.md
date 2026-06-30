@@ -84,6 +84,8 @@ $$
 
 ### Static Grasping
 
+{{< video src="Static.mp4" title="Static grasping demo" >}}
+
 - Detect all static blocks from the observation pose.
 - Sort candidates by distance from the robot base.
 - Estimate the block planar edge from the detected rotation matrix.
@@ -146,8 +148,6 @@ If the grasp is verified, the robot places the block onto the goal stack. If not
 - `ArmController`: safe joint-space motion, gripper command, and gripper feedback.
 
 ## Results
-
-{{< video src="Static_Simulation.mp4" title="Static grasp simulation" >}}
 
 - Static grasping: orientation-aware top-down grasp with gripper yaw alignment.
 - Dynamic grasping: turntable interception using radius filtering and lead-angle timing.

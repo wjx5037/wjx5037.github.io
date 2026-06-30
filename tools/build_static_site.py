@@ -50,6 +50,14 @@ def inline_markup(text: str) -> str:
     return escaped
 
 
+def button_link(line: str) -> str | None:
+    match = re.match(r"\[\[button:([^\]]+)\]\(([^)]+)\)\]", line.strip(), re.IGNORECASE)
+    if not match:
+        return None
+    label, url = match.groups()
+    return f'<a class="action-button" href="{html.escape(url)}" target="_blank" rel="noopener">{html.escape(label)}</a>'
+
+
 def figure_shortcode(line: str, project: str) -> str | None:
     match = re.search(r'{{<\s*figure\s+([^>]*)>}}', line)
     if not match:
@@ -64,6 +72,23 @@ def figure_shortcode(line: str, project: str) -> str | None:
     return (
         f'<figure class="detail-figure"{style}>'
         f'<img src="{html.escape(src)}" alt="{html.escape(title or src)}" loading="lazy">'
+        f'{f"<figcaption>{inline_markup(title)}</figcaption>" if title else ""}'
+        "</figure>"
+    )
+
+
+def video_shortcode(line: str) -> str | None:
+    match = re.search(r'{{<\s*video\s+([^>]*)>}}', line)
+    if not match:
+        return None
+    attrs = dict(re.findall(r'(\w+)="([^"]*)"', match.group(1)))
+    src = attrs.get("src")
+    if not src:
+        return ""
+    title = attrs.get("title", "")
+    return (
+        '<figure class="detail-figure">'
+        f'<video src="{html.escape(src)}" controls muted playsinline preload="metadata"></video>'
         f'{f"<figcaption>{inline_markup(title)}</figcaption>" if title else ""}'
         "</figure>"
     )
@@ -87,7 +112,9 @@ def markdown_to_html(markdown: str, project: str) -> str:
     paragraph: list[str] = []
     list_items: list[str] = []
     in_math = False
+    in_mermaid = False
     math_lines: list[str] = []
+    mermaid_lines: list[str] = []
 
     def flush_paragraph() -> None:
         nonlocal paragraph
@@ -107,9 +134,30 @@ def markdown_to_html(markdown: str, project: str) -> str:
             blocks.append('<div class="math-block">\\[' + html.escape("\n".join(math_lines)) + "\\]</div>")
             math_lines = []
 
+    def flush_mermaid() -> None:
+        nonlocal mermaid_lines
+        if mermaid_lines:
+            blocks.append('<pre class="mermaid">' + html.escape("\n".join(mermaid_lines)) + "</pre>")
+            mermaid_lines = []
+
     for raw_line in markdown.splitlines():
         line = raw_line.rstrip()
         stripped = line.strip()
+
+        if stripped == "```mermaid":
+            flush_paragraph()
+            flush_list()
+            in_mermaid = True
+            mermaid_lines = []
+            continue
+
+        if in_mermaid:
+            if stripped == "```":
+                flush_mermaid()
+                in_mermaid = False
+            else:
+                mermaid_lines.append(line)
+            continue
 
         if stripped == "$$":
             flush_paragraph()
@@ -126,6 +174,20 @@ def markdown_to_html(markdown: str, project: str) -> str:
         if not stripped:
             flush_paragraph()
             flush_list()
+            continue
+
+        button = button_link(stripped)
+        if button:
+            flush_paragraph()
+            flush_list()
+            blocks.append(button)
+            continue
+
+        video = video_shortcode(stripped)
+        if video is not None:
+            flush_paragraph()
+            flush_list()
+            blocks.append(video)
             continue
 
         fig = figure_shortcode(stripped, project)
@@ -168,6 +230,8 @@ def markdown_to_html(markdown: str, project: str) -> str:
     flush_list()
     if in_math:
         flush_math()
+    if in_mermaid:
+        flush_mermaid()
     return "\n".join(blocks)
 
 
@@ -211,6 +275,10 @@ DETAIL_TEMPLATE = """<!doctype html>
     </footer>
     <script>
       window.MathJax = {{ tex: {{ inlineMath: [['\\\\(', '\\\\)']], displayMath: [['\\\\[', '\\\\]']] }} }};
+    </script>
+    <script type="module">
+      import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+      mermaid.initialize({{ startOnLoad: true, theme: document.documentElement.dataset.theme === "light" ? "default" : "dark" }});
     </script>
     <script src="../../assets/js/site.js"></script>
     <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>

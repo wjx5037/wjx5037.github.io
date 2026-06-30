@@ -81,9 +81,10 @@
   function topCarousel(lang) {
     const slides = projects.map((project) => {
       const src = mediaItems(project)[0];
+      const media = mediaTag(src, text(project.mediaAlt, lang), "featured");
       return `
         <a class="featured-slide" href="#${project.id}">
-          <img src="${withBase(src)}" alt="${text(project.mediaAlt, lang)}" loading="lazy">
+          ${media}
           <span>${text(project.title, lang)}</span>
         </a>
       `;
@@ -117,9 +118,7 @@
     const media = mediaItems(project).slice(0, 3);
     const body = text(project.body, lang);
     const bodyHtml = Array.isArray(body) ? body.map((paragraph) => `<p>${paragraph}</p>`).join("") : "";
-    const mediaHtml = media.map((src, index) => `
-      <img src="${withBase(src)}" alt="${text(project.mediaAlt, lang)}${index ? ` ${index + 1}` : ""}" loading="lazy">
-    `).join("");
+    const mediaHtml = media.map((src, index) => mediaTag(src, `${text(project.mediaAlt, lang)}${index ? ` ${index + 1}` : ""}`, "card")).join("");
 
     return `
       <article class="project-card" id="${project.id}">
@@ -138,6 +137,14 @@
         </div>
       </article>
     `;
+  }
+
+  function mediaTag(src, alt, variant) {
+    const path = withBase(src);
+    if (/\.(mp4|mov|webm)$/i.test(src)) {
+      return `<video class="${variant}-video" src="${path}" muted loop playsinline autoplay controls preload="metadata" aria-label="${alt}"></video>`;
+    }
+    return `<img src="${path}" alt="${alt}" loading="lazy">`;
   }
 
   function renderProjects(lang) {

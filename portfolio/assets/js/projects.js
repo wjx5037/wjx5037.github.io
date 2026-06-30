@@ -2,7 +2,7 @@ window.PORTFOLIO_PROJECTS = [
   {
     id: "franka-manipulation",
     featured: true,
-    media: ["posts/project9/1.jpg"],
+    media: ["posts/project9/Dynamic_Success.mp4", "posts/project9/1.jpg"],
     mediaAlt: {
       en: "Franka Emika Panda robot grasping blocks",
       zh: "Franka Emika Panda 机械臂抓取积木"
@@ -12,20 +12,26 @@ window.PORTFOLIO_PROJECTS = [
       zh: "自主机器人操作系统"
     },
     subtitle: {
-      en: "Vision-based static and dynamic pick-and-place on a 7-DOF Franka Emika Panda.",
-      zh: "基于视觉的 7 自由度 Franka Emika Panda 静态和动态抓取放置系统。"
+      en: "Autonomous pick-and-place pipeline for static blocks and moving turntable targets on a 7-DOF Franka Panda.",
+      zh: "面向 7 自由度 Franka Panda 的自主抓取系统，可处理静态积木和转盘动态目标。"
     },
     year: "2025",
     tags: ["Franka", "ROS", "IK", "Perception"],
-    links: [{ label: "Details", url: "posts/project9/" }],
+    links: [
+      { label: "Details", url: "posts/project9/" },
+      { label: "GitHub", url: "https://github.com/wjx5037/Franka-Robot-Manipulation-System-Control" },
+      { label: "Real Robot Video", url: "https://drive.google.com/file/d/1aUSOK_oHtc0gYIpPaPrK1bFyV4XfTu81/view?usp=drive_link" }
+    ],
     body: {
       en: [
-        "Built an end-to-end manipulation pipeline that combines AprilTag perception, camera-to-world transforms, custom inverse kinematics, and safe motion execution.",
-        "The system handles static blocks and predicts dynamic turntable targets with lead-angle compensation for sensing and actuation latency."
+        "I built the high-level manipulation logic around four modules: AprilTag perception, frame transformation, IK-based motion generation, and gripper-state verification.",
+        "Static blocks are grasped through pose-aware top-down alignment. Dynamic blocks are modeled in polar coordinates around the turntable and intercepted with an empirically tuned lead-angle trigger to compensate for sensing and actuation delay.",
+        "Tech stack: Python, ROS, NumPy, Franka Panda interfaces, forward kinematics, inverse kinematics, homogeneous transforms, and feedback-based grasp validation."
       ],
       zh: [
-        "构建端到端机械臂操作流程，整合 AprilTag 感知、相机到世界坐标变换、自定义逆运动学和安全运动执行。",
-        "系统可以处理静态积木，并通过提前角补偿来预测转盘上的动态目标，抵消感知和执行延迟。"
+        "我把系统拆成四个核心模块：AprilTag 感知、坐标变换、基于 IK 的运动生成、以及基于夹爪状态的抓取验证。",
+        "静态积木通过姿态估计和自上而下对齐抓取；动态积木转换到转盘极坐标，并使用提前角触发策略补偿感知和执行延迟。",
+        "技术栈：Python、ROS、NumPy、Franka Panda 接口、正运动学、逆运动学、齐次变换和反馈式抓取验证。"
       ]
     }
   },

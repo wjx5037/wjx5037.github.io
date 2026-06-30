@@ -2,141 +2,162 @@
 title = 'Autonomous Robotic Manipulation System (Franka Emika Panda)'
 date = 2025-12-20
 summary = """
-![一种搬运安装空心混凝土护栏的叉车属具结构图](posts/project9/1.jpg)
-*MEAM5200 Robotics, University of Pennsylvania*
+![Franka Emika Panda autonomous manipulation demo](posts/project9/1.jpg)
+*MEAM 5200 Robotics, University of Pennsylvania*
 
-I developed an autonomous robotic manipulation system capable of reliably performing both static and dynamic pick-and-place tasks on a 7-DOF Franka Emika Panda robot. The system integrates vision-based perception, explicit coordinate frame transformations, custom inverse kinematics, and safe motion execution into a unified pipeline. Static objects are detected and grasped with orientation-aware alignment, while dynamic objects on a rotating turntable are intercepted using a lead-angle–based prediction strategy to compensate for sensing and actuation latency. A key emphasis of this project was simulation-to-real transfer, where calibration residuals, kinematic feasibility, and hardware delays were addressed through empirical tuning, conservative motion planning, and robust failure recovery.
+End-to-end autonomous manipulation pipeline for a 7-DOF Franka Emika Panda. The system combines AprilTag perception, camera-to-world coordinate transforms, custom IK-based motion generation, dynamic turntable interception, and gripper-feedback validation for static and moving block pick-and-place.
 #### ⬇️*Click*⬇️ { .text-right }
 """
-
 +++
-*MEAM 5200, University of Pennsylvania*  
+
+*MEAM 5200 Robotics, University of Pennsylvania*  
 11/2025-12/2025
-{{< figure src="1.jpg" title="Grasping image of Franka Emika Panda robot" >}}
-### Project Overview
-This project presents the design and implementation of an end-to-end autonomous robotic manipulation system capable of reliably handling both static and dynamic pick-and-place tasks on a real 7-DOF Franka Emika Panda robot.
 
-The system integrates vision-based perception, kinematic modeling, motion planning, and hardware execution into a unified pipeline. Using an onboard camera and AprilTag-based perception, the robot estimates object poses in real time, transforms them into the world frame, and executes safe, collision-aware grasp and placement motions. Beyond static manipulation, the system is designed to intercept moving objects on a rotating turntable, requiring prediction, timing compensation, and robust recovery from perception and kinematic failures.
+[[button:GitHub Repository](https://github.com/wjx5037/Franka-Robot-Manipulation-System-Control)]
+[[button:Real Robot Grasping Video](https://drive.google.com/file/d/1aUSOK_oHtc0gYIpPaPrK1bFyV4XfTu81/view?usp=drive_link)]
 
-A major focus of this project was simulation-to-real transfer. While the system was initially validated in simulation, extensive hardware testing revealed non-idealities such as calibration residuals, actuation latency, and inverse kinematics feasibility near workspace boundaries. These challenges were addressed through empirical offset compensation, conservative motion strategies, and explicit failure-handling logic, resulting in a robust and repeatable manipulation system on real hardware.
+{{< video src="Dynamic_Success.mp4" title="Dynamic grasp demo" >}}
 
-This project reflects a system-level robotics workflow, emphasizing reliability, modularity, and real-world execution rather than task-specific heuristics.
+{{< figure src="1.jpg" title="Franka Panda grasping setup with AprilTag blocks" >}}
 
-### System Architecture & Technical Details
-#### Perception & Coordinate Transformations
+## Project Goal
 
-- Detected static and dynamic blocks using AprilTag-based visual perception from an end-effector-mounted camera.
+Build an autonomous manipulation system that can detect blocks, decide a grasp strategy, execute safe robot motion, verify grasp success, and place blocks onto a goal stack.
 
-- Implemented explicit homogeneous transformation chains to convert poses from camera frame → end-effector frame → robot base frame → world frame.
+The project covers two task modes:
 
-- Applied conservative height constraints and frame-specific offsets to improve robustness under real hardware noise.
+- Static block grasping: detect a stationary block, estimate its planar orientation, align the gripper, grasp from above, and place it onto the stack.
+- Dynamic block interception: track a moving block on a rotating turntable, predict when it reaches the grasp line, trigger motion early, and compensate for sensing and actuation delay.
 
-#### Kinematics & Motion Generation
+## Program Logic Structure
 
-- Developed a custom inverse kinematics workflow using a fixed “hand-down” end-effector orientation to avoid wrist singularities.
+```mermaid
+flowchart TD
+    A["Start ROS node"] --> B["Initialize ArmController, ObjectDetector, FK, IK"]
+    B --> C["Move to safe start pose and open gripper"]
+    C --> D["Select team side and world/base transform"]
+    D --> E["Dynamic grasp loop"]
+    E --> F{"Dynamic block visible?"}
+    F -- Yes --> G["Detect block pose in camera frame"]
+    G --> H["Transform camera -> EE -> base -> world"]
+    H --> I["Convert target to turntable polar coordinates"]
+    I --> J["Wait for lead-angle trigger window"]
+    J --> K["Solve IK for approach and drop poses"]
+    K --> L["Move, close gripper, verify grasp"]
+    L --> M["Place on goal stack"]
+    M --> E
+    F -- Timeout --> N["Switch to static mode"]
+    N --> O["Cache static block detections"]
+    O --> P["Sort by distance and attempt grasp"]
+    P --> Q["Yaw-align gripper, solve IK, grasp"]
+    Q --> M
+```
 
-- Extended the IK solver with:
+## Algorithm Structure
 
-configurable seed selection,
+```mermaid
+flowchart LR
+    P["AprilTag perception"] --> T["Homogeneous transforms"]
+    T --> W["World-frame block pose"]
+    W --> S["Static strategy"]
+    W --> D["Dynamic strategy"]
 
-optional yaw control for orientation alignment,
+    S --> S1["Extract block planar edge"]
+    S1 --> S2["Compute gripper yaw"]
+    S2 --> S3["Pre-grasp -> descent -> close gripper"]
 
-explicit detection of IK non-convergence.
+    D --> D1["Convert x,y to r, theta"]
+    D1 --> D2["Check radius reachability"]
+    D2 --> D3["Lead-angle trigger"]
+    D3 --> D4["Intercept at fixed grasp line"]
 
-- Designed recovery strategies that automatically reselect targets or return the robot to safe observation configurations when IK solutions were infeasible.
+    S3 --> V["Gripper feedback verification"]
+    D4 --> V
+    V --> R{"Success?"}
+    R -- Yes --> G["Place block on stack"]
+    R -- No --> F["Return to observation pose and retry"]
+```
 
-#### Static Object Grasping
+## Core Methods
 
-For static blocks, estimated object orientation directly from visual pose information and computed a corresponding gripper yaw alignment.
+### Perception and Coordinate Frames
 
-Executed a multi-stage grasp sequence consisting of pre-grasp approach, orientation refinement, vertical descent, and grasp verification using gripper force and width feedback.
+- Use the end-effector-mounted camera and AprilTag detections to obtain block poses in the camera frame.
+- Compute the current end-effector pose from forward kinematics.
+- Convert detections through the transform chain:
 
-#### Dynamic Object Interception
+$$
+T_{WB} = T_{WEE}(q) \cdot T_{EEC} \cdot T_{CB}
+$$
 
-Modeled moving blocks on the turntable in polar coordinates (r, θ) relative to the rotation center.
+- Apply conservative z-height limits and empirical offsets to improve hardware robustness.
 
-Implemented a lead-angle-based interception strategy, triggering grasp execution when the target entered a predefined angular window to compensate for sensing and actuation latency.
+### Static Grasping
 
-Tuned interception parameters empirically on hardware to account for non-deterministic delays not present in simulation.
+- Detect all static blocks from the observation pose.
+- Sort candidates by distance from the robot base.
+- Estimate the block planar edge from the detected rotation matrix.
+- Compute a gripper yaw angle perpendicular to the block edge.
+- Execute a multi-stage motion:
+  - approach above the block
+  - yaw-align gripper
+  - descend vertically
+  - close gripper
+  - lift and verify
 
-#### Execution, Safety & Robustness
+### Dynamic Turntable Interception
 
-Enforced conservative motion constraints, including minimum height limits and safe joint-space trajectories.
+- Convert each dynamic block center into polar coordinates around the turntable:
 
-Verified grasp success using real-time gripper feedback rather than assuming ideal contact.
+$$
+r = \sqrt{(x - c_x)^2 + (y - c_y)^2}
+$$
 
-Designed the system to fail gracefully, prioritizing hardware safety and continued task execution over aggressive timing.
-### Algorithm Formulation & Control Logic
-#### Coordinate Frames & Pose Transformation
-Estimated object poses in the camera frame and transformed them into the world frame using homogeneous transformations.
+$$
+\theta = atan2(y - c_y, x - c_x)
+$$
 
-World-frame block pose:  
-##### *T_WB = T_WEE(q) * T_EEC * T_CB*  { .text-center }
-Where:
-- T_WEE(q) is the world-to-end-effector transform from forward kinematics at joint configuration q
+- Keep only targets within reachable radius limits.
+- Use a lead-angle trigger:
 
-- T_EEC is the calibrated end-effector-to-camera extrinsic transform
+$$
+\Delta(t) = wrap\_to\_pi(\theta(t) - \theta_{grasp})
+$$
 
-- T_CB is the camera-to-block pose from AprilTag detection
-#### Polar Representation for Dynamic Objects
-Converted dynamic block positions into polar coordinates relative to the turntable center (cx, cy).
+$$
+\Delta(t) \ge -\theta_{lead}
+$$
 
-Radius:  
+- Trigger the grasp slightly before the block reaches the grasp line to compensate for perception delay and robot motion latency.
 
-##### *r = sqrt((x - cx)^2 + (y - cy)^2)*  { .text-center } 
+### IK and Motion Execution
 
-Angle:  
+- Solve IK for world-frame approach and drop poses after converting targets into the correct robot base frame.
+- Use a fixed hand-down end-effector orientation to reduce singularity risk.
+- Use the previous valid joint state as the IK seed.
+- If IK fails, abort the attempt, return to a safe observation pose, and reselect a target.
 
-##### *theta = atan2(y - cy, x - cx)* { .text-center }  
+### Grasp Verification
 
-This representation decouples radial reachability from angular timing constraints.
-#### Inverse Kinematics Formulation
-Modeled the Panda as a 7-DOF kinematic chain:  
-##### *T_WEE(q) = f(q)* { .text-center }
-Solved inverse kinematics by minimizing pose error:
-##### *q = argmin_q || f(q) - T_target ||* { .text-center }
-Enforced a fixed “hand-down” end-effector orientation to avoid wrist singularities, and seeded IK with the previous valid configuration to improve convergence.
+The system does not assume a grasp succeeded just because the close command was sent. It checks gripper state:
 
-#### Static Grasp Pose Generation
-For a static block center p = [x, y, z] in the world frame, defined a conservative top-down pre-grasp pose by adding a vertical clearance h:  
-##### *p_pre = [x, y, z + h]* { .text-center }
-Then executed a vertical descent to the grasp height.  
-Estimated block planar orientation from the detected rotation matrix and computed a gripper yaw angle to align the gripper with the block edge before descent.
+$$
+g_{min} \le gap \le g_{max} \quad OR \quad force \ge F_{thresh}
+$$
 
-#### Dynamic Interception via Lead-Angle Triggering
-Formulated dynamic grasping as a latency compensation problem using an angle-window trigger.
+If the grasp is verified, the robot places the block onto the goal stack. If not, it retries safely.
 
-Defined angular offset:
+## Implementation Modules
 
-##### *Delta(t) = wrap_to_pi(theta(t) - theta_grasp)* { .text-center }
+- `Final_integration.py`: top-level task loop, static/dynamic mode switching, placement logic, and safety recovery.
+- `calculateFK.py`: forward kinematics for current end-effector pose.
+- `IK_position_null.py`: IK solver used for approach, grasp, and place poses.
+- `ObjectDetector`: AprilTag/object pose detection and camera extrinsic access.
+- `ArmController`: safe joint-space motion, gripper command, and gripper feedback.
 
-Triggered grasp motion when the block enters the lead-angle window:
+## Results
 
-##### *Delta(t) >= -theta_lead* { .text-center }
-Where:
-
-- theta_grasp is the fixed grasp-line angle
-
-- theta_lead is an empirically tuned lead angle to compensate sensing + actuation latency
-
-#### Grasp Verification
-Verified grasp success using real-time gripper feedback (gap and force), instead of assuming ideal contact.
-
-Accepted a grasp if:  
-
-##### *g_min <= gap <= g_max   OR   force >= F_thresh* { .text-center }
-
-#### Failure Handling & Recovery
-Treated perception and inverse kinematics as non-deterministic processes.
-
-If IK fails for either the pre-grasp or grasp pose, the system aborts the attempt, returns to a safe observation configuration, and reselects a new target to avoid deadlock near workspace boundaries.
-
-#### Execution, Safety & Robustness
-Enforced conservative motion constraints, including minimum height limits and safe joint-space trajectories.
-
-Verified grasp success using real-time gripper feedback rather than assuming ideal contact.
-
-Designed the system to fail gracefully, prioritizing hardware safety and continued task execution over aggressive timing.
-### Demo video
-Whole process of panda robot grasping: 
-https://drive.google.com/file/d/1aUSOK_oHtc0gYIpPaPrK1bFyV4XfTu81/view?usp=drive_link 
+- Static grasping: orientation-aware top-down grasp with gripper yaw alignment.
+- Dynamic grasping: turntable interception using radius filtering and lead-angle timing.
+- Placement: successful block placement onto a goal stack with feedback-based grasp validation.
+- Robustness: fallback behavior for IK failure, missing detections, failed grasp verification, and match-time limits.

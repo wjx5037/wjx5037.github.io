@@ -124,10 +124,13 @@
     const body = text(project.body, lang);
     const bodyHtml = Array.isArray(body) ? body.map((paragraph) => `<p>${paragraph}</p>`).join("") : "";
     const mediaHtml = media.map((src, index) => mediaTag(src, `${text(project.mediaAlt, lang)}${index ? ` ${index + 1}` : ""}`, "card")).join("");
+    const mediaLayoutClass = project.mediaLayout ? ` project-media--${project.mediaLayout}` : "";
+    const galleryClass = media.length > 1 ? " project-media--gallery" : "";
+    const duoClass = media.length === 2 && !project.mediaLayout ? " project-media--duo" : "";
 
     return `
       <article class="project-card" id="${project.id}">
-        <div class="project-media${media.length > 1 ? " project-media--gallery" : ""}${media.length === 2 ? " project-media--duo" : ""}">
+        <div class="project-media${galleryClass}${duoClass}${mediaLayoutClass}">
           ${mediaHtml}
         </div>
         <div class="project-content">

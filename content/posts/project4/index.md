@@ -4,8 +4,6 @@ date = 2025-11-20
 +++
 
 [[button:GitHub Repository](https://github.com/wjx5037/4WD-Wifi-Controlled-Robot-Car-with-ToF-Vive-)]
-[[button:V1 Demo Video](https://youtube.com/shorts/3bOzf5cycDg?si=jNFPo0Qvo8tbKFiQ)]
-[[button:V2 Demo Video](https://youtube.com/shorts/xrWTAGAtIhg?si=ORJMxfBXCtLerUQC)]
 
 {{< figure src="finalcar1.jpg" title="Four-wheel Wi-Fi robot car - final hardware layout" width="720px" >}}
 
@@ -124,7 +122,7 @@ The navigation mode uses two Vive receivers to estimate x/y position and yaw. Th
 
 ## Hardware Iterations
 
-{{< figure src="1.png" title="V1 CAD model" width="620px" >}}
+{{< figure src="1.png" title="V2 CAD model" width="620px" >}}
 {{< figure src="2.png" title="V1 side view" width="620px" >}}
 {{< figure src="finalcar2.jpg" title="V2 front view" width="720px" >}}
 {{< figure src="finalcar4.jpg" title="V2 bottom view" width="720px" >}}
@@ -132,6 +130,8 @@ The navigation mode uses two Vive receivers to estimate x/y position and yaw. Th
 The first version validated the drivetrain, web control, and encoder feedback. The second version reorganized the chassis, wiring, controller placement, sensor mounting, and power distribution to make the platform more reliable for autonomous testing.
 
 ## Results
+
+{{< video src="Wallfollow.mp4" title="Wall-following demo" >}}
 
 - Built a complete ESP32-S3 mobile robot with Wi-Fi control, telemetry, and runtime tuning.
 - Implemented four-wheel closed-loop speed control using quadrature encoder feedback.

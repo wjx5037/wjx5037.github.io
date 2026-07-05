@@ -21,49 +21,67 @@ The final system supports four operating modes:
 ## Program Logic Structure
 
 ```mermaid
-flowchart TD
-    A["ESP32-S3 boot"] --> B["Initialize Vive, servo, motors, encoders, ToF, Wi-Fi AP"]
-    B --> C["Start HTTP server and dashboard"]
-    C --> D["Main loop"]
-    D --> E["Handle web requests"]
-    D --> F["Update wheel-speed PI controllers"]
-    D --> G["Update Vive pose"]
-    D --> H["Read ToF sensors"]
-    D --> I{"Control mode"}
-    I -- WEB --> J["Convert dashboard speed/turn to skid-steer targets"]
-    I -- VIVE_NAV --> K["Run point or multi-waypoint navigation"]
-    I -- WALLFOLLOW --> L["Run ToF wall-follow controller"]
-    I -- STOP --> M["Stop all motors and reset targets"]
-    J --> F
-    K --> F
-    L --> F
-    M --> F
+%%{init: {"flowchart": {"nodeSpacing": 55, "rankSpacing": 70}, "themeVariables": {"fontSize": "18px"}} }%%
+flowchart TB
+    A["ESP32-S3 boot"] --> B["Initialize hardware<br/>Vive, servo, motors, encoders, ToF"]
+    B --> C["Start Wi-Fi AP<br/>and HTTP dashboard"]
+    C --> D["Main loop scheduler"]
+
+    D --> E["Handle web requests<br/>/status, /set, /navPoint, /attack"]
+    D --> F["Read sensors<br/>ToF + Vive + encoders"]
+    D --> G["Run control update<br/>every 20 ms"]
+
+    F --> H["Estimate wheel speed<br/>from PCNT counters"]
+    F --> I["Estimate pose<br/>from dual Vive receivers"]
+    F --> J["Measure distance<br/>front + left ToF"]
+
+    G --> K{"Selected mode"}
+    K -- "WEB" --> L["Dashboard speed/turn command"]
+    K -- "VIVE_NAV" --> M["Point or multi-waypoint navigation"]
+    K -- "WALLFOLLOW" --> N["ToF wall-follow controller"]
+    K -- "STOP" --> O["Stop motors<br/>reset targets"]
+
+    L --> P["Skid-steer left/right targets"]
+    M --> P
+    N --> P
+    P --> Q["Four independent PI wheel loops"]
+    H --> Q
+    Q --> R["MCPWM motor output"]
 ```
 
 ## Control Architecture
 
 ```mermaid
-flowchart LR
-    UI["Web dashboard"] --> HTTP["ESP32 WebServer routes: /status, /set, /navPoint, /attack"]
-    HTTP --> Mode["Mode manager"]
+%%{init: {"flowchart": {"nodeSpacing": 45, "rankSpacing": 75}, "themeVariables": {"fontSize": "18px"}} }%%
+flowchart TB
+    UI["Browser dashboard<br/>telemetry + tuning + mode selection"] --> HTTP["ESP32 WebServer<br/>/status /set /navPoint /attack"]
+    HTTP --> MODE["Mode manager"]
 
-    Mode --> Web["WEB speed + turn command"]
-    Mode --> Wall["ToF wall following"]
-    Mode --> Nav["Vive navigation"]
+    subgraph Inputs["Feedback Inputs"]
+      ENC["Four quadrature encoders<br/>PCNT counters"]
+      TOF["Front + left VL53L1X ToF"]
+      VIVE["Dual Vive photodiodes"]
+    end
 
-    Web --> Drive["forward/turn to left/right wheel targets"]
-    Wall --> Drive
-    Nav --> Drive
+    ENC --> SPEED["Wheel speed estimation"]
+    TOF --> WALL["Wall-distance and obstacle feedback"]
+    VIVE --> POSE["Filtered x, y, yaw pose"]
 
-    Enc["Four quadrature encoders via PCNT"] --> Speed["Wheel speed estimation"]
-    Speed --> PI["Independent PI controller per wheel"]
-    Drive --> PI
-    PI --> PWM["MCPWM motor drive"]
-    PWM --> Motors["Four DC gear motors"]
+    MODE --> WEB["WEB manual command"]
+    MODE --> NAV["Vive waypoint navigation"]
+    MODE --> WF["ToF wall-following"]
 
-    ToF["Front/left VL53L1X ToF"] --> Wall
-    Vive["Dual Vive photodiodes"] --> Pose["Filtered x, y, yaw pose"]
-    Pose --> Nav
+    WEB --> DRIVE["forward/turn command"]
+    NAV --> DRIVE
+    WF --> DRIVE
+    WALL --> WF
+    POSE --> NAV
+
+    DRIVE --> TARGET["Left/right wheel targets"]
+    TARGET --> PI["Independent PI controller<br/>for FL, FR, BL, BR"]
+    SPEED --> PI
+    PI --> PWM["MCPWM bidirectional drive"]
+    PWM --> MOTOR["Four DC gear motors"]
 ```
 
 ## Core Methods

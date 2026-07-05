@@ -40,8 +40,8 @@ window.PORTFOLIO_PROJECTS = [
   {
     id: "wifi-robot-car",
     featured: true,
-    mediaLayout: "split-video",
-    media: ["posts/project4/finalcar1.jpg", "posts/project4/Wallfollow.mp4"],
+    mediaLayout: "stacked-photos-video",
+    media: ["posts/project4/finalcar1.jpg", "posts/project4/finalcar2.jpg", "posts/project4/Wallfollow.mp4"],
     mediaAlt: {
       en: "Four-wheel Wi-Fi controlled robot car",
       zh: "四轮 Wi-Fi 控制机器人车"

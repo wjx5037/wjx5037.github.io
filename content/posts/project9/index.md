@@ -4,7 +4,7 @@ date = 2025-12-20
 +++
 
 [[button:GitHub Repository](https://github.com/wjx5037/Franka-Robot-Manipulation-System-Control)]
-[[button:Real Robot Grasping Video](https://drive.google.com/file/d/1aUSOK_oHtc0gYIpPaPrK1bFyV4XfTu81/view?usp=drive_link)]
+
 
 {{< video src="Dynamic_Success.mp4" title="Dynamic grasp demo" >}}
 
@@ -47,6 +47,8 @@ Instead of estimating a single arrival time for a moving block, the dynamic gras
 
 This makes the interception less sensitive to turntable speed drift, AprilTag detection delay, and robot actuation latency than a pure time-based open-loop prediction.
 
+{{< video src="Polling_simulation.mp4" title="Polling-based angular tracking simulation" >}}
+
 ```mermaid
 flowchart TD
     A["Observe rotating turntable"] --> B["Detect AprilTag block pose"]
@@ -65,8 +67,6 @@ flowchart TD
     L -- Yes --> M["Place block on stack"]
     L -- No --> A
 ```
-
-{{< video src="Polling_simulation.mp4" title="Polling-based angular tracking simulation" >}}
 
 ## Core Methods
 

@@ -21,7 +21,7 @@
 
   const dictionary = {
     en: {
-      page_title: "Personal Projects",
+      page_title: "Wenbo Xu Personal Projects",
       page_tagline: "Robotics · Mechatronics · Mechanical Design · Product Design",
       contact_label: "Contact:",
       footer_note: "Static GitHub Pages portfolio.",
@@ -31,7 +31,7 @@
       company_group: "Delivered Company Projects"
     },
     zh: {
-      page_title: "个人作品集",
+      page_title: "许文博个人作品集",
       page_tagline: "机器人 · 机电一体化 · 机械设计 · 产品设计",
       contact_label: "联系:",
       footer_note: "静态 GitHub Pages 作品集。",

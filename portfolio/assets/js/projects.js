@@ -21,7 +21,6 @@ window.PORTFOLIO_PROJECTS = [
     links: [
       { label: "Details", url: "posts/project9/" },
       { label: "GitHub", url: "https://github.com/wjx5037/Franka-Robot-Manipulation-System-Control" },
-      { label: "Real Robot Video", url: "https://drive.google.com/file/d/1aUSOK_oHtc0gYIpPaPrK1bFyV4XfTu81/view?usp=drive_link" }
     ],
     body: {
       en: [
@@ -55,16 +54,23 @@ window.PORTFOLIO_PROJECTS = [
       zh: "基于 ESP32-S3、编码器反馈和闭环运动控制的机器人车平台。"
     },
     year: "2025",
-    tags: ["ESP32", "Embedded", "PI Control", "Encoders"],
-    links: [{ label: "Details", url: "posts/project4/" }],
+    tags: ["ESP32-S3", "MCPWM", "PCNT", "ToF", "Vive"],
+    links: [
+      { label: "Details", url: "posts/project4/" },
+      { label: "GitHub", url: "https://github.com/wjx5037/4WD-Wifi-Controlled-Robot-Car-with-ToF-Vive-" }
+    ],
     body: {
       en: [
-        "Designed and built a four-wheel-drive robot platform integrating Wi-Fi control, encoder-based feedback, and closed-loop velocity regulation.",
-        "The project emphasizes low-level embedded control, hardware debugging, and repeatable mechatronic integration."
+        "Built a 4WD embedded mobile robot around an ESP32-S3, four DC gear motors, quadrature encoders, dual VL53L1X ToF sensors, and Vive photodiode localization. The platform supports Wi-Fi teleoperation, wall following, point-to-point navigation, stop mode, and web-triggered task behaviors.",
+        "The control stack separates high-level modes from low-level actuation: the browser dashboard sends speed, turn, PID, and navigation commands; the firmware samples sensors, estimates wheel speed through PCNT counters, runs independent PI control for each wheel, and converts forward/turn commands into skid-steer targets.",
+        "Autonomous behavior combines ToF-based obstacle and wall-distance feedback with Vive-based pose estimation. The robot filters Vive coordinates, computes heading error to a target point, and uses distance/angle feedback to drive multi-stage waypoint navigation.",
+        "Tech stack: ESP32-S3, Arduino/C++, Wi-Fi AP WebServer, MCPWM motor drive, PCNT quadrature encoders, VL53L1X ToF sensing, Vive510 localization, PI wheel-speed control, PD wall following, and JavaScript telemetry dashboard."
       ],
       zh: [
-        "设计并搭建四轮驱动机器人平台，整合 Wi-Fi 控制、编码器反馈和闭环速度调节。",
-        "项目重点在底层嵌入式控制、硬件调试和可复现的机电系统集成。"
+        "基于 ESP32-S3 搭建四轮驱动移动机器人平台，集成四个直流减速电机、正交编码器、双 VL53L1X ToF 传感器和 Vive 光电定位模块。系统支持 Wi-Fi 遥控、沿墙行驶、点到点导航、停止模式以及网页触发的任务动作。",
+        "控制架构将高层模式和底层执行分离：网页端发送速度、转向、PID 和导航目标；固件端周期读取传感器，通过 PCNT 计数器估计四轮速度，为每个轮子独立运行 PI 控制，并将 forward/turn 指令转换成 skid-steer 左右轮目标速度。",
+        "自主行为结合 ToF 距离反馈和 Vive 位姿估计。机器人对 Vive 坐标做滤波，计算目标点方向误差，并使用距离/角度反馈完成多段 waypoint navigation。",
+        "技术栈：ESP32-S3、Arduino/C++、Wi-Fi AP WebServer、MCPWM 电机驱动、PCNT 正交编码器、VL53L1X ToF 感知、Vive510 定位、PI 轮速控制、PD 沿墙控制和 JavaScript 遥测调参界面。"
       ]
     }
   },

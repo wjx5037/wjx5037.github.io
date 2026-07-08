@@ -135,9 +135,9 @@ window.PORTFOLIO_PROJECTS = [
         "Tech stack: SolidWorks CAD, mechanism design, motion simulation, design-for-manufacturing review, sponsor documentation, and engineering presentation."
       ],
       zh: [
-        "我为企业赞助的涡轮机械测试项目设计了一套可调扩压器壁面插入件，让壁面角度可以在 0 到 3 度范围内调整，避免每个测试工况都重新加工固定壁面。",
+        "这是一个团队完成的企业赞助涡轮机械测试项目，目标是设计一套可调扩压器壁面插入件，让壁面角度可以在 0 到 3 度范围内调整，避免每个测试工况都重新加工固定壁面。",
         "核心方案是内部驱动环机构，把受控驱动转化为多处壁面的同步角度调节，同时保留结构支撑、仪器安装空间和压缩机测试台兼容性。",
-        "我的主要工作包括需求梳理、方案对比、SolidWorks 建模、运动仿真、可制造性优化，以及面向 Fox Rotating Equipment Solutions 的最终交付展示。",
+        "我的主要任务是需求梳理、方案对比、SolidWorks 建模、运动仿真，以及面向 Fox Rotating Equipment Solutions 的最终交付展示。",
         "技术栈：SolidWorks CAD、机构设计、运动仿真、可制造性评估、企业项目文档和工程展示。"
       ]
     }

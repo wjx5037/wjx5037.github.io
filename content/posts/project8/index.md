@@ -9,7 +9,7 @@ date = 2025-05-03
 
 [[button:Explanation Video](https://drive.google.com/file/d/1IAWOdaP3prZ0QVEDt1Vp-jWv6TS1lB45/view?usp=sharing)]
 
-**Due to confidentiality requirements from the project sponsor, detailed drawings and internal dimensions are not published here.**
+{{< notice text="Due to confidentiality requirements from the project sponsor, detailed drawings and internal dimensions are not published here." >}}
 
 ## Project Goal
 

@@ -111,15 +111,15 @@ window.PORTFOLIO_PROJECTS = [
     media: ["posts/project8/p1.png"],
     mediaAlt: {
       en: "Adjustable diffuser wall geometry project",
-      zh: "可调扩压器壁面几何设计项目"
+      zh: "涡轮机械测试用可调扩压器壁面设计项目"
     },
     title: {
-      en: "Adjustable Diffuser Wall Geometry",
-      zh: "可调扩压器壁面几何设计"
+      en: "Adjustable Diffuser Wall Geometry for Turbomachinery Testing",
+      zh: "涡轮机械测试用可调扩压器壁面设计"
     },
     subtitle: {
-      en: "Sponsor-delivered adjustable diffuser wall concept for centrifugal compressor testing.",
-      zh: "面向离心压缩机测试的企业交付型可调扩压器壁面方案。"
+      en: "Sponsored by and delivered to Fox Rotating Equipment Solutions for centrifugal compressor testing.",
+      zh: "由 Fox Rotating Equipment Solutions 赞助并最终交付，用于离心压缩机测试。"
     },
     year: "2025",
     tags: ["SolidWorks", "Mechanism", "Capstone"],
@@ -135,9 +135,9 @@ window.PORTFOLIO_PROJECTS = [
         "Tech stack: SolidWorks CAD, mechanism design, motion simulation, design-for-manufacturing review, sponsor documentation, and engineering presentation."
       ],
       zh: [
-        "为企业赞助的涡轮机械测试设计可调扩压器壁面插入件，使壁面角度可在 0 到 3 度范围内调节，减少为每个测试条件单独加工固定壁面的成本和周期。",
-        "方案采用内部驱动环机构，将受控驱动转换为同步壁面角度调节，同时兼顾结构支撑、测试仪器避让和压缩机测试硬件兼容性。",
-        "我的工作包括需求定义、方案选择、SolidWorks 建模、运动仿真、可制造性优化，以及面向 Fox Rotating Equipment Solutions 的保密交付展示。",
+        "我为企业赞助的涡轮机械测试项目设计了一套可调扩压器壁面插入件，让壁面角度可以在 0 到 3 度范围内调整，避免每个测试工况都重新加工固定壁面。",
+        "核心方案是内部驱动环机构，把受控驱动转化为多处壁面的同步角度调节，同时保留结构支撑、仪器安装空间和压缩机测试台兼容性。",
+        "我的主要工作包括需求梳理、方案对比、SolidWorks 建模、运动仿真、可制造性优化，以及面向 Fox Rotating Equipment Solutions 的最终交付展示。",
         "技术栈：SolidWorks CAD、机构设计、运动仿真、可制造性评估、企业项目文档和工程展示。"
       ]
     }

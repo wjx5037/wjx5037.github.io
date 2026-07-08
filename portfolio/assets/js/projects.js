@@ -108,30 +108,37 @@ window.PORTFOLIO_PROJECTS = [
   {
     id: "diffuser-wall",
     featured: false,
-    media: ["posts/project8/p1.png", "posts/project8/p2.png"],
+    media: ["posts/project8/p1.png"],
     mediaAlt: {
       en: "Adjustable diffuser wall geometry project",
-      zh: "可调扩压器壁面几何项目"
+      zh: "可调扩压器壁面几何设计项目"
     },
     title: {
       en: "Adjustable Diffuser Wall Geometry",
       zh: "可调扩压器壁面几何设计"
     },
     subtitle: {
-      en: "Capstone mechanism for turbomachinery testing with adjustable 0 to 3 degree wall angle.",
-      zh: "面向涡轮机械测试的可调角度壁面机构，调节范围 0 到 3 度。"
+      en: "Sponsor-delivered adjustable diffuser wall concept for centrifugal compressor testing.",
+      zh: "面向离心压缩机测试的企业交付型可调扩压器壁面方案。"
     },
     year: "2025",
     tags: ["SolidWorks", "Mechanism", "Capstone"],
-    links: [{ label: "Details", url: "posts/project8/" }],
+    links: [
+      { label: "Details", url: "posts/project8/" },
+      { label: "Explanation Video", url: "https://drive.google.com/file/d/1IAWOdaP3prZ0QVEDt1Vp-jWv6TS1lB45/view?usp=sharing" }
+    ],
     body: {
       en: [
-        "Designed a movable diffuser insert to reduce test lead time and increase aerodynamic testing flexibility for sponsor-driven turbomachinery experiments.",
-        "Contributed CAD modeling, motion simulation, and an internal drive ring actuation concept."
+        "Designed an adjustable diffuser wall insert for sponsor-driven turbomachinery testing, allowing the wall angle to vary from 0 to 3 degrees instead of manufacturing a separate fixed shroud for each test condition.",
+        "The mechanism uses an internal drive-ring concept to translate controlled actuation into synchronized wall-angle adjustment while preserving structural support, instrumentation clearance, and compatibility with compressor test hardware.",
+        "My work focused on requirement definition, concept selection, SolidWorks CAD modeling, motion simulation, manufacturability refinement, and a confidentiality-aware final presentation package for Fox Rotating Equipment Solutions.",
+        "Tech stack: SolidWorks CAD, mechanism design, motion simulation, design-for-manufacturing review, sponsor documentation, and engineering presentation."
       ],
       zh: [
-        "设计可移动扩压器插入件，减少实验准备时间，并提升涡轮机械气动测试灵活性。",
-        "主要贡献包括 CAD 建模、运动仿真和内部驱动环调节机构方案。"
+        "为企业赞助的涡轮机械测试设计可调扩压器壁面插入件，使壁面角度可在 0 到 3 度范围内调节，减少为每个测试条件单独加工固定壁面的成本和周期。",
+        "方案采用内部驱动环机构，将受控驱动转换为同步壁面角度调节，同时兼顾结构支撑、测试仪器避让和压缩机测试硬件兼容性。",
+        "我的工作包括需求定义、方案选择、SolidWorks 建模、运动仿真、可制造性优化，以及面向 Fox Rotating Equipment Solutions 的保密交付展示。",
+        "技术栈：SolidWorks CAD、机构设计、运动仿真、可制造性评估、企业项目文档和工程展示。"
       ]
     }
   },

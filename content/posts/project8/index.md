@@ -1,29 +1,46 @@
 +++
-title = 'Adjustable Diffuser Wall Geometry for Turbomachinery Testing                                              '
+title = 'Adjustable Diffuser Wall Geometry for Turbomachinery Testing'
 date = 2025-05-03
-summary = """
-![一种搬运安装空心混凝土护栏的叉车属具结构图](posts/project8/p1.png)
-*Advised by Dr. Chaoyang Wang at Pennsylvania State University & (sponsored by Fox Rotating Equipment Solutions)*
-
-This capstone project, sponsored by Fox Rotating Equipment Solutions, focuses on developing an adjustable diffuser wall for centrifugal compressor testing to reduce lead time and increase aerodynamic testing flexibility. Our team designed a movable diffuser insert capable of varying the wall angle between 0° and 3°, eliminating the need to fabricate new fixed shroud walls for each experiment. My primary contributions involved SolidWorks CAD modeling, motion simulation, and proposing an internal drive ring actuation mechanism to ensure precise and structurally feasible adjustment. Due to sponsor confidentiality requirements, detailed design drawings cannot be publicly disclosed.
-
-#### ⬇️*Click*⬇️ { .text-right }
-"""
-
 +++
-*Advised by Dr. Chaoyang Wang at Pennsylvania State University & (sponsored by Fox Rotating Equipment Solutions)*
-{{< figure src="p1.png" title="Adjustable diffuser wall final project " >}}
 
-**Due to confidentiality requirements from the project sponsor, I am unable to publicly share detailed designs or technical drawings for this project. Thanks for understanding!*
+*Delivered to and sponsored by Fox Rotating Equipment Solutions*
 
-## Program Objectives
-The goal of this project was to design and develop an adjustable diffuser wall for centrifugal compressor testing that could vary its angle between 0° and 3°. By replacing fixed shroud walls with a movable geometry insert, the project aimed to reduce manufacturing lead time and costs, increase testing flexibility, and enable more efficient aerodynamic experimentation for turbomachinery applications.
+{{< figure src="p1.png" title="Final adjustable diffuser wall prototype concept" >}}
 
-{{< figure src="p2.png" title="Diffuser wall in turbine " >}}
-## Specific Design Process
-Our design process began with identifying the key requirements for a movable diffuser wall, including adjustable geometry (0°–3°), structural stability, and compatibility with instrumentation. We brainstormed multiple actuation methods and selected an internal drive ring mechanism as the most effective solution. Using SolidWorks, I led the CAD modeling and motion simulations to validate the mechanism’s performance, ensuring smooth angle adjustment and durability under operating conditions. The team then refined the geometry for manufacturability and prepared a prototype concept capable of supporting future turbomachinery testing.
+[[button:Explanation Video](https://drive.google.com/file/d/1IAWOdaP3prZ0QVEDt1Vp-jWv6TS1lB45/view?usp=sharing)]
 
-## Explanation video
-https://www.youtube.com/watch?app=desktop&v=0Ld3ID61GiE 
+**Due to confidentiality requirements from the project sponsor, detailed drawings and internal dimensions are not published here.**
 
+## Project Goal
 
+Design an adjustable diffuser wall insert for centrifugal compressor testing. The core requirement was to vary the diffuser wall angle from 0 to 3 degrees without manufacturing a separate fixed wall for each test condition.
+
+The value of the design is practical: reduce test-article lead time, lower fabrication cost, and give the sponsor a repeatable way to explore different diffuser geometries during aerodynamic experiments.
+
+## Design Logic
+
+The mechanism was built around an internal drive-ring concept. Instead of treating the wall as a single manually adjusted plate, the design converts controlled actuation into synchronized wall-angle motion across the diffuser geometry.
+
+Key design requirements:
+
+- Adjustable wall angle from 0 to 3 degrees.
+- Smooth and repeatable angle change during setup.
+- Structural support for the diffuser insert under test conditions.
+- Clearance for instrumentation and surrounding compressor hardware.
+- Geometry that could be manufactured, assembled, and presented without exposing confidential sponsor details.
+
+## My Contribution
+
+I contributed to requirement definition, concept comparison, CAD modeling, and motion simulation. In SolidWorks, I developed the mechanism geometry, checked moving-part clearance, and refined the internal actuation layout so the adjustment motion remained constrained and mechanically understandable.
+
+I also helped prepare the final sponsor-facing design package, focusing on clear communication of the mechanism, expected adjustment behavior, manufacturability considerations, and testing value.
+
+## Turbomachinery Context
+
+{{< figure src="p2.png" title="Diffuser wall location in the turbomachinery test context" >}}
+
+The adjustable wall is intended for compressor diffuser testing, where small geometry changes can affect downstream flow behavior. A reusable adjustable insert gives the test team more flexibility than a set of fixed diffuser walls.
+
+## Technical Stack
+
+SolidWorks CAD, mechanism design, motion simulation, design-for-manufacturing review, sponsor documentation, and engineering presentation.

@@ -65,13 +65,13 @@ window.PORTFOLIO_PROJECTS = [
         "Built a 4WD embedded mobile robot around an ESP32-S3, four DC gear motors, quadrature encoders, dual VL53L1X ToF sensors, and Vive photodiode localization. The platform supports Wi-Fi teleoperation, wall following, point-to-point navigation, stop mode, and web-triggered task behaviors.",
         "The control stack separates high-level modes from low-level actuation: the browser dashboard sends speed, turn, PID, and navigation commands; the firmware samples sensors, estimates wheel speed through PCNT counters, runs independent PI control for each wheel, and converts forward/turn commands into skid-steer targets.",
         "Autonomous behavior combines ToF-based obstacle and wall-distance feedback with Vive-based pose estimation. The robot filters Vive coordinates, computes heading error to a target point, and uses distance/angle feedback to drive multi-stage waypoint navigation.",
-        "Tech stack: ESP32-S3, Arduino/C++, Wi-Fi AP WebServer, MCPWM motor drive, PCNT quadrature encoders, VL53L1X ToF sensing, Vive510 localization, PI wheel-speed control, PD wall following, and JavaScript telemetry dashboard."
+        "Tech stack: SolidWorks CAD, ESP32-S3, Arduino/C++, Wi-Fi AP WebServer, MCPWM motor drive, PCNT quadrature encoders, VL53L1X ToF sensing, Vive510 localization, PI wheel-speed control, PD wall following, and JavaScript telemetry dashboard."
       ],
       zh: [
         "基于 ESP32-S3 搭建四轮驱动移动机器人平台，集成四个直流减速电机、正交编码器、双 VL53L1X ToF 传感器和 Vive 光电定位模块。系统支持 Wi-Fi 遥控、沿墙行驶、点到点导航、停止模式以及网页触发的任务动作。",
         "控制架构将高层模式和底层执行分离：网页端发送速度、转向、PID 和导航目标；固件端周期读取传感器，通过 PCNT 计数器估计四轮速度，为每个轮子独立运行 PI 控制，并将 forward/turn 指令转换成 skid-steer 左右轮目标速度。",
         "自主行为结合 ToF 距离反馈和 Vive 位姿估计。机器人对 Vive 坐标做滤波，计算目标点方向误差，并使用距离/角度反馈完成多段 waypoint navigation。",
-        "技术栈：ESP32-S3、Arduino/C++、Wi-Fi AP WebServer、MCPWM 电机驱动、PCNT 正交编码器、VL53L1X ToF 感知、Vive510 定位、PI 轮速控制、PD 沿墙控制和 JavaScript 遥测调参界面。"
+        "技术栈：SolidWorks CAD、ESP32-S3、Arduino/C++、Wi-Fi AP WebServer、MCPWM 电机驱动、PCNT 正交编码器、VL53L1X ToF 感知、Vive510 定位、PI 轮速控制、PD 沿墙控制和 JavaScript 遥测调参界面。"
       ]
     }
   },
@@ -125,11 +125,11 @@ window.PORTFOLIO_PROJECTS = [
     tags: ["SolidWorks", "Mechanism", "Capstone"],
     links: [
       { label: "Details", url: "posts/project8/" },
-      { label: "Explanation Video", url: "https://drive.google.com/file/d/1IAWOdaP3prZ0QVEDt1Vp-jWv6TS1lB45/view?usp=sharing" }
+      { label: { en: "Explanation Video", zh: "介绍视频" }, url: "https://drive.google.com/file/d/1IAWOdaP3prZ0QVEDt1Vp-jWv6TS1lB45/view?usp=sharing" }
     ],
     body: {
       en: [
-        "Designed an adjustable diffuser wall insert for sponsor-driven turbomachinery testing, allowing the wall angle to vary from 0 to 3 degrees instead of manufacturing a separate fixed shroud for each test condition.",
+        "Our team designed an adjustable diffuser wall insert for sponsor-driven turbomachinery testing, allowing the wall angle to vary from 0 to 3 degrees instead of manufacturing a separate fixed shroud for each test condition.",
         "The mechanism uses an internal drive-ring concept to translate controlled actuation into synchronized wall-angle adjustment while preserving structural support, instrumentation clearance, and compatibility with compressor test hardware.",
         "My work focused on requirement definition, concept selection, SolidWorks CAD modeling, motion simulation, manufacturability refinement, and a confidentiality-aware final presentation package for Fox Rotating Equipment Solutions.",
         "Tech stack: SolidWorks CAD, mechanism design, motion simulation, design-for-manufacturing review, sponsor documentation, and engineering presentation."

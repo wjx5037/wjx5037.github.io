@@ -76,7 +76,7 @@
         ${project.links.map((link) => {
           const external = isExternal(link.url);
           const attrs = external ? ' target="_blank" rel="noopener"' : "";
-          const label = link.label === "Details" ? dictionary[lang].details_label : link.label;
+          const label = link.label === "Details" ? dictionary[lang].details_label : text(link.label, lang);
           return `<a href="${withBase(link.url)}"${attrs}>${label}</a>`;
         }).join("")}
       </div>

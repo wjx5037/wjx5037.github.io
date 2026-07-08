@@ -44,6 +44,7 @@
 
   function text(field, lang) {
     if (!field) return "";
+    if (typeof field === "string") return field;
     return field[lang] || field.en || "";
   }
 

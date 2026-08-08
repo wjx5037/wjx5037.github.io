@@ -140,10 +140,11 @@
     const mediaLayoutClass = project.mediaLayout ? ` project-media--${project.mediaLayout}` : "";
     const galleryClass = media.length > 1 ? " project-media--gallery" : "";
     const duoClass = media.length === 2 && !project.mediaLayout ? " project-media--duo" : "";
+    const singleClass = media.length === 1 && !project.mediaLayout ? " project-media--single" : "";
 
     return `
       <article class="project-card" id="${project.id}">
-        <div class="project-media${galleryClass}${duoClass}${mediaLayoutClass}">
+        <div class="project-media${galleryClass}${duoClass}${singleClass}${mediaLayoutClass}">
           ${mediaHtml}
         </div>
         <div class="project-content">

@@ -149,7 +149,7 @@ The first version validated the drivetrain, web control, and encoder feedback. T
 
 ## Results
 
-{{< video src="Wallfollow.mp4" title="Wall-following demo" >}}
+{{< video src="Wallfollow.mp4" poster="Wallfollow-poster.jpg" title="Wall-following demo" >}}
 
 - Built a complete ESP32-S3 mobile robot with Wi-Fi control, telemetry, and runtime tuning.
 - Implemented four-wheel closed-loop speed control using quadrature encoder feedback.

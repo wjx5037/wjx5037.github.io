@@ -4,6 +4,12 @@
   const themeKey = "wjx-portfolio-theme";
   const basePrefix = location.pathname.includes("/robotics/") ? "../" : "";
   const projects = window.PORTFOLIO_PROJECTS || [];
+  const videoPosters = {
+    "posts/project4/Wallfollow.mp4": "posts/project4/Wallfollow-poster.jpg",
+    "posts/project9/Dynamic_Success.mp4": "posts/project9/Dynamic_Success-poster.jpg",
+    "posts/project9/Polling_simulation.mp4": "posts/project9/Polling_simulation-poster.jpg",
+    "posts/project9/Static.mp4": "posts/project9/Static-poster.jpg"
+  };
   const projectGroups = [
     {
       key: "robotics_group",
@@ -151,7 +157,8 @@
   function mediaTag(src, alt, variant) {
     const path = withBase(src);
     if (/\.(mp4|mov|webm)$/i.test(src)) {
-      return `<video class="${variant}-video" src="${path}" controls playsinline preload="none" aria-label="${alt}"></video>`;
+      const poster = videoPosters[src] ? ` poster="${withBase(videoPosters[src])}"` : "";
+      return `<video class="${variant}-video" src="${path}"${poster} controls playsinline preload="none" aria-label="${alt}"></video>`;
     }
     return `<img src="${path}" alt="${alt}" loading="lazy">`;
   }

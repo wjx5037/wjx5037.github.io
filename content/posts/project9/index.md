@@ -19,7 +19,7 @@ The project covers two task modes:
 
 ## Program Logic Structure
 
-```mermaid
+```mermaid compact
 flowchart TD
     A["Start ROS node"] --> B["Initialize ArmController, ObjectDetector, FK, IK"]
     B --> C["Move to safe start pose and open gripper"]

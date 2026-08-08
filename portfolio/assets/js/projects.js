@@ -94,23 +94,23 @@ window.PORTFOLIO_PROJECTS = [
       zh: "由 Fox Rotating Equipment Solutions 赞助并最终交付，用于离心压缩机测试。"
     },
     year: "2025",
-    tags: ["SolidWorks", "Mechanism", "Capstone"],
+    tags: ["Client Delivery", "SolidWorks", "Mechanism"],
     links: [
       { label: "Details", url: "posts/project8/" },
       { label: { en: "Explanation Video", zh: "介绍视频" }, url: "https://drive.google.com/file/d/1IAWOdaP3prZ0QVEDt1Vp-jWv6TS1lB45/view?usp=sharing" }
     ],
     body: {
       en: [
-        "Collaborated on a sponsor-funded adjustable diffuser-wall insert for centrifugal-compressor testing, allowing the wall angle to change from 0 to 3 degrees without manufacturing a separate fixed insert for every test condition.",
-        "The mechanism uses an internal drive-ring layout that converts a controlled input into synchronized wall-angle adjustment while preserving structural support, instrumentation clearance, and compatibility with surrounding test hardware.",
-        "My work covered requirement definition, concept comparison, SolidWorks CAD modeling, moving-part clearance and motion simulation, manufacturability refinement, and a final sponsor-facing design presentation for Fox Rotating Equipment Solutions.",
-        "Tech stack: SolidWorks CAD, mechanism design, motion simulation, clearance analysis, design-for-manufacturing review, and sponsor-facing engineering communication."
+        "Worked in a sponsor-funded capstone team to deliver an adjustable diffuser-wall insert for Fox Rotating Equipment Solutions. The design changes wall angle from 0 to 3 degrees, avoiding a separate fixed insert for every compressor test condition.",
+        "The work began by translating sponsor test needs into engineering requirements: controlled adjustment, repeatable setup, instrumentation clearance, structural support, and practical manufacturing. We compared concepts before selecting an internal drive-ring layout for synchronized wall-angle motion.",
+        "I led requirement organization, concept comparison, SolidWorks CAD modeling, moving-part clearance and motion simulation, and manufacturability refinement. I also prepared and presented the final design package, communicating mechanism choices, tradeoffs, and test value directly to the sponsor.",
+        "Industrial design skills: stakeholder requirements, concept selection, design review, SolidWorks CAD, motion simulation, clearance analysis, design-for-manufacturing, and sponsor-facing delivery."
       ],
       zh: [
-        "这是一个面向离心压缩机测试的企业赞助团队项目：通过可调扩压器壁面插入件，让壁面角度在 0–3 度范围内变化，避免为每种测试工况反复加工固定壁面。",
-        "方案采用内部驱动环机构，将受控驱动转化为多处壁面的同步角度调节，同时保留结构支撑、仪器安装空间及与测试台周边硬件的兼容性。",
-        "我负责需求梳理、方案对比、SolidWorks 建模、运动与干涉检查、可制造性优化，以及面向 Fox Rotating Equipment Solutions 的最终交付展示。",
-        "技术栈：SolidWorks CAD、机构设计、运动仿真、干涉检查、可制造性评估和企业工程沟通。"
+        "这是一个由 Fox Rotating Equipment Solutions 赞助并最终交付的团队项目：为离心压缩机测试设计可调扩压器壁面插入件，使壁面角度可在 0–3 度范围内变化，避免为每种工况重复加工固定壁面。",
+        "项目先将客户测试需求转化为工程约束，包括受控调节、可重复设置、仪器空间、结构支撑和可制造性。团队对多种方案进行比较后，选择内部驱动环机构实现壁面角度的同步调节。",
+        "我负责需求梳理、方案比选、SolidWorks 建模、运动与干涉检查及可制造性优化，并准备最终交付材料，向客户清晰说明机构选择、设计权衡和测试价值。",
+        "工业项目能力：客户需求分析、方案筛选、设计评审、SolidWorks CAD、运动仿真、干涉检查、可制造性评估和面向客户的工程交付。"
       ]
     }
   },
@@ -128,11 +128,11 @@ window.PORTFOLIO_PROJECTS = [
       zh: "混凝土护栏搬运叉车属具"
     },
     subtitle: {
-      en: "Transverse gripping mechanism for safe and damage-free hollow concrete guardrail handling.",
-      zh: "用于空心混凝土护栏安全、无损搬运的横向夹取机构。"
+      en: "Shanxi Transportation Science Research Institute internship project: transverse gripping for safe, damage-free hollow concrete guardrail handling.",
+      zh: "山西交通科学研究院实习项目：用于空心混凝土护栏安全、无损搬运的横向夹取机构。"
     },
     year: "2024",
-    tags: ["SolidWorks", "Mechanism", "Patent"],
+    tags: ["Industry Internship", "SolidWorks", "Patent"],
     links: [{ label: "Details", url: "posts/project1/" }],
     body: {
       en: [
@@ -163,11 +163,11 @@ window.PORTFOLIO_PROJECTS = [
       zh: "半装配式混凝土护栏智能搬运车"
     },
     subtitle: {
-      en: "Automated transport concept integrating precision mechanical design and multi-DOF handling.",
-      zh: "整合精密机械设计和多自由度搬运的自动化运输方案。"
+      en: "Shanxi Transportation Science Research Institute internship project: automated transport with multi-DOF guardrail handling.",
+      zh: "山西交通科学研究院实习项目：整合多自由度护栏搬运的自动化运输方案。"
     },
     year: "2024",
-    tags: ["CAD", "Motion Study", "Automation"],
+    tags: ["Industry Internship", "CAD", "Automation"],
     links: [{ label: "Details", url: "posts/project5/" }],
     body: {
       en: [
@@ -233,24 +233,24 @@ window.PORTFOLIO_PROJECTS = [
       zh: "Discovery Space Museum 展品设计"
     },
     subtitle: {
-      en: "Interactive electricity and physics exhibit for children, from concept screening to prototype.",
-      zh: "面向儿童的电学和物理互动展品，从概念筛选到原型制作。"
+      en: "Client-commissioned interactive STEM exhibit for Discovery Space, from stakeholder needs to a maintainable prototype.",
+      zh: "面向 Discovery Space 儿童博物馆的客户委托互动 STEM 展品，从需求梳理到可维护原型。"
     },
     year: "2023",
-    tags: ["Prototype", "SolidWorks", "AHP"],
+    tags: ["Client Design", "AHP", "Prototype"],
     links: [{ label: "Details", url: "posts/project3/" }],
     body: {
       en: [
-        "Designed Exciting Pass with a multidisciplinary team for Discovery Space Children’s Museum: a hands-on metal-path challenge that teaches basic circuits and physics through buzzer and LED feedback.",
-        "The design was developed for children ages 2–12, balancing an engaging challenge with safety, durability, maintainability, and clear educational feedback.",
-        "I contributed to concept generation and AHP-based selection, SolidWorks CAD, alpha-prototype fabrication, and iterative refinement of 3D-printed components, the electronics enclosure, and the wooden base.",
-        "Tech stack: AHP decision analysis, SolidWorks CAD, basic circuits, LEDs and buzzer feedback, 3D printing, wood fabrication, and user-centered exhibit design."
+        "Worked with a multidisciplinary team on a client-commissioned exhibit for Discovery Space Children’s Museum, translating its educational, safety, maintenance, and age-range needs into a hands-on STEM experience for children ages 2–12.",
+        "Before detailed design, the team used 6-3-5 concept generation and AHP screening to compare options against engagement, flexibility, aesthetics, and ease of assembly. This created a traceable rationale for selecting the Exciting Pass concept.",
+        "My role combined stakeholder-oriented requirement interpretation with SolidWorks CAD and prototype refinement. I helped turn design needs into maintainable details: protected low-voltage electronics, rounded wood surfaces, an accessible service door, and durable 3D-printed track supports.",
+        "Industrial design skills: stakeholder requirements, structured concept selection, AHP decision matrices, SolidWorks CAD, rapid prototyping, low-voltage electronics, design-for-maintenance, and client-ready presentation."
       ],
       zh: [
-        "与跨学科团队为 Discovery Space 儿童博物馆设计 Exciting Pass 互动展品：儿童沿金属路径完成挑战，通过蜂鸣器和 LED 反馈学习基础电路与物理概念。",
-        "项目面向 2–12 岁儿童，在互动趣味之外，同时平衡安全性、耐久性、可维护性和清晰的教学反馈。",
-        "我参与概念生成与 AHP 方案筛选、SolidWorks 建模、Alpha 原型制作，并迭代 3D 打印部件、电子结构和木质底座。",
-        "技术栈：AHP 决策分析、SolidWorks CAD、基础电路、LED 与蜂鸣器反馈、3D 打印、木工制作和以用户为中心的展品设计。"
+        "与跨学科团队为 Discovery Space 儿童博物馆完成客户委托展品设计，将教育目标、安全性、维护便利性和 2–12 岁儿童的使用需求，转化为可互动的 STEM 学习体验。",
+        "在详细设计之前，团队采用 6-3-5 概念生成法和 AHP 筛选矩阵，从互动性、灵活性、美观性和装配便利性等维度比较方案，为 Exciting Pass 的选择建立可追溯的决策依据。",
+        "我参与面向使用方的需求梳理、SolidWorks 建模和原型迭代，将需求落实为可维护的设计细节：受保护的低压电子结构、圆角木质表面、便于维护的检修门，以及耐用的 3D 打印轨道支撑件。",
+        "工业项目能力：利益相关方需求分析、结构化方案筛选、AHP 决策矩阵、SolidWorks CAD、快速原型、低压电子、面向维护的设计和客户交付展示。"
       ]
     }
   },

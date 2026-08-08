@@ -20,8 +20,12 @@
       ids: ["acrp-luggage", "goodwill-ebins"]
     },
     {
-      key: "company_group",
-      ids: ["diffuser-wall", "museum-exhibit", "forklift-attachment", "guardrail-transporter"]
+      key: "client_group",
+      ids: ["diffuser-wall", "museum-exhibit"]
+    },
+    {
+      key: "internship_group",
+      ids: ["forklift-attachment", "guardrail-transporter"]
     }
   ];
 
@@ -34,7 +38,8 @@
       details_label: "Details",
       robotics_group: "Robotics Projects",
       competition_group: "Competition Projects",
-      company_group: "Delivered Company Projects"
+      client_group: "Client-Commissioned Projects",
+      internship_group: "Shanxi Transportation Science Research Institute Internship"
     },
     zh: {
       page_title: "许文博个人作品集",
@@ -44,7 +49,8 @@
       details_label: "项目详情",
       robotics_group: "机器人项目",
       competition_group: "竞赛项目",
-      company_group: "已交付公司项目"
+      client_group: "客户委托项目",
+      internship_group: "山西交通科学研究院实习项目"
     }
   };
 

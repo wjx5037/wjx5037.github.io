@@ -128,6 +128,7 @@ def markdown_to_html(markdown: str, project: str) -> str:
     in_mermaid = False
     math_lines: list[str] = []
     mermaid_lines: list[str] = []
+    mermaid_class = "mermaid"
 
     def flush_paragraph() -> None:
         nonlocal paragraph
@@ -148,20 +149,22 @@ def markdown_to_html(markdown: str, project: str) -> str:
             math_lines = []
 
     def flush_mermaid() -> None:
-        nonlocal mermaid_lines
+        nonlocal mermaid_lines, mermaid_class
         if mermaid_lines:
-            blocks.append('<pre class="mermaid">' + html.escape("\n".join(mermaid_lines)) + "</pre>")
+            blocks.append(f'<pre class="{mermaid_class}">' + html.escape("\n".join(mermaid_lines)) + "</pre>")
             mermaid_lines = []
+            mermaid_class = "mermaid"
 
     for raw_line in markdown.splitlines():
         line = raw_line.rstrip()
         stripped = line.strip()
 
-        if stripped == "```mermaid":
+        if stripped.startswith("```mermaid"):
             flush_paragraph()
             flush_list()
             in_mermaid = True
             mermaid_lines = []
+            mermaid_class = "mermaid mermaid-compact" if stripped == "```mermaid compact" else "mermaid"
             continue
 
         if in_mermaid:
@@ -262,7 +265,7 @@ DETAIL_TEMPLATE = """<!doctype html>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{description}">
     <title>{title} | Wenbo Xu</title>
-    <link rel="stylesheet" href="../../assets/css/site.css?v=20260708-media-5">
+    <link rel="stylesheet" href="../../assets/css/site.css?v=20260708-media-6">
   </head>
   <body>
     <header class="site-header">
@@ -300,7 +303,7 @@ DETAIL_TEMPLATE = """<!doctype html>
       import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
       mermaid.initialize({{ startOnLoad: true, theme: document.documentElement.dataset.theme === "light" ? "default" : "dark" }});
     </script>
-    <script src="../../assets/js/site.js?v=20260708-media-5"></script>
+    <script src="../../assets/js/site.js?v=20260708-media-6"></script>
     <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   </body>
 </html>

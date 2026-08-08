@@ -328,16 +328,6 @@ h3 {
   object-position: left center !important;
 }
 
-.project-media--single {
-  align-self: start;
-  aspect-ratio: 4 / 3;
-}
-
-.project-media--single img,
-.project-media--single video {
-  min-height: 0;
-}
-
 .project-media--gallery {
   display: grid;
   grid-template-columns: 1fr 0.48fr;

@@ -88,7 +88,7 @@ def video_shortcode(line: str) -> str | None:
     title = attrs.get("title", "")
     return (
         '<figure class="detail-figure">'
-        f'<video src="{html.escape(src)}" controls muted playsinline preload="metadata"></video>'
+        f'<video src="{html.escape(src)}" controls playsinline preload="none"></video>'
         f'{f"<figcaption>{inline_markup(title)}</figcaption>" if title else ""}'
         "</figure>"
     )
@@ -260,7 +260,7 @@ DETAIL_TEMPLATE = """<!doctype html>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{description}">
     <title>{title} | Wenbo Xu</title>
-    <link rel="stylesheet" href="../../assets/css/site.css?v=20260708-labels-2">
+    <link rel="stylesheet" href="../../assets/css/site.css?v=20260708-media-1">
   </head>
   <body>
     <header class="site-header">
@@ -298,7 +298,7 @@ DETAIL_TEMPLATE = """<!doctype html>
       import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
       mermaid.initialize({{ startOnLoad: true, theme: document.documentElement.dataset.theme === "light" ? "default" : "dark" }});
     </script>
-    <script src="../../assets/js/site.js?v=20260708-labels-2"></script>
+    <script src="../../assets/js/site.js?v=20260708-media-1"></script>
     <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   </body>
 </html>

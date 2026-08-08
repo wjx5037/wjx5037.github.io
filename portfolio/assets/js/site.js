@@ -151,7 +151,7 @@
   function mediaTag(src, alt, variant) {
     const path = withBase(src);
     if (/\.(mp4|mov|webm)$/i.test(src)) {
-      return `<video class="${variant}-video" src="${path}" muted loop playsinline autoplay controls preload="metadata" aria-label="${alt}"></video>`;
+      return `<video class="${variant}-video" src="${path}" controls playsinline preload="none" aria-label="${alt}"></video>`;
     }
     return `<img src="${path}" alt="${alt}" loading="lazy">`;
   }

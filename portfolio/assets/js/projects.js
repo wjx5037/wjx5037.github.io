@@ -2,7 +2,7 @@ window.PORTFOLIO_PROJECTS = [
   {
     id: "franka-manipulation",
     featured: true,
-    thumbnail: "posts/project9/1.jpg",
+    thumbnail: "posts/project9/carousel.jpg",
     media: ["posts/project9/Dynamic_Success.mp4", "posts/project9/Static.mp4"],
     mediaAlt: {
       en: "Franka Emika Panda robot grasping blocks",
@@ -40,6 +40,7 @@ window.PORTFOLIO_PROJECTS = [
   {
     id: "wifi-robot-car",
     featured: true,
+    thumbnail: "posts/project4/carousel.jpg",
     mediaLayout: "stacked-photos-video",
     media: ["posts/project4/finalcar1.jpg", "posts/project4/finalcar2.jpg", "posts/project4/Wallfollow.mp4"],
     mediaAlt: {
@@ -78,6 +79,7 @@ window.PORTFOLIO_PROJECTS = [
   {
     id: "waldo-arm",
     featured: true,
+    thumbnail: "posts/project2/carousel.jpg",
     media: ["posts/project2/p1.jpg", "posts/project2/2.png", "posts/project2/3.png"],
     mediaAlt: {
       en: "Two-degree-of-freedom Waldo teleoperated arm",
@@ -108,6 +110,7 @@ window.PORTFOLIO_PROJECTS = [
   {
     id: "diffuser-wall",
     featured: false,
+    thumbnail: "posts/project8/carousel.jpg",
     media: ["posts/project8/p1.png"],
     mediaAlt: {
       en: "Adjustable diffuser wall geometry project",
@@ -145,6 +148,7 @@ window.PORTFOLIO_PROJECTS = [
   {
     id: "forklift-attachment",
     featured: false,
+    thumbnail: "posts/project1/carousel.jpg",
     media: ["posts/project1/横向夹取.png", "posts/project1/空心混凝土护栏.png", "posts/project1/护栏实物.png", "posts/project1/figure1.png", "posts/project1/figure2.png", "posts/project1/figure3.png", "posts/project1/figure4.png", "posts/project1/figure5.png", "posts/project1/figure6.png"],
     mediaAlt: {
       en: "Forklift attachment for concrete guardrail handling",
@@ -175,6 +179,7 @@ window.PORTFOLIO_PROJECTS = [
   {
     id: "guardrail-transporter",
     featured: false,
+    thumbnail: "posts/project5/carousel.jpg",
     media: ["posts/project5/p5.1.png", "posts/project5/p5.2.png", "posts/project5/p5.3.png"],
     mediaAlt: {
       en: "Semi-assembled concrete guardrail intelligent transporter",
@@ -205,6 +210,7 @@ window.PORTFOLIO_PROJECTS = [
   {
     id: "acrp-luggage",
     featured: false,
+    thumbnail: "posts/project7/carousel.jpg",
     media: ["posts/project7/p7.1.png", "posts/project7/p7.6.png", "posts/project7/p7.8.png", "posts/project7/p7.2.png", "posts/project7/p7.3.jpg", "posts/project7/p7.4.png", "posts/project7/p7.5.png", "posts/project7/p7.7.png", "posts/project7/p7.9.png"],
     mediaAlt: {
       en: "RFID-assisted baggage visibility system",
@@ -235,6 +241,7 @@ window.PORTFOLIO_PROJECTS = [
   {
     id: "museum-exhibit",
     featured: false,
+    thumbnail: "posts/project3/carousel.jpg",
     media: ["posts/project3/e1.jpg", "posts/project3/e2.png", "posts/project3/e11.jpg", "posts/project3/e3.png", "posts/project3/e4.png", "posts/project3/e5.png", "posts/project3/e6.png", "posts/project3/e7.png", "posts/project3/e8.png"],
     mediaAlt: {
       en: "Discovery Space Museum Exciting Pass exhibit",
@@ -265,6 +272,7 @@ window.PORTFOLIO_PROJECTS = [
   {
     id: "goodwill-ebins",
     featured: false,
+    thumbnail: "posts/project6/carousel.jpg",
     media: ["posts/project6/p6.1.png", "posts/project6/p6.5.png", "posts/project6/p6.14.jpg", "posts/project6/p6.2.png", "posts/project6/p6.3.png", "posts/project6/p6.4.png", "posts/project6/p6.6.png", "posts/project6/p6.7.png", "posts/project6/p6.8.png"],
     mediaAlt: {
       en: "Goodwill E-bins donation redesign project",

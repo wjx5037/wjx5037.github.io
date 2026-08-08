@@ -99,7 +99,7 @@
   function topCarousel(lang) {
     const slides = projects.map((project) => {
       const src = carouselImage(project);
-      const media = mediaTag(src, text(project.mediaAlt, lang), "featured");
+      const media = mediaTag(src, text(project.mediaAlt, lang), "featured", project.mediaAlign);
       return `
         <a class="featured-slide" href="#${project.id}">
           ${media}
@@ -136,7 +136,7 @@
     const media = mediaItems(project).slice(0, 3);
     const body = text(project.body, lang);
     const bodyHtml = Array.isArray(body) ? body.map((paragraph) => `<p>${paragraph}</p>`).join("") : "";
-    const mediaHtml = media.map((src, index) => mediaTag(src, `${text(project.mediaAlt, lang)}${index ? ` ${index + 1}` : ""}`, "card")).join("");
+    const mediaHtml = media.map((src, index) => mediaTag(src, `${text(project.mediaAlt, lang)}${index ? ` ${index + 1}` : ""}`, "card", project.mediaAlign)).join("");
     const mediaLayoutClass = project.mediaLayout ? ` project-media--${project.mediaLayout}` : "";
     const galleryClass = media.length > 1 ? " project-media--gallery" : "";
     const duoClass = media.length === 2 && !project.mediaLayout ? " project-media--duo" : "";
@@ -160,13 +160,14 @@
     `;
   }
 
-  function mediaTag(src, alt, variant) {
+  function mediaTag(src, alt, variant, alignment) {
     const path = withBase(src);
+    const alignmentClass = alignment === "left" ? " media-align-left" : "";
     if (/\.(mp4|mov|webm)$/i.test(src)) {
       const poster = videoPosters[src] ? ` poster="${withBase(videoPosters[src])}"` : "";
-      return `<video class="${variant}-video" src="${path}"${poster} controls playsinline preload="none" aria-label="${alt}"></video>`;
+      return `<video class="${variant}-video${alignmentClass}" src="${path}"${poster} controls playsinline preload="none" aria-label="${alt}"></video>`;
     }
-    return `<img src="${path}" alt="${alt}" loading="lazy">`;
+    return `<img class="${alignmentClass.trim()}" src="${path}" alt="${alt}" loading="lazy">`;
   }
 
   function renderProjects(lang) {

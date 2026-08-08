@@ -324,6 +324,10 @@ h3 {
   object-fit: cover;
 }
 
+.media-align-left {
+  object-position: left center !important;
+}
+
 .project-media--gallery {
   display: grid;
   grid-template-columns: 1fr 0.48fr;

@@ -119,6 +119,7 @@ window.PORTFOLIO_PROJECTS = [
     featured: false,
     thumbnail: "posts/project1/carousel.jpg",
     media: ["posts/project1/横向夹取.png"],
+    mediaAlign: "left",
     mediaAlt: {
       en: "Forklift attachment for concrete guardrail handling",
       zh: "混凝土护栏搬运叉车属具"

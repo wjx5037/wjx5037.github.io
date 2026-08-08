@@ -118,7 +118,7 @@ window.PORTFOLIO_PROJECTS = [
     id: "forklift-attachment",
     featured: false,
     thumbnail: "posts/project1/carousel.jpg",
-    media: ["posts/project1/横向夹取.png", "posts/project1/空心混凝土护栏.png", "posts/project1/护栏实物.png", "posts/project1/figure1.png", "posts/project1/figure2.png", "posts/project1/figure3.png", "posts/project1/figure4.png", "posts/project1/figure5.png", "posts/project1/figure6.png"],
+    media: ["posts/project1/横向夹取.png"],
     mediaAlt: {
       en: "Forklift attachment for concrete guardrail handling",
       zh: "混凝土护栏搬运叉车属具"
@@ -153,7 +153,7 @@ window.PORTFOLIO_PROJECTS = [
     id: "guardrail-transporter",
     featured: false,
     thumbnail: "posts/project5/carousel.jpg",
-    media: ["posts/project5/p5.1.png", "posts/project5/p5.2.png", "posts/project5/p5.3.png"],
+    media: ["posts/project5/p5.3.png"],
     mediaAlt: {
       en: "Semi-assembled concrete guardrail intelligent transporter",
       zh: "半装配式混凝土护栏智能搬运车"

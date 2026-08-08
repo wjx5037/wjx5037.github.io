@@ -124,6 +124,7 @@ $$
 
 ### IK and Motion Execution
 
+- I wrote the kinematics and motion layer used in this project: forward kinematics, position-level inverse kinematics (IK) with null-space control, and velocity inverse kinematics (VIK) for differential end-effector motion. The robot interface is used for safe command execution, not as a black-box IK solver.
 - Solve IK for world-frame approach and drop poses after converting targets into the correct robot base frame.
 - Use a fixed hand-down end-effector orientation to reduce singularity risk.
 - Use the previous valid joint state as the IK seed.
@@ -142,8 +143,9 @@ If the grasp is verified, the robot places the block onto the goal stack. If not
 ## Implementation Modules
 
 - `Final_integration.py`: top-level task loop, static/dynamic mode switching, placement logic, and safety recovery.
-- `calculateFK.py`: forward kinematics for current end-effector pose.
-- `IK_position_null.py`: IK solver used for approach, grasp, and place poses.
+- `calculateFK.py`: self-written forward kinematics for the current end-effector pose.
+- `IK_position_null.py`: self-written position-level IK with null-space control for approach, grasp, and place poses.
+- Custom VIK routines: Jacobian-based joint-velocity mapping for differential end-effector motion and online target updates.
 - `ObjectDetector`: AprilTag/object pose detection and camera extrinsic access.
 - `ArmController`: safe joint-space motion, gripper command, and gripper feedback.
 

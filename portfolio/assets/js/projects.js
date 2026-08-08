@@ -24,16 +24,16 @@ window.PORTFOLIO_PROJECTS = [
     ],
     body: {
       en: [
-        "The grasping pipeline is organized around four core modules: AprilTag perception, coordinate-frame transformation, IK-based motion generation, and gripper-state verification. Detected block poses are first transformed into the world frame, then converted into either a static grasp plan or a dynamic interception plan.",
-        "For dynamic blocks on the rotating turntable, I avoided a purely time-based open-loop prediction method. Instead, I designed a polling-based angular tracking strategy: the system continuously updates the target block's real-time polar angle and triggers the grasp only when the block enters the predefined grasp-angle window. Compared with estimating arrival time once, this closed-loop angle check is much more robust to turntable speed variation, perception delay, and actuation latency.",
-        "Static blocks are handled with pose estimation and top-down gripper-yaw alignment. Dynamic blocks are handled with radius filtering, real-time angular polling, lead-angle triggering, and gripper-feedback validation.",
-        "Tech stack: Python, ROS, NumPy, Franka Panda interfaces, forward kinematics, inverse kinematics, homogeneous transforms, and feedback-based grasp validation."
+        "Built a vision-guided autonomous manipulation system on a 7-DOF Franka Panda for static pick-and-place and dynamic interception of AprilTag-tagged blocks on a rotating turntable.",
+        "I wrote the kinematics and motion layer from scratch: forward kinematics, position inverse kinematics (IK) with null-space control, and velocity inverse kinematics (VIK). These routines generate joint targets and differential end-effector motion rather than relying on a packaged IK solver.",
+        "AprilTag detections are propagated through camera-to-end-effector-to-base-to-world transforms. For rotating targets, a closed-loop angular polling strategy continuously tracks the block and triggers inside a lead-angle window, making interception more robust than a one-shot arrival-time estimate.",
+        "Tech stack: Python, ROS, NumPy, self-written FK/IK/VIK, Jacobian-based velocity control, homogeneous transforms, AprilTag perception, Franka Panda API, and gripper-feedback verification."
       ],
       zh: [
-        "抓取逻辑由四个核心模块构成：AprilTag 感知、坐标变换、基于 IK 的运动生成，以及基于夹爪状态的抓取验证。系统先将相机检测到的积木位姿转换到世界坐标系，再根据任务类型生成静态抓取或动态拦截动作。",
-        "针对转盘上的动态积木，我没有采用常见的基于时间估计的开环预测方法，而是设计了一个角度轮询跟踪策略：系统持续检测目标积木的实时极坐标角度，并在它进入预设抓取角窗口时立即触发抓取。相比单纯计算到达时间，这种方法能显著降低转速波动、检测延迟和执行误差带来的影响。",
-        "静态积木通过姿态估计和自上而下的 gripper yaw 对齐完成抓取；动态积木则通过半径筛选、实时角度跟踪、提前角触发和夹爪反馈验证完成拦截。",
-        "技术栈：Python、ROS、NumPy、Franka Panda 接口、正运动学、逆运动学、齐次变换和反馈式抓取验证。"
+        "面向 7 自由度 Franka Panda 的视觉自主抓取系统，可完成静态积木的拾放，以及转盘动态目标的拦截抓取。",
+        "运动学与轨迹执行层由我从零编写，包括正运动学、带零空间控制的位置逆运动学（IK），以及用于微分末端运动的速度逆运动学（VIK）。这些模块为观察、接近、抓取、放置和在线目标更新生成关节目标与速度指令，而不是调用现成的黑盒 IK 求解器。",
+        "系统将 AprilTag 检测结果依次转换到末端、机械臂基座和世界坐标系。针对转盘目标，我设计闭环角度轮询策略，持续追踪目标并在提前角触发窗口内发起抓取，避免一次性估算到达时间带来的误差。",
+        "技术栈：Python、ROS、NumPy、自编写 FK/IK/VIK、基于雅可比矩阵的速度控制、齐次变换、AprilTag 感知、Franka Panda 接口和夹爪反馈验证。"
       ]
     }
   },
@@ -101,16 +101,16 @@ window.PORTFOLIO_PROJECTS = [
     ],
     body: {
       en: [
-        "Our team designed an adjustable diffuser wall insert for sponsor-driven turbomachinery testing, allowing the wall angle to vary from 0 to 3 degrees instead of manufacturing a separate fixed shroud for each test condition.",
-        "The mechanism uses an internal drive-ring concept to translate controlled actuation into synchronized wall-angle adjustment while preserving structural support, instrumentation clearance, and compatibility with compressor test hardware.",
-        "My work focused on requirement definition, concept selection, SolidWorks CAD modeling, motion simulation, manufacturability refinement, and a confidentiality-aware final presentation package for Fox Rotating Equipment Solutions.",
-        "Tech stack: SolidWorks CAD, mechanism design, motion simulation, design-for-manufacturing review, sponsor documentation, and engineering presentation."
+        "Collaborated on a sponsor-funded adjustable diffuser-wall insert for centrifugal-compressor testing, allowing the wall angle to change from 0 to 3 degrees without manufacturing a separate fixed insert for every test condition.",
+        "The mechanism uses an internal drive-ring layout that converts a controlled input into synchronized wall-angle adjustment while preserving structural support, instrumentation clearance, and compatibility with surrounding test hardware.",
+        "My work covered requirement definition, concept comparison, SolidWorks CAD modeling, moving-part clearance and motion simulation, manufacturability refinement, and a final sponsor-facing design presentation for Fox Rotating Equipment Solutions.",
+        "Tech stack: SolidWorks CAD, mechanism design, motion simulation, clearance analysis, design-for-manufacturing review, and sponsor-facing engineering communication."
       ],
       zh: [
-        "这是一个团队完成的企业赞助涡轮机械测试项目，目标是设计一套可调扩压器壁面插入件，让壁面角度可以在 0 到 3 度范围内调整，避免每个测试工况都重新加工固定壁面。",
-        "核心方案是内部驱动环机构，把受控驱动转化为多处壁面的同步角度调节，同时保留结构支撑、仪器安装空间和压缩机测试台兼容性。",
-        "我的主要任务是需求梳理、方案对比、SolidWorks 建模、运动仿真，以及面向 Fox Rotating Equipment Solutions 的最终交付展示。",
-        "技术栈：SolidWorks CAD、机构设计、运动仿真、可制造性评估、企业项目文档和工程展示。"
+        "这是一个面向离心压缩机测试的企业赞助团队项目：通过可调扩压器壁面插入件，让壁面角度在 0–3 度范围内变化，避免为每种测试工况反复加工固定壁面。",
+        "方案采用内部驱动环机构，将受控驱动转化为多处壁面的同步角度调节，同时保留结构支撑、仪器安装空间及与测试台周边硬件的兼容性。",
+        "我负责需求梳理、方案对比、SolidWorks 建模、运动与干涉检查、可制造性优化，以及面向 Fox Rotating Equipment Solutions 的最终交付展示。",
+        "技术栈：SolidWorks CAD、机构设计、运动仿真、干涉检查、可制造性评估和企业工程沟通。"
       ]
     }
   },
@@ -136,12 +136,16 @@ window.PORTFOLIO_PROJECTS = [
     links: [{ label: "Details", url: "posts/project1/" }],
     body: {
       en: [
-        "Developed a forklift attachment concept with horizontal translation, adaptive gripping, and rubber-cushioned contact surfaces.",
-        "Contributed CAD modeling, motion simulation, and national invention patent documentation."
+        "Developed a forklift-mounted attachment for safe handling and installation of hollow, semi-prefabricated concrete guardrails, reducing alignment effort and preventing surface damage during construction-site handling.",
+        "The transverse-gripping mechanism combines a fork-frame mount, horizontal translation, cylinder-actuated motion, and a parallelogram linkage with an adaptive contact element to align, support, and clamp the guardrail. Rubber contact layers protect the concrete during loading and placement.",
+        "My contribution included developing the transverse-gripping concept, building the full SolidWorks assembly, running motion studies, and writing and submitting national invention-patent documentation for the attachment.",
+        "Tech stack: SolidWorks CAD, mechanism design, cylinder-actuated linkage design, motion simulation, design-for-manufacturing, and patent documentation."
       ],
       zh: [
-        "开发带水平移动、自适应夹持和橡胶缓冲接触面的叉车属具方案。",
-        "负责 CAD 建模、运动仿真和国家发明专利文档撰写。"
+        "为半装配式空心混凝土护栏设计叉车属具，用于在施工现场完成更安全、更高效、且尽量无损的搬运与安装。",
+        "横向夹取方案由叉车架连接、水平移动机构、缸驱动动作以及平行四边形连杆组成，并通过自适应接触件实现对齐、承托和夹紧；橡胶接触层可降低搬运和就位过程中的表面损伤。",
+        "我提出并完善横向夹取方案，完成整机 SolidWorks 装配建模与运动仿真，并负责该属具国家发明专利材料的撰写和提交。",
+        "技术栈：SolidWorks CAD、机构设计、缸驱动连杆机构、运动仿真、可制造性设计和专利文档。"
       ]
     }
   },
@@ -167,12 +171,16 @@ window.PORTFOLIO_PROJECTS = [
     links: [{ label: "Details", url: "posts/project5/" }],
     body: {
       en: [
-        "Designed intelligent handling equipment for semi-assembled concrete guardrails with an emphasis on stability, positioning, and construction efficiency.",
-        "The work focused on SolidWorks modeling, motion studies, and mechanism-level feasibility."
+        "Designed an intelligent straddle transporter concept for semi-assembled concrete guardrails, combining high-capacity transport with the positioning control needed for installation in constrained construction environments.",
+        "The machine integrates six handling motions—lifting, longitudinal and lateral translation, rotation, and swing—to reposition guardrails while adapting to site geometry. The concept was sized for loads above 10 tons and uses dedicated chassis, lifting, attachment, protection, hydraulic, and electrical subsystems.",
+        "I conducted technical research, developed the SolidWorks layout, ran motion simulations, and led structural refinements including cockpit relocation, interchangeable left/right mounting interfaces, and triangular frame supports.",
+        "Tech stack: SolidWorks CAD, multi-DOF mechanism design, motion simulation, hydraulic actuation concepts, structural optimization, and engineering research."
       ],
       zh: [
-        "面向半装配式混凝土护栏设计智能搬运装备，关注稳定性、定位精度和施工效率。",
-        "工作重点包括 SolidWorks 建模、运动分析和机构可行性验证。"
+        "面向半装配式混凝土护栏的智能跨运车概念设计，兼顾大载荷搬运能力与施工现场安装所需的定位和姿态调整。",
+        "设备通过升降、前后与左右平移、旋转和摆动等六类运动完成护栏重定位，适应复杂工况；整机概念由底盘、升降、属具、防护、液压和电控子系统构成，目标载荷超过 10 吨。",
+        "我完成了技术调研、SolidWorks 总体布局和运动仿真，并主导驾驶舱位置调整、左右可互换安装接口及三角支撑臂等结构优化。",
+        "技术栈：SolidWorks CAD、多自由度机构设计、运动仿真、液压执行方案、结构优化和工程调研。"
       ]
     }
   },
@@ -198,12 +206,16 @@ window.PORTFOLIO_PROJECTS = [
     links: [{ label: "Details", url: "posts/project7/" }],
     body: {
       en: [
-        "Developed LuggageLocator, an RFID-based baggage visibility concept with scanner geometry, operational analysis, and a software dashboard.",
-        "The project combined user research, airport operations reasoning, CAD prototyping, and frontend dashboard design."
+        "Collaborated on LuggageLocator for the 2024 ACRP University Design Competition: an RFID-based, end-to-end baggage-visibility concept intended to reduce mishandled bags and give passengers, airlines, and airports actionable status information.",
+        "The system combines a U-shaped RFID scanning station with a web dashboard and relational data model. Checkpoint data supports both individual bag status and historical views that can reveal congestion or operational bottlenecks.",
+        "My work included problem framing and literature review, concept selection with a decision matrix, CAD modeling and structural analysis of the scanner, and testing the web/database prototype for technical feasibility, scalability, and operational value.",
+        "Tech stack: RFID system concepts, SolidWorks CAD, structural analysis, React, JavaScript, CSS, relational database design, SQL query testing, and cost-benefit/risk analysis."
       ],
       zh: [
-        "开发 LuggageLocator 概念：基于 RFID 的行李可视化系统，包含扫描结构、运营分析和软件看板。",
-        "项目结合用户研究、机场运营逻辑、CAD 原型和前端看板设计。"
+        "作为 2024 ACRP 大学生设计竞赛团队成员，我参与设计 LuggageLocator：一套基于 RFID 的端到端行李可视化方案，用于减少行李错运，并向旅客、航空公司和机场提供可执行的状态信息。",
+        "系统将 U 型 RFID 扫描站、网页看板和关系型数据模型结合。各检查点数据既可显示单件行李状态，也能呈现历史趋势，用于识别拥堵和运营瓶颈。",
+        "我负责问题定义与文献调研、使用决策矩阵筛选方案、扫描站 CAD 建模和结构分析，以及网页/数据库原型的可行性、扩展性和运营价值测试。",
+        "技术栈：RFID 系统方案、SolidWorks CAD、结构分析、React、JavaScript、CSS、关系型数据库设计、SQL 查询测试及成本效益/风险分析。"
       ]
     }
   },
@@ -229,12 +241,16 @@ window.PORTFOLIO_PROJECTS = [
     links: [{ label: "Details", url: "posts/project3/" }],
     body: {
       en: [
-        "Designed Exciting Pass, a hands-on metal-path challenge with buzzer and LED feedback for STEM learning.",
-        "Contributed concept generation, AHP selection, CAD modeling, fabrication, and safety-focused iteration."
+        "Designed Exciting Pass with a multidisciplinary team for Discovery Space Children’s Museum: a hands-on metal-path challenge that teaches basic circuits and physics through buzzer and LED feedback.",
+        "The design was developed for children ages 2–12, balancing an engaging challenge with safety, durability, maintainability, and clear educational feedback.",
+        "I contributed to concept generation and AHP-based selection, SolidWorks CAD, alpha-prototype fabrication, and iterative refinement of 3D-printed components, the electronics enclosure, and the wooden base.",
+        "Tech stack: AHP decision analysis, SolidWorks CAD, basic circuits, LEDs and buzzer feedback, 3D printing, wood fabrication, and user-centered exhibit design."
       ],
       zh: [
-        "设计 Exciting Pass 互动展品，通过金属路径挑战、蜂鸣器和 LED 反馈帮助儿童学习 STEM 概念。",
-        "参与概念生成、AHP 方案选择、CAD 建模、制作和安全性迭代。"
+        "与跨学科团队为 Discovery Space 儿童博物馆设计 Exciting Pass 互动展品：儿童沿金属路径完成挑战，通过蜂鸣器和 LED 反馈学习基础电路与物理概念。",
+        "项目面向 2–12 岁儿童，在互动趣味之外，同时平衡安全性、耐久性、可维护性和清晰的教学反馈。",
+        "我参与概念生成与 AHP 方案筛选、SolidWorks 建模、Alpha 原型制作，并迭代 3D 打印部件、电子结构和木质底座。",
+        "技术栈：AHP 决策分析、SolidWorks CAD、基础电路、LED 与蜂鸣器反馈、3D 打印、木工制作和以用户为中心的展品设计。"
       ]
     }
   },
@@ -260,12 +276,16 @@ window.PORTFOLIO_PROJECTS = [
     links: [{ label: "Details", url: "posts/project6/" }],
     body: {
       en: [
-        "Explored a technology-enabled donation bin concept for Goodwill operations, balancing usability, pickup logistics, and fabrication constraints.",
-        "The project moved through early prototyping, product reasoning, and manufacturable design choices."
+        "Collaborated on a smart donation-bin redesign for Goodwill, focused on improving donation quality, pickup timing, and the day-to-day usability of collection bins.",
+        "The final concept combines a weight-based fullness signal, app-supported pickup visibility, a transport-friendly physical form, and location data that could inform bin placement and collection scheduling.",
+        "My work covered needs research, concept generation and screening, CAD modeling, prototype evaluation, and feasibility analysis across sensors, appearance, transport mechanisms, and cost-saving potential.",
+        "Tech stack: user research, product design, concept-selection matrices, CAD, prototype evaluation, sensor and app concepts, logistics reasoning, and cost feasibility analysis."
       ],
       zh: [
-        "探索面向 Goodwill 运营的技术化捐赠箱方案，平衡易用性、回收物流和制造约束。",
-        "项目经历了早期原型、产品逻辑分析和可制造设计选择。"
+        "作为团队成员参与 Goodwill 智能捐赠箱再设计，目标是提升捐赠质量、优化回收时机，并改善捐赠箱的日常使用体验。",
+        "最终方案结合基于重量的满载检测、支持回收调度的应用端信息、便于运输的实体结构，以及可用于优化布点和收运排程的位置数据。",
+        "我负责需求调研、概念生成与筛选、CAD 建模、原型评估，并从传感器、外观、运输机构和降本潜力等方面开展可行性分析。",
+        "技术栈：用户调研、产品设计、概念筛选矩阵、CAD、原型评估、传感器与应用端方案、物流分析和成本可行性评估。"
       ]
     }
   }

@@ -56,9 +56,6 @@ title = ''
 **Four-Wheel Wi-Fi Controlled Robot Car** (2025)  
 *Embedded Control · ESP32 · PI Feedback System*  
 
-**Waldo System — 2-DOF Teleoperated Arm** (2025)   
-*Embedded Control · ATmega32U4 · ADC-to-PWM · Laser-Cut Prototyping*  
-
 **Adjustable Diffuser Wall for Turbomachinery Testing**(2025)    
 *SolidWorks · Mechanism Design · Sponsored Project*  
 

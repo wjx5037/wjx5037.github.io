@@ -77,37 +77,6 @@ window.PORTFOLIO_PROJECTS = [
     }
   },
   {
-    id: "waldo-arm",
-    featured: true,
-    thumbnail: "posts/project2/carousel.jpg",
-    media: ["posts/project2/p1.jpg", "posts/project2/2.png", "posts/project2/3.png"],
-    mediaAlt: {
-      en: "Two-degree-of-freedom Waldo teleoperated arm",
-      zh: "二自由度 Waldo 遥操作机械臂"
-    },
-    title: {
-      en: "Waldo System - 2-DOF Servo-Controlled Arm",
-      zh: "Waldo 系统 - 二自由度舵机控制机械臂"
-    },
-    subtitle: {
-      en: "Master-slave teleoperation using potentiometer sensing and PWM servo output.",
-      zh: "通过电位器采样和 PWM 舵机输出实现主从遥操作。"
-    },
-    year: "2025",
-    tags: ["ATmega32U4", "Servo", "Teleoperation"],
-    links: [{ label: "Details", url: "posts/project2/" }],
-    body: {
-      en: [
-        "Fabricated a laser-cut two-joint mechanism and implemented real-time ADC-to-PWM signal mapping on an ATmega32U4 microcontroller.",
-        "Careful power and grounding design allowed smooth servo operation during rapid motion and high-load moments."
-      ],
-      zh: [
-        "制作激光切割二关节机构，并在 ATmega32U4 上实现实时 ADC 到 PWM 信号映射。",
-        "通过电源和共地设计保证舵机在快速运动和较高负载下稳定运行。"
-      ]
-    }
-  },
-  {
     id: "diffuser-wall",
     featured: false,
     thumbnail: "posts/project8/carousel.jpg",

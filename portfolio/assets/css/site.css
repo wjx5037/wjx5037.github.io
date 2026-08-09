@@ -679,6 +679,11 @@ h3 {
   background: #fff;
 }
 
+.detail-figure img[src$="fox-logo-white.png"] {
+  padding: 24px;
+  background: #111;
+}
+
 .detail-figure video {
   width: 100%;
   max-height: 760px;

@@ -49,7 +49,7 @@ This makes the interception less sensitive to turntable speed drift, AprilTag de
 
 {{< video src="Polling_simulation.mp4" poster="Polling_simulation-poster.jpg" title="Polling-based angular tracking simulation" >}}
 
-```mermaid
+```mermaid compact
 flowchart TD
     A["Observe rotating turntable"] --> B["Detect AprilTag block pose"]
     B --> C["Transform camera pose to world frame"]

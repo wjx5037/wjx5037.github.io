@@ -71,11 +71,7 @@ title = ''
 **Discovery Space Museum Exhibit — “Exciting Pass”**(2023)    
 *Mechanical Prototyping · SolidWorks · AHP Concept Evaluation*  
 
-**Goodwill E-Bins Design Project**(2022)    
-*Mechanical Prototyping*  
-
 ## ⬇️Below are the details⬇️ { .text-center }
-
 
 
 

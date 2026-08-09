@@ -208,15 +208,15 @@ window.PORTFOLIO_PROJECTS = [
     body: {
       en: [
         "As a member of the 2024 ACRP University Design Competition team, I helped develop LuggageLocator, an RFID-based end-to-end baggage-visibility concept that reduces mishandled bags and provides actionable status information to passengers, airlines, and airports.",
-        "The system combines a U-shaped RFID scanning station, a web dashboard, and a relational data model. Checkpoint data supports both individual bag status and historical trends for identifying congestion and operational bottlenecks.",
-        "I was responsible for problem definition and literature research, decision-matrix concept selection, scanner CAD modeling and structural analysis, and feasibility, scalability, and operational-value testing of the web/database prototype.",
-        "Tech stack: RFID system concepts, SolidWorks CAD, structural analysis, React, JavaScript, CSS, relational database design, SQL query testing, and cost-benefit and risk analysis."
+        "The team solution combines a U-shaped RFID scanning station with a web dashboard and relational data model. A teammate designed and implemented the dashboard and database prototype; checkpoint data helps airlines and airports see bag status and operational bottlenecks.",
+        "My work focused on problem definition and literature research, decision-matrix concept selection, scanner CAD modeling and structural analysis, and RFID hardware feasibility and testing.",
+        "Tech stack: RFID system design, SolidWorks CAD, structural analysis, concept-selection matrices, RFID hardware testing, cost-benefit analysis, and risk assessment."
       ],
       zh: [
         "作为 2024 ACRP 大学生设计竞赛团队成员，我参与设计 LuggageLocator：一套基于 RFID 的端到端行李可视化方案，用于减少行李错运，并向旅客、航空公司和机场提供可执行的状态信息。",
-        "系统将 U 型 RFID 扫描站、网页看板和关系型数据模型结合。各检查点数据既可显示单件行李状态，也能呈现历史趋势，用于识别拥堵和运营瓶颈。",
-        "我负责问题定义与文献调研、使用决策矩阵筛选方案、扫描站 CAD 建模和结构分析，以及网页/数据库原型的可行性、扩展性和运营价值测试。",
-        "技术栈：RFID 系统方案、SolidWorks CAD、结构分析、React、JavaScript、CSS、关系型数据库设计、SQL 查询测试及成本效益/风险分析。"
+        "团队方案将 U 型 RFID 扫描站、网页看板和关系型数据模型结合。网页看板与数据库原型由队友设计和实现；检查点数据用于展示单件行李状态及历史趋势，并识别拥堵和运营瓶颈。",
+        "我负责问题定义与文献调研、使用决策矩阵筛选方案、扫描站 CAD 建模和结构分析，以及 RFID 硬件可行性研究与测试。",
+        "技术栈：RFID 系统设计、SolidWorks CAD、结构分析、概念筛选矩阵、RFID 硬件测试、成本效益分析和风险评估。"
       ]
     }
   },
@@ -252,41 +252,6 @@ window.PORTFOLIO_PROJECTS = [
         "在详细设计之前，团队采用 6-3-5 概念生成法和 AHP 筛选矩阵，从互动性、灵活性、美观性和装配便利性等维度比较方案，为 Exciting Pass 的选择建立可追溯的决策依据。",
         "我参与面向使用方的需求梳理、SolidWorks 建模和原型迭代，将需求落实为可维护的设计细节：受保护的低压电子结构、圆角木质表面、便于维护的检修门，以及耐用的 3D 打印轨道支撑件。",
         "工业项目能力：利益相关方需求分析、结构化方案筛选、AHP 决策矩阵、SolidWorks CAD、快速原型、低压电子、面向维护的设计和客户交付展示。"
-      ]
-    }
-  },
-  {
-    id: "goodwill-ebins",
-    featured: false,
-    thumbnail: "posts/project6/carousel.jpg",
-    media: ["posts/project6/p6.1.png", "posts/project6/p6.5.png", "posts/project6/p6.14.jpg", "posts/project6/p6.2.png", "posts/project6/p6.3.png", "posts/project6/p6.4.png", "posts/project6/p6.6.png", "posts/project6/p6.7.png", "posts/project6/p6.8.png"],
-    mediaAlt: {
-      en: "Goodwill E-bins donation redesign project",
-      zh: "Goodwill 智能捐赠箱设计项目"
-    },
-    title: {
-      en: "E-Bins for Goodwill Donations",
-      zh: "Goodwill 智能捐赠箱"
-    },
-    subtitle: {
-      en: "Smart donation-bin redesign to improve pickup efficiency and donation quality.",
-      zh: "用于提升回收效率和捐赠质量的智能捐赠箱再设计。"
-    },
-    year: "2022",
-    tags: ["Product Design", "Prototype", "Manufacturing"],
-    links: [{ label: "Details", url: "posts/project6/" }],
-    body: {
-      en: [
-        "As a team member, I contributed to a Goodwill smart donation-bin redesign focused on improving donation quality, optimizing pickup timing, and making collection bins easier to use day to day.",
-        "The final concept combines weight-based fullness sensing, app-supported pickup coordination, a transport-friendly physical structure, and location data that can improve bin placement and collection scheduling.",
-        "I conducted needs research, concept generation and screening, CAD modeling, and prototype evaluation, and assessed the feasibility of sensors, form factor, transport mechanisms, and cost-saving opportunities.",
-        "Tech stack: user research, product design, concept-selection matrices, CAD, prototype evaluation, sensor and app concepts, logistics analysis, and cost-feasibility assessment."
-      ],
-      zh: [
-        "作为团队成员参与 Goodwill 智能捐赠箱再设计，目标是提升捐赠质量、优化回收时机，并改善捐赠箱的日常使用体验。",
-        "最终方案结合基于重量的满载检测、支持回收调度的应用端信息、便于运输的实体结构，以及可用于优化布点和收运排程的位置数据。",
-        "我负责需求调研、概念生成与筛选、CAD 建模、原型评估，并从传感器、外观、运输机构和降本潜力等方面开展可行性分析。",
-        "技术栈：用户调研、产品设计、概念筛选矩阵、CAD、原型评估、传感器与应用端方案、物流分析和成本可行性评估。"
       ]
     }
   }

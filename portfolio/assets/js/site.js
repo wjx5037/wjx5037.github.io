@@ -17,7 +17,7 @@
     },
     {
       key: "competition_group",
-      ids: ["acrp-luggage", "goodwill-ebins"]
+      ids: ["acrp-luggage"]
     },
     {
       key: "client_group",

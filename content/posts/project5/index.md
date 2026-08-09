@@ -1,101 +1,58 @@
 +++
-title = 'R&D of a Semi-assembled Concrete Guardrail Intelligent Transporter '
+title = 'Semi-Assembled Concrete Guardrail Transporter'
 date = 2024-08-11
-summary = """
-![一种搬运安装空心混凝土护栏的叉车属具结构图](posts/project5/p5.3.png)
-*Research Assistant to Prof. Zhanlong Li at Taiyuan University of Science and Technology* 
-
-This project focuses on developing an intelligent transporter for semi-assembled concrete guardrails, integrating automation, precision mechanical design, and multi-DOF motion control to enable efficient grasping, transport, and installation on construction sites. The machine features six degrees of freedom—lifting, translation, rotation, and swing—to adapt to complex terrain while supporting loads over 10 tons. In this project, I contributed to literature research, SolidWorks CAD modeling, and motion simulation, and later led key structural optimizations, including redesigning the cockpit mounting system, adding interchangeable side interfaces, and reinforcing the frame with triangular support arms to enhance mechanical strength and operational flexibility.
-#### ⬇️*Click*⬇️ { .text-right }
-"""
-
+summary = "A multi-DOF straddle transporter concept for heavy semi-assembled concrete guardrails in constrained construction environments."
 +++
 
-*Research Assistant to Prof. Zhanlong Li at Taiyuan University of Science and Technology*  
-08/2024-12/2024
-## Research Objective
-To develop a device that integrates automation control, precision mechanical design, IoT technology and artificial intelligence algorithms to accurately and quickly locate the guardrail under the guidance of construction vehicles, and automatically complete the grasping, transportation and installation, realizing the intelligent and automated installation of semi-assembled hollow-core concrete guardrail.
-## Current Research Plan
-In order to achieve the research objectives and solve the problem of intelligent assembly of hollow concrete guardrail, we decided to design an intelligent straddle transport vehicle to meet the objective requirements and solve the problem. The project is currently in the testing stage
-## My contribution
-### Literature research:
-Check the domestic and international literature and technical information about the straddle carrier and related fields.
-### CAD Modeling and Simulation:
-CAD modeling preliminary design of the project structure using SolidWorks and motion simulation analysis.
-#### Preliminary Design Program:
-After reviewing and analyzing domestic and international literature and technical data on tunnel cleaning and and other related fields, I used SolidWorks to CAD design it.
-The equipment consists of six parts: chassis, lifting system, positioning attachment, protection system, hydraulic system, and electric control system.
+*Shanxi Transportation Science Research Institute internship project*
 
-{{< figure src="p5.1.png" >}}
-{{< figure src="p5.2.png" >}}
+{{< figure src="p5.3.png" title="Improved transporter concept" >}}
 
+## Project Goal
 
-The equipment has six degrees of freedom:
+Develop a straddle-transporter concept that can carry, position, and install semi-assembled concrete guardrails while preserving the positional control needed on constrained construction sites.
 
-① Main frame lifting  
-② Forward and backward movement  
-③ Lifting  
-④ Left and right movement  
-⑤ Horizontal rotation  
-⑥ Forward and backward swing 
+## System Architecture
 
-These features allow for flexible action according to the actual site conditions.
+The vehicle concept is organized into six integrated subsystems:
 
-Main Technical Parameters:
+- Chassis and steering for vehicle travel and site maneuvering.
+- Main-frame lifting system for vertical guardrail handling.
+- Lifting trolley for longitudinal and lateral positioning.
+- Quick-change handling attachment with guide elements and hydraulic hooks.
+- Hydraulic actuation for lifting, translation, rotation, and swing.
+- Electrical/control provisions for coordinated operation and future automation.
 
-| Parameter Name                | Unit  | Value          |
-|-------------------------------|-------|----------------|
-| Maximum Dimensions (L×W×H)    | mm    | 7000×7000×9000 |
-| Maximum Lifting Weight        | T     | ≥10            |
-| Maximum Lifting Height        | mm    | ≥4500          |
-| Maximum Forward/Backward Stroke | mm    | ≥2000          |
-| Maximum Left/Right Stroke     | mm    | ≥1500          |
-| Running Speed (Unloaded)      | m/min | 1-10           |
-| Running Speed (Loaded)        | m/min | 0.5-5          |
+{{< figure src="p5.1.png" title="Preliminary overall layout of the transporter system" >}}
 
+## Motion Capability and Design Envelope
 
-1、Chassis
+The concept uses six controlled motions to bring a heavy guardrail into installation pose:
 
-The chassis is driven by hydraulic motor to move and steer the equipment, the rated weight of the whole machine is ≥10T, and it is powered by internal combustion engine. The steering system is arranged on each tire mechanism, and the steering system consists of slewing bearing and cylinder drive, control system, etc., which can meet the requirements of equipment straight, traverse, 0 ~ 90 ° steering and other operational requirements. The wheels are made of solid tires (or polyurethane), which reduces the damage to the ground during steering of the crane and at the same time has high friction with the ground.
+- Main-frame lift and attachment lift.
+- Forward/backward and left/right translation.
+- Horizontal rotation and fore/aft swing for attitude correction.
 
-2、Lifting system
-Lifting system consists of the main frame lifting, lifting mobile trolley, lifting adjustment device and other components.
+Key design targets were a load above 10 tons, lifting height above 4.5 m, forward/backward travel above 2.0 m, and lateral travel above 1.5 m. The quick attachment was designed to accommodate one to five guardrails while maintaining guided, low-damage pickup.
 
-(1) Main frame lifting
-The main frame lifting is an important part of the realization of the guardrail lifting.
-This part is mainly through the hydraulic cylinder expansion and contraction to drive the main frame for lifting, with the lifting of the main arm, can realize the guardrail lifting and placing work, guardrail lifting height ≥ 4500mm, the main frame lifting height ≥ 1800mm.
+{{< figure src="p5.2.png" title="Motion-study view of the preliminary handling concept" >}}
 
-(2) Lifting trolley
+## My Contribution
 
-The lifting and moving trolley can realize forward and backward movement and left and right movement, through the movement of the trolley, synchronous control with the lifting appliance, it can be moved flexibly in the working scene, so as to realize the flexible movement of the guardrail and rotational adjustment.
+I conducted technical research, created the SolidWorks master layout, and performed motion simulation for the initial architecture. I then led practical structural refinements to improve load-path clarity, operator access, and adaptability to different work conditions.
 
-The movement parameters of the mechanism are as follows:
+## Structural Refinements
 
-1. Forward and backward moving stroke: ≥1500mm;
-2. Left-right moving stroke: ≥1500mm;
+- Relocated the cockpit from the original under-frame position to a reinforced side-mounted interface.
+- Added left/right interchangeable mounting interfaces so the cockpit can be configured for different site constraints.
+- Added triangular support arms on both sides to strengthen the transporter frame.
 
-(3) Lifting adjustment device
+{{< figure src="p5.3.png" title="Final improvement package with side-mounted cockpit and triangular frame supports" >}}
 
-The lifting and adjusting device can realize the lifting and attitude adjustment of the appliance. The lifting cylinder drives the main arm to realize the lifting and lowering of the clamping guardrail, adjusts the central axis rotating platform to realize the rotating operation of the appliance, and adjusts the swinging cylinder to realize the forward and backward swinging of the appliance.
+## Design Value
 
-The parameters of the system are as follows:
+The project combined heavy-load transport with fine positioning rather than treating them as separate tasks. The architecture gives the installation team a single machine for movement, lifting, alignment, and attitude correction, while the refinement work focused on making the concept mechanically credible and easier to adapt on site.
 
-1. Lifting height of main arm: 2500mm;
-2. Center axis rotating angle: 360°;
-Precision of center axis rotation: ≤0.4°;
-3. Front and rear deflection angle: ±8°;
+## Tech Stack
 
-3、Specialized quick attachment
-
-The handling attachment can be quickly installed and replaced, the serialized design can ensure that 1~5 guardrails can be handled at a time, while the central axis rotating platform and swing cylinder can be adjusted for guardrail attitude, the middle of the attachment is equipped with guardrail guiding elements, which can realize the rapid and non-destructive positioning of the guardrail, and is convenient to carry out the next step of the lifting work, and the guardrail can be automatically picked up by the hydraulic hooks, and at the same time, through the bias adjusting springs, the self-adaptation of multiple guardrails can be realized. At the same time, the offset adjusting spring can realize the self-adaptive position adjustment of multiple guardrails to prevent collision between guardrails.
-
-#### Current improvement program：
-
-Based on the initial proposal, I have adjusted the structure of the straddle carrier as well as the cockpit location to be more mechanically sound and aesthetically pleasing to the design.
-1. I designed the cockpit from its original position under the left side to avoid overhanging the cockpit and to make it more mechanically rational, and used 40 reinforced screws (20 front and 20 rear) to connect it to the left side.
-2. I designed interfaces to connect the cockpit on both the left and the right side, so that the cockpit can be mounted on the left or the right side, in order to adapt to different complexities and to increase flexibility.
-3. I added triangular support arms on both the left and right sides to improve the structural strength of the transporter and to ensure that it is mechanically sound.
-
-{{< figure src="p5.3.png"  title="Improved transporter" >}}
-
-
+SolidWorks CAD, multi-DOF mechanism design, motion simulation, hydraulic actuation concepts, structural optimization, and engineering research.

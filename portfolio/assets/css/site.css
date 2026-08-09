@@ -311,6 +311,32 @@ h3 {
   background: var(--line);
 }
 
+@media (min-width: 981px) {
+  /* Keep bilingual covers visually stable; full project detail remains on its own page. */
+  .project-card {
+    min-height: clamp(560px, 39vw, 720px);
+  }
+
+  html[lang="en"] .project-content {
+    gap: 14px;
+    padding: clamp(22px, 3.2vw, 36px);
+  }
+
+  html[lang="en"] .project-content h2 {
+    font-size: clamp(1.45rem, 2.7vw, 2.45rem);
+  }
+
+  html[lang="en"] .project-subtitle {
+    font-size: clamp(1rem, 1.7vw, 1.15rem);
+    line-height: 1.35;
+  }
+
+  html[lang="en"] .project-body {
+    gap: 9px;
+    line-height: 1.42;
+  }
+}
+
 .project-media,
 .project-content {
   background: var(--surface);

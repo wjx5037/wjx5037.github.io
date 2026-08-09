@@ -43,7 +43,7 @@ The adjustable wall is intended for compressor diffuser testing, where small geo
 
 {{< figure src="fox-logo-white.png" title="Fox Innovation & Technologies" width="420px" >}}
 
-The sponsor operates in the rotating-equipment domain that informs this project's testing context. The logo is used with attribution from the sponsor's public corporate site: [Fox Innovation & Technologies](https://www.foxinnovation.com/about-us).
+The sponsor operates in the rotating-equipment domain that informs this project's testing context.
 
 ## Technical Stack
 

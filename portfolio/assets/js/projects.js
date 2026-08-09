@@ -9,11 +9,11 @@ window.PORTFOLIO_PROJECTS = [
       zh: "Franka Emika Panda 机械臂抓取积木"
     },
     title: {
-      en: "Autonomous Robot Manipulation",
+      en: "Autonomous Robotic Manipulation System",
       zh: "机器人自动抓取操作系统"
     },
     subtitle: {
-      en: "Vision-guided static and dynamic grasping on a 7-DOF Franka Panda.",
+      en: "Vision-guided autonomous grasping for static blocks and rotating targets on a 7-DOF Franka Panda.",
       zh: "面向 7 自由度 Franka Panda 的自主抓取系统，可处理静态积木和转盘动态目标。"
     },
     year: "2025",
@@ -24,10 +24,10 @@ window.PORTFOLIO_PROJECTS = [
     ],
     body: {
       en: [
-        "Vision-guided pick-and-place for static blocks and rotating AprilTag targets.",
-        "I wrote the motion layer: FK, null-space position IK, and Jacobian-based VIK, without a packaged IK solver.",
-        "Camera-to-world transforms and closed-loop angular polling trigger reliable dynamic grasps.",
-        "Python · ROS · NumPy · FK/IK/VIK · AprilTag · Franka API"
+        "A vision-guided autonomous manipulation system for a 7-DOF Franka Panda, supporting pick-and-place of static blocks and interception grasps of moving targets on a rotating turntable.",
+        "I wrote the kinematics and trajectory-execution layer from scratch, including forward kinematics, position inverse kinematics (IK) with null-space control, and velocity inverse kinematics (VIK) for differential end-effector motion. These modules generate joint targets and velocity commands for observation, approach, grasping, placement, and online target updates rather than calling a black-box IK solver.",
+        "AprilTag detections are transformed through the end-effector, robot-base, and world frames. For turntable targets, I designed a closed-loop angular polling strategy that continuously tracks the block and triggers a grasp inside a lead-angle window, avoiding the error of a one-shot arrival-time estimate.",
+        "Tech stack: Python, ROS, NumPy, self-written FK/IK/VIK, Jacobian-based velocity control, homogeneous transforms, AprilTag perception, Franka Panda API, and gripper-feedback verification."
       ],
       zh: [
         "面向 7 自由度 Franka Panda 的视觉自主抓取系统，可完成静态积木的拾放，以及转盘动态目标的拦截抓取。",
@@ -48,11 +48,11 @@ window.PORTFOLIO_PROJECTS = [
       zh: "四轮 Wi-Fi 控制机器人车"
     },
     title: {
-      en: "Four-Wheel Wi-Fi Robot Car",
+      en: "Four-Wheel Wi-Fi Controlled Robot Car",
       zh: "四轮 Wi-Fi 控制机器人车"
     },
     subtitle: {
-      en: "ESP32-S3 mobile robot with closed-loop wheel control and autonomous behaviors.",
+      en: "A four-wheel mobile robot platform built around ESP32-S3, encoder feedback, and closed-loop motion control.",
       zh: "基于 ESP32-S3、编码器反馈和闭环运动控制的机器人车平台。"
     },
     year: "2025",
@@ -63,10 +63,10 @@ window.PORTFOLIO_PROJECTS = [
     ],
     body: {
       en: [
-        "Four-wheel ESP32-S3 robot for Wi-Fi teleoperation and autonomous mobile behaviors.",
-        "PCNT encoder feedback and independent PI loops regulate each wheel; skid-steer mixing converts forward and turn inputs.",
-        "ToF feedback supports wall following, while Vive pose estimates guide point-to-point navigation.",
-        "ESP32-S3 · Arduino/C++ · MCPWM · PCNT encoders · ToF · Vive · JavaScript"
+        "Built a four-wheel-drive mobile robot around an ESP32-S3, four DC gear motors, quadrature encoders, dual VL53L1X ToF sensors, and Vive photodiode localization. It supports Wi-Fi teleoperation, wall following, point-to-point navigation, stop mode, and web-triggered behaviors.",
+        "The control architecture separates high-level modes from low-level actuation: the browser dashboard sends speed, steering, PID, and navigation targets, while firmware samples sensors, estimates each wheel speed through PCNT counters, runs independent PI loops, and converts forward/turn commands into skid-steer wheel targets.",
+        "Autonomous behaviors combine ToF distance feedback with Vive pose estimation. The robot filters Vive coordinates, computes heading error toward the target, and uses distance and angle feedback for multi-stage waypoint navigation.",
+        "Tech stack: SolidWorks CAD, ESP32-S3, Arduino/C++, Wi-Fi AP WebServer, MCPWM motor drive, PCNT quadrature encoders, VL53L1X ToF sensing, Vive510 localization, PI wheel-speed control, PD wall following, and a JavaScript telemetry dashboard."
       ],
       zh: [
         "基于 ESP32-S3 搭建四轮驱动移动机器人平台，集成四个直流减速电机、正交编码器、双 VL53L1X ToF 传感器和 Vive 光电定位模块。系统支持 Wi-Fi 遥控、沿墙行驶、点到点导航、停止模式以及网页触发的任务动作。",
@@ -86,7 +86,7 @@ window.PORTFOLIO_PROJECTS = [
       zh: "涡轮机械测试用可调扩压器壁面设计项目"
     },
     title: {
-      en: "Adjustable Diffuser Wall for Turbomachinery Testing",
+      en: "Adjustable Diffuser Wall Geometry for Turbomachinery Testing",
       zh: "涡轮机械测试用可调扩压器壁面设计"
     },
     subtitle: {
@@ -101,10 +101,10 @@ window.PORTFOLIO_PROJECTS = [
     ],
     body: {
       en: [
-        "Capstone-team delivery of an adjustable diffuser-wall insert for centrifugal-compressor testing.",
-        "An internal drive-ring mechanism varies the wall angle from 0 to 3 degrees with repeatable adjustment.",
-        "I led requirements, concept trade studies, SolidWorks CAD, motion and clearance checks, and sponsor presentation.",
-        "Requirements · concept selection · SolidWorks · motion simulation · DFM · client delivery"
+        "A sponsor-funded team project delivered to Fox Rotating Equipment Solutions: an adjustable diffuser-wall insert for centrifugal-compressor testing. The wall angle can vary from 0 to 3 degrees, removing the need to manufacture a separate fixed wall for each test condition.",
+        "The project translated the sponsor's test needs into engineering constraints, including controlled adjustment, repeatable setup, instrumentation clearance, structural support, and manufacturability. After comparing multiple concepts, the team selected an internal drive-ring mechanism to synchronize diffuser-wall motion.",
+        "I organized requirements, compared concepts, built the SolidWorks model, performed motion and interference checks, and refined the design for manufacture. I also prepared the final delivery package and communicated the mechanism selection, tradeoffs, and test value directly to the sponsor.",
+        "Tech stack: stakeholder requirements analysis, concept selection, design review, SolidWorks CAD, motion simulation, clearance analysis, design-for-manufacturing, and sponsor-facing engineering delivery."
       ],
       zh: [
         "这是一个由 Fox Rotating Equipment Solutions 赞助并最终交付的团队项目：为离心压缩机测试设计可调扩压器壁面插入件，使壁面角度可在 0–3 度范围内变化，避免为每种工况重复加工固定壁面。",
@@ -125,11 +125,11 @@ window.PORTFOLIO_PROJECTS = [
       zh: "混凝土护栏搬运叉车属具"
     },
     title: {
-      en: "Concrete Guardrail Forklift Attachment",
+      en: "Forklift Attachment for Concrete Guardrail Handling",
       zh: "混凝土护栏搬运叉车属具"
     },
     subtitle: {
-      en: "Shanxi Transportation Science Research Institute internship project.",
+      en: "Shanxi Transportation Science Research Institute internship project: transverse gripping for safe, damage-free hollow concrete guardrail handling.",
       zh: "山西交通科学研究院实习项目：用于空心混凝土护栏安全、无损搬运的横向夹取机构。"
     },
     year: "2024",
@@ -137,10 +137,10 @@ window.PORTFOLIO_PROJECTS = [
     links: [{ label: "Details", url: "posts/project1/" }],
     body: {
       en: [
-        "Forklift-mounted attachment for damage-free installation of hollow concrete guardrails.",
-        "A transverse-gripping linkage provides lateral positioning, adaptive clamping, and protected contact surfaces.",
-        "I developed the concept, complete CAD assembly, motion studies, and invention-patent documentation.",
-        "SolidWorks · mechanism design · motion simulation · DFM · patent documentation"
+        "Developed a forklift attachment for safer, more efficient, and low-damage handling and installation of semi-assembled hollow concrete guardrails on construction sites.",
+        "The transverse-gripping concept combines a forklift-frame mount, horizontal translation, cylinder actuation, and a parallelogram linkage. Adaptive contact elements align, support, and clamp the guardrail, while rubber contact layers reduce surface damage during handling and placement.",
+        "I proposed and refined the transverse-gripping concept, completed the full SolidWorks assembly and motion simulation, and wrote and submitted the national invention-patent documentation for the attachment.",
+        "Tech stack: SolidWorks CAD, mechanism design, cylinder-actuated linkage design, motion simulation, design-for-manufacturing, and patent documentation."
       ],
       zh: [
         "为半装配式空心混凝土护栏设计叉车属具，用于在施工现场完成更安全、更高效、且尽量无损的搬运与安装。",
@@ -160,11 +160,11 @@ window.PORTFOLIO_PROJECTS = [
       zh: "半装配式混凝土护栏智能搬运车"
     },
     title: {
-      en: "Concrete Guardrail Transporter",
+      en: "Semi-Assembled Concrete Guardrail Transporter",
       zh: "半装配式混凝土护栏智能搬运车"
     },
     subtitle: {
-      en: "Shanxi Transportation Science Research Institute internship project.",
+      en: "Shanxi Transportation Science Research Institute internship project: an automated transport concept with multi-DOF guardrail handling.",
       zh: "山西交通科学研究院实习项目：整合多自由度护栏搬运的自动化运输方案。"
     },
     year: "2024",
@@ -172,10 +172,10 @@ window.PORTFOLIO_PROJECTS = [
     links: [{ label: "Details", url: "posts/project5/" }],
     body: {
       en: [
-        "Straddle-transporter concept for heavy semi-assembled guardrails in constrained construction sites.",
-        "Six controlled motions reposition each rail for pickup, transport, and installation; the design targets loads above 10 tons.",
-        "I researched the application, built the SolidWorks layout, ran motion studies, and refined chassis and mounting details.",
-        "SolidWorks, multi-DOF mechanisms, motion simulation, hydraulics, structural optimization"
+        "Designed an intelligent straddle-transporter concept for semi-assembled concrete guardrails, combining high-capacity transport with the positioning and pose adjustment required for installation in constrained construction environments.",
+        "The machine repositions guardrails through six motions: lifting, longitudinal translation, lateral translation, rotation, and swing. The concept integrates chassis, lifting, attachment, protection, hydraulic, and electrical subsystems and targets loads above 10 tons.",
+        "I completed the technical research, SolidWorks master layout, and motion simulation, and led structural refinements including cockpit relocation, interchangeable left/right mounting interfaces, and triangular support arms.",
+        "Tech stack: SolidWorks CAD, multi-DOF mechanism design, motion simulation, hydraulic actuation concepts, structural optimization, and engineering research."
       ],
       zh: [
         "面向半装配式混凝土护栏的智能跨运车概念设计，兼顾大载荷搬运能力与施工现场安装所需的定位和姿态调整。",
@@ -199,7 +199,7 @@ window.PORTFOLIO_PROJECTS = [
       zh: "RFID 辅助行李可视化系统"
     },
     subtitle: {
-      en: "2024 ACRP competition concept for end-to-end baggage visibility.",
+      en: "An ACRP concept for reducing mishandled baggage through end-to-end visibility.",
       zh: "通过端到端可视化减少行李错运的 ACRP 概念方案。"
     },
     year: "2024",
@@ -207,10 +207,10 @@ window.PORTFOLIO_PROJECTS = [
     links: [{ label: "Details", url: "posts/project7/" }],
     body: {
       en: [
-        "Competition concept using RFID to make baggage status visible from check-in to arrival.",
-        "A U-shaped scanner, web dashboard, and relational model expose bag status and operational bottlenecks.",
-        "I led problem research, decision-matrix concept selection, scanner CAD and analysis, and web/database validation.",
-        "RFID · SolidWorks · structural analysis · React · JavaScript · CSS · SQL"
+        "As a member of the 2024 ACRP University Design Competition team, I helped develop LuggageLocator, an RFID-based end-to-end baggage-visibility concept that reduces mishandled bags and provides actionable status information to passengers, airlines, and airports.",
+        "The system combines a U-shaped RFID scanning station, a web dashboard, and a relational data model. Checkpoint data supports both individual bag status and historical trends for identifying congestion and operational bottlenecks.",
+        "I was responsible for problem definition and literature research, decision-matrix concept selection, scanner CAD modeling and structural analysis, and feasibility, scalability, and operational-value testing of the web/database prototype.",
+        "Tech stack: RFID system concepts, SolidWorks CAD, structural analysis, React, JavaScript, CSS, relational database design, SQL query testing, and cost-benefit and risk analysis."
       ],
       zh: [
         "作为 2024 ACRP 大学生设计竞赛团队成员，我参与设计 LuggageLocator：一套基于 RFID 的端到端行李可视化方案，用于减少行李错运，并向旅客、航空公司和机场提供可执行的状态信息。",
@@ -230,11 +230,11 @@ window.PORTFOLIO_PROJECTS = [
       zh: "Discovery Space Museum Exciting Pass 展品"
     },
     title: {
-      en: "Discovery Space STEM Exhibit",
+      en: "Discovery Space Museum Exhibit",
       zh: "Discovery Space Museum 展品设计"
     },
     subtitle: {
-      en: "Client-commissioned interactive STEM exhibit for Discovery Space Children's Museum.",
+      en: "A client-commissioned interactive STEM exhibit for Discovery Space Children's Museum, from requirements to a maintainable prototype.",
       zh: "面向 Discovery Space 儿童博物馆的客户委托互动 STEM 展品，从需求梳理到可维护原型。"
     },
     year: "2023",
@@ -242,10 +242,10 @@ window.PORTFOLIO_PROJECTS = [
     links: [{ label: "Details", url: "posts/project3/" }],
     body: {
       en: [
-        "Client-commissioned hands-on STEM exhibit for Discovery Space Children's Museum, for visitors aged 2 to 12.",
-        "6-3-5 ideation and AHP selection compared engagement, flexibility, aesthetics, and assembly before choosing the concept.",
-        "I translated stakeholder needs into CAD and prototype details: protected electronics, rounded wood, service access, and durable track supports.",
-        "Stakeholder needs, AHP, SolidWorks, prototyping, low-voltage electronics, DFM"
+        "With a multidisciplinary team, I completed a client-commissioned exhibit for Discovery Space Children's Museum. Educational goals, safety, maintainability, and the needs of children aged 2 to 12 were translated into a hands-on STEM learning experience.",
+        "Before detailed design, the team used 6-3-5 concept generation and an AHP screening matrix to compare options across engagement, flexibility, aesthetics, and ease of assembly, creating a traceable rationale for selecting the Exciting Pass concept.",
+        "I contributed to stakeholder requirement organization, SolidWorks CAD, and prototype iteration, translating needs into maintainable details: protected low-voltage electronics, rounded wood surfaces, an accessible service door, and durable 3D-printed track supports.",
+        "Tech stack: stakeholder requirements analysis, structured concept selection, AHP decision matrices, SolidWorks CAD, rapid prototyping, low-voltage electronics, design-for-maintenance, and client-ready presentation."
       ],
       zh: [
         "与跨学科团队为 Discovery Space 儿童博物馆完成客户委托展品设计，将教育目标、安全性、维护便利性和 2–12 岁儿童的使用需求，转化为可互动的 STEM 学习体验。",
@@ -265,7 +265,7 @@ window.PORTFOLIO_PROJECTS = [
       zh: "Goodwill 智能捐赠箱设计项目"
     },
     title: {
-      en: "Smart Donation Bins for Goodwill",
+      en: "E-Bins for Goodwill Donations",
       zh: "Goodwill 智能捐赠箱"
     },
     subtitle: {
@@ -277,10 +277,10 @@ window.PORTFOLIO_PROJECTS = [
     links: [{ label: "Details", url: "posts/project6/" }],
     body: {
       en: [
-        "Goodwill donation-bin redesign focused on donation quality, pickup timing, and daily usability.",
-        "Weight-based fullness sensing, pickup visibility, transport-ready form, and location data support smarter collection.",
-        "I contributed needs research, concept screening, CAD, prototype evaluation, and sensor, logistics, and cost feasibility studies.",
-        "User research · product design · CAD · prototyping · sensors · logistics · cost analysis"
+        "As a team member, I contributed to a Goodwill smart donation-bin redesign focused on improving donation quality, optimizing pickup timing, and making collection bins easier to use day to day.",
+        "The final concept combines weight-based fullness sensing, app-supported pickup coordination, a transport-friendly physical structure, and location data that can improve bin placement and collection scheduling.",
+        "I conducted needs research, concept generation and screening, CAD modeling, and prototype evaluation, and assessed the feasibility of sensors, form factor, transport mechanisms, and cost-saving opportunities.",
+        "Tech stack: user research, product design, concept-selection matrices, CAD, prototype evaluation, sensor and app concepts, logistics analysis, and cost-feasibility assessment."
       ],
       zh: [
         "作为团队成员参与 Goodwill 智能捐赠箱再设计，目标是提升捐赠质量、优化回收时机，并改善捐赠箱的日常使用体验。",

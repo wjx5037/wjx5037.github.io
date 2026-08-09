@@ -6,11 +6,9 @@ summary = "A 2024 ACRP competition concept combining a U-shaped RFID scanner wit
 
 *2024 Airport Cooperative Research Program (ACRP) University Design Competition - advised by Dr. Denise Turso, Pennsylvania State University*
 
-{{< figure src="p7.6.png" title="U-shaped RFID baggage-scanner concept" >}}
-
 ## Project Goal
 
-LuggageLocator is a team concept for reducing mishandled baggage by making baggage movement visible across airport checkpoints. The physical concept uses a U-shaped RFID scanning station to capture bag movement; the wider team solution presents that information to airport, airline, and passenger stakeholders.
+LuggageLocator is a team concept for reducing mishandled baggage by making each handoff visible across airport checkpoints. A U-shaped RFID scanning station captures each bag's movement; the integrated system turns those events into operational information for airport staff, airline staff, and passengers.
 
 ## Problem Framing
 
@@ -22,6 +20,22 @@ The team generated several concepts and evaluated them with a weighted decision 
 
 {{< figure src="p7.5.png" title="Decision matrix used to select the end-to-end visibility concept" >}}
 
+## End-to-End System
+
+When a bag passes through a scanner, the RFID read becomes a timestamped checkpoint event. The team system stores the bag identifier, location, status, and scan time; the dashboard then exposes current bag status, scan history, throughput patterns, and potential bottlenecks. This keeps the concept grounded in a complete operational workflow rather than treating RFID as an isolated sensor.
+
+{{< figure src="p7.6.png" title="U-shaped RFID baggage-scanner concept at a conveyor checkpoint" >}}
+
+## Dashboard and Data Workflow
+
+The website dashboard and relational-database prototype were designed and implemented by a teammate. They are shown here to document the complete team deliverable, not as my individual software work. The dashboard supports airport operations by filtering baggage events by gate, date, and time window, then surfacing individual bag status and aggregate flow information.
+
+{{< figure src="p7.8.png" title="Team dashboard for monitoring baggage status and checkpoint activity" >}}
+
+The final entity-relationship model links baggage records, flight information, checkpoints, and scan events. This data structure makes it possible to trace a bag's journey and identify missing or delayed handoffs without replacing the entire baggage-handling system.
+
+{{< figure src="p7.12.png" title="Final team data model for baggage, flights, checkpoints, and scan events" >}}
+
 ## Physical Scanner Design
 
 My work focused on the hardware side of the project. I modeled the U-shaped scanner in SolidWorks, defined the scanner envelope around a baggage conveyor path, and evaluated the structure as a practical physical interface for RFID-based tracking.
@@ -32,14 +46,20 @@ My work focused on the hardware side of the project. I modeled the U-shaped scan
 
 {{< figure src="p7.14.png" title="Structural simulation of the U-shaped RFID scanner" >}}
 
-## Contribution Boundary
+## Validation and Feasibility
 
-My responsibilities were problem definition and literature research, decision-matrix concept selection, scanner CAD modeling, structural analysis, and RFID hardware feasibility/testing. The website/dashboard and database prototype were designed and implemented by a teammate and are not presented here as my individual work.
+The team tested the database workflow with representative baggage records and SQL queries to validate that scan events could be written, retrieved, and associated with the correct operational context. Hardware feasibility work considered RFID read coverage, scanner geometry, structural integrity, and its fit around an active baggage conveyor path.
+
+{{< figure src="p7.10.png" title="Team query test used to validate baggage-event retrieval" >}}
+
+## My Contribution
+
+I led problem definition and literature research, decision-matrix concept selection, scanner CAD modeling, structural analysis, and RFID hardware feasibility/testing. My work made the physical sensing point technically credible: its geometry, load behavior, tag-read envelope, and fit within baggage-handling flow. The dashboard and database components were my teammate's responsibility.
 
 ## Design Value
 
-The project connects an implementable physical sensing point with a broader airport-operations concept. My contribution focused on making the RFID scanning station technically credible: its geometry, structural behavior, and fit within baggage-handling flow.
+LuggageLocator connects an implementable physical scanning station with a usable airport-operations view. The combined team deliverable demonstrates how a bag's physical checkpoint event can become traceable operational data, while my contribution focuses on the engineering feasibility of the RFID station itself.
 
 ## Tech Stack
 
-RFID system design, SolidWorks CAD, structural analysis, concept-selection matrices, RFID hardware testing, cost-benefit analysis, and risk assessment.
+Team system: RFID architecture, SolidWorks CAD, structural analysis, React, JavaScript, CSS, relational database design, SQL validation, cost-benefit analysis, and risk assessment. Individual focus: hardware concept development, scanner CAD, structural analysis, and RFID feasibility testing.

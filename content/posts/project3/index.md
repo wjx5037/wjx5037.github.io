@@ -12,6 +12,8 @@ summary = "A client-commissioned interactive STEM exhibit for children, develope
 
 Design a hands-on museum exhibit for children aged 2 to 12 that makes basic circuits and physics tangible through a wire-loop challenge. The exhibit needed to be engaging, safe, durable, economical, and maintainable by museum staff.
 
+{{< figure src="e10.png" title="Discovery Space Children's Museum, the client environment for Exciting Pass" >}}
+
 ## Interaction and System Architecture
 
 Children guide a metal ring along a shaped metal path. Completing the path without contact represents success; contact closes the circuit and activates immediate buzzer and LED feedback. The functional decomposition informed the mechanical layout, electrical packaging, and safety interfaces.

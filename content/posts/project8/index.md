@@ -41,6 +41,10 @@ I also helped prepare the final sponsor-facing design package, focusing on clear
 
 The adjustable wall is intended for compressor diffuser testing, where small geometry changes can affect downstream flow behavior. A reusable adjustable insert gives the test team more flexibility than a set of fixed diffuser walls.
 
+{{< figure src="fox-rotating-equipment-services.jpg" title="Public rotating-equipment visual from Fox Innovation & Technologies" >}}
+
+The sponsor operates in the rotating-equipment domain that informs this project's testing context. The image above is used with attribution from the sponsor's public corporate site: [Fox Innovation & Technologies](https://www.foxinnovation.com/about-us).
+
 ## Technical Stack
 
 SolidWorks CAD, mechanism design, motion simulation, design-for-manufacturing review, sponsor documentation, and engineering presentation.

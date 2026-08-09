@@ -36,6 +36,10 @@
       contact_label: "Contact:",
       footer_note: "Static GitHub Pages portfolio.",
       details_label: "Details",
+      projects_nav: "Projects",
+      robotics_nav: "Robotics",
+      all_projects: "All Projects",
+      back_projects: "← Projects",
       robotics_group: "Robotics Projects",
       competition_group: "Competition Projects",
       client_group: "Client-Commissioned Projects",
@@ -47,6 +51,10 @@
       contact_label: "联系:",
       footer_note: "静态 GitHub Pages 作品集。",
       details_label: "项目详情",
+      projects_nav: "项目",
+      robotics_nav: "机器人",
+      all_projects: "全部项目",
+      back_projects: "← 项目",
       robotics_group: "机器人项目",
       competition_group: "竞赛项目",
       client_group: "客户委托项目",
@@ -233,6 +241,11 @@
     document.querySelectorAll("[data-lang]").forEach((button) => {
       button.classList.toggle("is-active", button.dataset.lang === nextLang);
     });
+
+    const detailTitle = document.querySelector(`[data-detail-lang="${nextLang}"]`);
+    if (detailTitle && detailTitle.closest(".detail-title")) {
+      document.title = `${detailTitle.textContent.trim()} | Wenbo Xu`;
+    }
 
     renderProjects(nextLang);
   }

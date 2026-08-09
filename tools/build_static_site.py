@@ -264,8 +264,13 @@ DETAIL_TEMPLATE = """<!doctype html>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{description}">
-    <title>{title} | Wenbo Xu</title>
-    <link rel="stylesheet" href="../../assets/css/site.css?v=20260708-media-17">
+    <title>{title_en} | Wenbo Xu</title>
+    <script>
+      try {{
+        document.documentElement.lang = localStorage.getItem("wjx-portfolio-lang") === "zh" ? "zh" : "en";
+      }} catch (_) {{}}
+    </script>
+    <link rel="stylesheet" href="../../assets/css/site.css?v=20260708-media-18">
   </head>
   <body>
     <header class="site-header">
@@ -274,27 +279,37 @@ DETAIL_TEMPLATE = """<!doctype html>
         <span class="brand-text">Wenbo Xu</span>
       </a>
       <nav class="site-nav" aria-label="Primary navigation">
-        <a href="../../">Projects</a>
-        <a href="../../robotics/">Robotics</a>
+        <a href="../../" data-i18n="projects_nav">Projects</a>
+        <a href="../../robotics/" data-i18n="robotics_nav">Robotics</a>
       </nav>
       <div class="header-actions">
+        <div class="lang-switch detail-lang-switch" aria-label="Language">
+          <button class="lang-option is-active" type="button" data-lang="en">EN</button>
+          <button class="lang-option" type="button" data-lang="zh">中文</button>
+        </div>
         <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle black and white mode">◐</button>
-        <a class="button secondary compact-button" href="../../">All Projects</a>
+        <a class="button secondary compact-button" href="../../" data-i18n="all_projects">All Projects</a>
       </div>
     </header>
     <main>
       <article class="detail-page">
-        <a class="back-link" href="../../">← Projects</a>
+        <a class="back-link" href="../../" data-i18n="back_projects">← Projects</a>
         <p class="eyebrow">{date}</p>
-        <h1>{title}</h1>
-        <div class="detail-content">
-          {body}
+        <h1 class="detail-title">
+          <span data-detail-lang="en">{title_en}</span>
+          <span data-detail-lang="zh">{title_zh}</span>
+        </h1>
+        <div class="detail-content" data-detail-lang="en">
+          {body_en}
+        </div>
+        <div class="detail-content" data-detail-lang="zh">
+          {body_zh}
         </div>
       </article>
     </main>
     <footer class="site-footer">
       <span>© Wenbo Xu</span>
-      <span>Static GitHub Pages portfolio</span>
+      <span data-i18n="footer_note">Static GitHub Pages portfolio</span>
     </footer>
     <script>
       window.MathJax = {{ tex: {{ inlineMath: [['\\\\(', '\\\\)']], displayMath: [['\\\\[', '\\\\]']] }} }};
@@ -303,7 +318,7 @@ DETAIL_TEMPLATE = """<!doctype html>
       import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
       mermaid.initialize({{ startOnLoad: true, theme: document.documentElement.dataset.theme === "light" ? "default" : "dark" }});
     </script>
-    <script src="../../assets/js/site.js?v=20260708-media-17"></script>
+    <script src="../../assets/js/site.js?v=20260708-media-18"></script>
     <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   </body>
 </html>
@@ -328,17 +343,24 @@ def build_detail_pages() -> None:
             continue
         target_dir = posts_target / project_dir.name
         copy_project_media(project_dir, target_dir)
-        raw = index.read_text(encoding="utf-8")
-        meta, body = parse_frontmatter(raw)
-        title = meta.get("title") or project_dir.name
-        date = meta.get("date", "")
-        body_html = markdown_to_html(body, project_dir.name)
-        description = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", body_html)).strip()[:160]
+        raw_en = index.read_text(encoding="utf-8")
+        meta_en, body_en = parse_frontmatter(raw_en)
+        zh_index = project_dir / "index.zh.md"
+        raw_zh = zh_index.read_text(encoding="utf-8") if zh_index.exists() else raw_en
+        meta_zh, body_zh = parse_frontmatter(raw_zh)
+        title_en = meta_en.get("title") or project_dir.name
+        title_zh = meta_zh.get("title") or title_en
+        date = meta_en.get("date", "")
+        body_en_html = markdown_to_html(body_en, project_dir.name)
+        body_zh_html = markdown_to_html(body_zh, project_dir.name)
+        description = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", body_en_html)).strip()[:160]
         page = DETAIL_TEMPLATE.format(
-            title=html.escape(title),
+            title_en=html.escape(title_en),
+            title_zh=html.escape(title_zh),
             date=html.escape(date),
             description=html.escape(description),
-            body=body_html,
+            body_en=body_en_html,
+            body_zh=body_zh_html,
         )
         (target_dir / "index.html").write_text(page, encoding="utf-8", newline="\n")
 

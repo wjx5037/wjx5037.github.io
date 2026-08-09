@@ -559,6 +559,11 @@ h3 {
   align-items: center;
 }
 
+.header-actions {
+  justify-content: flex-end;
+  gap: 10px;
+}
+
 .brand {
   gap: 10px;
   font-weight: 850;
@@ -630,6 +635,29 @@ h3 {
   display: grid;
   gap: 18px;
   margin-top: 38px;
+}
+
+.detail-content[data-detail-lang],
+.detail-title > [data-detail-lang] {
+  display: none;
+}
+
+html[lang="en"] .detail-content[data-detail-lang="en"],
+html[lang="zh"] .detail-content[data-detail-lang="zh"] {
+  display: grid;
+}
+
+html[lang="en"] .detail-title > [data-detail-lang="en"],
+html[lang="zh"] .detail-title > [data-detail-lang="zh"] {
+  display: inline;
+}
+
+.site-header .detail-lang-switch {
+  margin: 0;
+}
+
+.site-header .detail-lang-switch .lang-option {
+  min-width: 44px;
 }
 
 .detail-notice {

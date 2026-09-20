@@ -13,7 +13,7 @@
   const projectGroups = [
     {
       key: "robotics_group",
-      ids: ["franka-manipulation", "wifi-robot-car"]
+      ids: ["franka-manipulation", "jhu-cockroach-robot", "wifi-robot-car"]
     },
     {
       key: "competition_group",

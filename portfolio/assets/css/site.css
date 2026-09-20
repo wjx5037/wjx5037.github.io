@@ -660,6 +660,11 @@ html[lang="zh"] .detail-title > [data-detail-lang="zh"] {
   min-width: 44px;
 }
 
+.site-header .theme-toggle {
+  position: static;
+  box-shadow: none;
+}
+
 .detail-notice {
   margin: 6px 0 10px;
   color: #ff5a5f;

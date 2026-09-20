@@ -38,6 +38,41 @@ window.PORTFOLIO_PROJECTS = [
     }
   },
   {
+    id: "jhu-cockroach-robot",
+    featured: true,
+    thumbnail: "posts/project10/cockroach-robot.jpg",
+    media: ["posts/project10/cockroach-robot.jpg"],
+    mediaAlt: {
+      en: "JHU cockroach-inspired free-running robot experimental platform",
+      zh: "JHU 仿蟑螂自由奔跑机器人实验平台"
+    },
+    title: {
+      en: "Cockroach-Inspired Free-Running Robot Research",
+      zh: "仿蟑螂自由奔跑机器人研究"
+    },
+    subtitle: {
+      en: "Johns Hopkins University research on repeatable locomotion experiments with a bio-inspired free-running robot.",
+      zh: "约翰斯·霍普金斯大学研究项目：面向仿生自由奔跑机器人的可重复运动实验。"
+    },
+    year: "2026",
+    tags: ["JHU Research", "Bio-Inspired Robotics", "Locomotion", "Mechatronics"],
+    links: [{ label: "Details", url: "posts/project10/" }],
+    body: {
+      en: [
+        "A Johns Hopkins University research project using a cockroach-inspired free-running robot as a physical platform for studying locomotion and mechanical interaction. The work focuses on making experiments repeatable enough to connect observed body motion with actuation, sensing, and recorded data.",
+        "The platform combines actuated leg and tail mechanisms, motor position control, mechanical calibration, high-speed camera tracking, LED synchronization markers, and experimental data collection. I worked at the boundary between hardware behavior and experimental operations: aligning mechanical references, interpreting encoder signals, and tracing behavior through the control and sensing stack.",
+        "The research is ongoing and a manuscript is in preparation. This portfolio presents the research direction and system-level contribution only; experimental protocols, detailed mechanisms, parameters, quantitative results, code, and unpublished data are intentionally withheld.",
+        "Research focus: bio-inspired locomotion, mechatronic system integration, actuator calibration, motor feedback, high-speed motion tracking, experimental synchronization, and repeatable data collection."
+      ],
+      zh: [
+        "约翰斯·霍普金斯大学研究项目：以仿蟑螂自由奔跑机器人为实体平台，研究运动行为与机械交互。核心目标是建立可重复的实验，使观测到的机体运动能够与驱动、传感和记录数据建立可靠关联。",
+        "平台集成腿部与尾部驱动机构、电机位置控制、机械标定、高速相机追踪、LED 同步标记和实验数据采集。我主要在硬件行为和实验运行的交界处开展工作：建立机械参考位置、解读编码器信号，并追踪运动表现与控制/传感链路之间的关系。",
+        "该研究仍在进行中，相关论文正在撰写。本作品集仅公开研究方向和系统级贡献；实验流程、机构细节、参数、定量结果、代码和未发表数据均不公开。",
+        "研究重点：仿生运动、机电系统集成、执行器标定、电机反馈、高速运动追踪、实验同步和可重复数据采集。"
+      ]
+    }
+  },
+  {
     id: "wifi-robot-car",
     featured: true,
     thumbnail: "posts/project4/carousel.jpg",

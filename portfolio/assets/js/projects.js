@@ -60,17 +60,17 @@ window.PORTFOLIO_PROJECTS = [
     body: {
         en: [
           "An ongoing LCSR JHU Robotics research project investigating how potential-energy-landscape theory can guide robot control during compliant-obstacle traversal. The experiments use a physical cockroach robot negotiating a flexible beam, creating controlled and repeatable conditions for studying robot-obstacle interaction.",
-          "I built and integrated the physical experimental platform across its mechanical, embedded, sensing, firmware, and Python-automation layers. I developed IMU-based control to help the robot traverse the flexible beam reliably and support repeatable research trials.",
-          "The synchronized test system aligns robot motion, obstacle interaction, and system data from each trial. It provides the repeatable measurements required for potential-energy-landscape reconstruction and subsequent research analysis.",
-          "The research is active and a paper is in preparation. This portfolio intentionally withholds controller design details, parameters, protocols, datasets, code, and unpublished analyses.",
-          "Research focus: potential-energy landscapes, bio-inspired robot control, IMU-based feedback, compliant-obstacle traversal, experimental platform development, synchronized motion tracking, and data collection."
+          "I engineered a full-stack physical cockroach robot with four-actuator locomotion, a 2-DOF tail, embedded control, six-axis CoinFT force/torque sensing, IMU instrumentation, firmware, and Python automation. I developed predictive IMU-based tail-swing control that adapts swing amplitude, velocity, and acceleration from the robot's roll.",
+          "The controller increased roll-through success by 69 percentage points. The synchronized test system combines physical triggers, LED timing signals, 100-fps video, motor telemetry, beam sensors, and robot-state logging to provide repeatable data for 3D potential-energy-landscape reconstruction and analysis.",
+          "The research is active and a paper is in preparation. This portfolio intentionally withholds detailed parameters, protocols, datasets, code, and unpublished analyses.",
+          "Research focus: potential-energy landscapes, bio-inspired robot control, IMU-based feedback, compliant-obstacle traversal, force/torque sensing, experimental platform development, synchronized motion tracking, and data collection."
         ],
         zh: [
           "这是 LCSR JHU Robotics 的在研项目，探索势能场理论如何用于机器人控制。实验使用真实的蟑螂机器人穿越柔性梁，在可控、可重复的条件下研究机器人与柔性障碍物的物理交互及其对穿越行为的影响。",
-          "我负责搭建并集成实体实验平台，覆盖机械、嵌入式、传感、固件和 Python 自动化等环节。我开发了基于 IMU 的控制，使机器人能够更可靠地穿越柔性梁，并支持可重复的研究试验。",
-          "同步测试系统将每次试验中的机器人运动、障碍物交互和系统数据对齐，为势能场重建和后续研究分析提供可重复的测量数据。",
-          "研究仍在进行中，相关论文正在撰写。本作品集不公开控制器设计细节、参数、实验流程、数据集、代码或未发表分析。",
-          "研究重点：势能场理论、仿生机器人控制、IMU 反馈、柔性障碍穿越、实验平台开发、同步运动追踪和数据采集。"
+          "我搭建了完整的实体蟑螂机器人平台，集成四执行器运动系统、2 自由度尾部、嵌入式控制、六轴 CoinFT 力/力矩传感器、IMU、固件与 Python 自动化。我开发了预测式 IMU 尾部摆动控制，根据机器人翻滚状态调节摆幅、速度和加速度。",
+          "该控制器将翻滚穿越的通过率提升了 69 个百分点。同步测试系统集成物理触发、LED 时间标记、100 fps 视频、电机遥测、柔性梁传感器和机器人状态记录，为三维势能场重建和数据分析提供可重复的试验数据。",
+          "研究仍在进行中，相关论文正在撰写。本作品集不公开具体参数、实验流程、数据集、代码或未发表分析。",
+          "研究重点：势能场理论、仿生机器人控制、IMU 反馈、柔性障碍穿越、力/力矩感知、实验平台开发、同步运动追踪和数据采集。"
         ]
     }
   },

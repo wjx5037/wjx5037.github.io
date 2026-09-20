@@ -8,7 +8,7 @@ summary = "LCSR JHU Robotics research applying potential-energy-landscape theory
 
 {{< figure src="cockroach-robot.jpg" title="Cockroach robot flexible-beam traversal experimental platform" >}}
 
-{{< notice text="Research paper in preparation. Controller design details, parameters, protocols, datasets, code, and unpublished analyses are intentionally not published here." >}}
+{{< notice text="Research paper in preparation. Detailed parameters, protocols, datasets, code, and unpublished analyses are intentionally not published here." >}}
 
 ## Research Goal
 
@@ -18,17 +18,17 @@ The project shares the high-level scientific motivation of potential-energy-land
 
 ## Research Platform
 
-The physical platform integrates the mechanical system, embedded control, sensing, firmware, and Python automation. The flexible beam provides a controlled compliant obstacle whose interaction with the robot can be repeatedly tested.
+The platform integrates four-actuator locomotion, a 2-DOF tail, embedded control, a six-axis CoinFT force/torque sensor, IMU instrumentation, firmware, and Python automation. The flexible beam provides a controlled compliant obstacle whose interaction with the robot can be repeatedly tested.
 
-The synchronized measurement workflow aligns robot motion, obstacle interaction, and system data from each trial. This creates a shared time base for later analysis and 3D potential-energy-landscape reconstruction.
+The synchronized measurement system combines physical triggers, LED timing signals, 100-fps video, motor telemetry, beam sensors, and robot-state logging. This links each trial's physical motion to a shared time base for later analysis and 3D potential-energy-landscape reconstruction.
 
 ## My Contribution
 
 I engineered the full experimental platform, including its mechanical/mechatronic integration, embedded control, sensing, firmware, and Python automation. The objective was to make the physical robot suitable for controlled, repeatable experiments rather than a one-off demonstration.
 
-I developed IMU-based control to help the robot traverse the flexible beam reliably. The public portfolio presents the control purpose and experimental role only; its implementation remains private while the research is active.
+I developed predictive IMU-based tail-swing control for flexible-beam traversal. The controller adapts the tail swing amplitude, velocity, and acceleration from the robot's roll, increasing roll-through success by 69 percentage points.
 
-I also built the synchronized experimental workflow that makes trial data traceable and supplies the measurements needed for subsequent potential-energy-landscape analysis.
+I also built the synchronized experimental workflow that brings together triggers, LED timing, 100-fps video, motor telemetry, beam sensing, and robot-state logs. It makes the results traceable and supplies the data needed for subsequent potential-energy-landscape analysis.
 
 ## Research Value
 
@@ -42,4 +42,4 @@ The research is active and a paper is in preparation. This page presents the res
 
 ## Research Focus
 
-Potential-energy landscapes, bio-inspired robot control, IMU-based feedback, compliant-obstacle traversal, mechatronic system integration, synchronized motion tracking, experimental design, and repeatable data collection.
+Potential-energy landscapes, bio-inspired robot control, IMU-based feedback, compliant-obstacle traversal, force/torque sensing, mechatronic system integration, synchronized motion tracking, experimental design, and repeatable data collection.

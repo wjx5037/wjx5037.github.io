@@ -16,6 +16,20 @@ This research investigates how potential-energy-landscape theory can inform robo
 
 The project shares the high-level scientific motivation of potential-energy-landscape studies of obstacle traversal, but the current experiment uses a physical cockroach robot passing through a flexible beam rather than a simplified test apparatus. The goal is to create repeatable robot-beam trials that connect body motion, physical interaction, sensing, and control with synchronized experimental data.
 
+## Locomotor-Transition Background
+
+When a multi-legged robot contacts a flexible obstacle, its body configuration and the obstacle deformation together define a potential-energy landscape. Familiar locomotor modes correspond to local basins on that landscape: once the system enters one basin, its physical state tends to remain there.
+
+A locomotor transition is the move from one basin to another. For this project, a successful roll-through of the flexible beam is the desired transition; becoming trapped is an undesired state. Reaching the desired state requires the system to cross a potential-energy barrier, rather than simply following a geometric path around the obstacle.
+
+Mechanical interaction and self-propulsion move the robot through this landscape. Sensing and feedback control can make a desired transition more likely by steering the system state and its interaction with the beam. Here, IMU-based control supports the robot's roll-through transition during flexible-beam traversal.
+
+{{< figure src="locomotor-transitions-energy-landscape.png" title="Research background: locomotor transitions can be understood as barrier crossings between potential-energy basins." >}}
+
+Figure source and theory background: LCSR Terradynamics Lab — *Principles of Multi-Legged Locomotor Transitions in Complex 3-D Terrain*
+
+https://li.me.jhu.edu/home/principles-of-multi-legged-locomotor-transitions-in-complex-3-d-terrain/
+
 ## Research Platform
 
 The platform integrates four-actuator locomotion, a 2-DOF tail, embedded control, a six-axis CoinFT force/torque sensor, IMU instrumentation, firmware, and Python automation. The flexible beam provides a controlled compliant obstacle whose interaction with the robot can be repeatedly tested.

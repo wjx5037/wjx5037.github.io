@@ -1,43 +1,45 @@
 +++
-title = 'Cockroach-Inspired Free-Running Robot Research'
+title = 'Cockroach Robot Beam Traversal Research'
 date = 2026-08-24
-summary = "Johns Hopkins University research on repeatable locomotion experiments with a bio-inspired free-running robot."
+summary = "LCSR JHU Robotics research applying potential-energy-landscape theory to IMU-controlled traversal of a flexible beam."
 +++
 
-*Ongoing research project at Johns Hopkins University*
+*Ongoing research project at LCSR JHU Robotics*
 
-{{< figure src="cockroach-robot.jpg" title="Cockroach-inspired free-running robot experimental platform" >}}
+{{< figure src="cockroach-robot.jpg" title="Cockroach robot flexible-beam traversal experimental platform" >}}
 
-{{< notice text="Research paper in preparation. Detailed mechanisms, experimental protocols, parameters, quantitative results, code, and unpublished data are intentionally not published here." >}}
+{{< notice text="Research paper in preparation. Controller design details, parameters, protocols, datasets, code, and unpublished analyses are intentionally not published here." >}}
 
 ## Research Goal
 
-This research uses a cockroach-inspired free-running robot as a physical platform for studying locomotion and mechanical interaction. The objective is to build repeatable experiments that connect a robot's observed body motion with its actuation commands, sensor signals, and synchronized recordings.
+This research investigates how potential-energy-landscape theory can inform robot control during compliant-obstacle traversal. Physical interaction between a robot and an obstacle shapes the landscape of possible motions; the research examines how feedback control can help a robot reach the basin associated with successful traversal rather than one associated with failure.
 
-The project treats experimental repeatability as a first-class research requirement. A robot must not only move; it must start from a known mechanical state, execute controlled motion, and generate data that can be aligned and analyzed afterward.
+The project shares the high-level scientific motivation of potential-energy-landscape studies of obstacle traversal, but the current experiment uses a physical cockroach robot passing through a flexible beam rather than a simplified test apparatus. The goal is to create repeatable robot-beam trials that connect body motion, physical interaction, sensing, and control with synchronized experimental data.
 
 ## Research Platform
 
-The robot integrates actuated leg and tail mechanisms, motor position control, encoder feedback, mechanical calibration, high-speed motion tracking, LED synchronization markers, and experimental data collection. Together, these components support controlled locomotion trials and post-experiment analysis of how the robot interacts with its environment.
+The physical platform integrates the mechanical system, embedded control, sensing, firmware, and Python automation. The flexible beam provides a controlled compliant obstacle whose interaction with the robot can be repeatedly tested.
 
-The platform makes it possible to investigate the relationship between mechanical configuration, actuator state, observed motion, and experimental timing without reducing the system to an isolated mechanical, electrical, or software problem.
+The synchronized measurement workflow aligns robot motion, obstacle interaction, and system data from each trial. This creates a shared time base for later analysis and 3D potential-energy-landscape reconstruction.
 
 ## My Contribution
 
-I worked on the mechanical and mechatronic reliability of the experimental system. My work included establishing repeatable mechanical reference positions, calibrating the tail mechanism, interpreting motor-encoder readings against physical configuration, examining motor-position edge cases, and supporting the camera/LED synchronization setup used to align video with control and sensor data.
+I engineered the full experimental platform, including its mechanical/mechatronic integration, embedded control, sensing, firmware, and Python automation. The objective was to make the physical robot suitable for controlled, repeatable experiments rather than a one-off demonstration.
 
-This work required system-level debugging across actuator loading, mechanical alignment, wiring, voltage, calibration, control logic, and sensor interpretation. The goal was to make each trial more controlled, traceable, and useful for research analysis.
+I developed IMU-based control to help the robot traverse the flexible beam reliably. The public portfolio presents the control purpose and experimental role only; its implementation remains private while the research is active.
 
-## Experimental Design Value
+I also built the synchronized experimental workflow that makes trial data traceable and supplies the measurements needed for subsequent potential-energy-landscape analysis.
 
-Locomotion research depends on more than demonstrating that a robot can move once. The experimental system must begin from a known state, apply repeatable inputs, capture synchronized observations, and make the resulting behavior interpretable afterward.
+## Research Value
 
-The project strengthened my approach to experimental robotics: observe physical behavior, inspect hardware condition, examine the relevant control and sensing signals, and relate the result back to mechanical and dynamic principles.
+The work moves potential-energy-landscape research from a simplified apparatus toward a free-running physical robot confronting a compliant obstacle. It creates an experimental basis for examining how feedback-driven body motion and physical interaction shape traversal outcomes.
+
+Its central engineering value is experimental rigor: known initial conditions, controlled IMU-guided action, synchronized observations, and data that can be interpreted against a physics-based research framework.
 
 ## Publication Status
 
-The research is active and a paper is in preparation. This page intentionally presents only the research motivation, platform scope, and high-level engineering contribution. Detailed methods and results will remain private until publication.
+The research is active and a paper is in preparation. This page presents the research motivation, platform scope, and verified high-level contribution only. Detailed methods and results will remain private until publication.
 
 ## Research Focus
 
-Bio-inspired robotics, locomotion, mechatronic system integration, actuator calibration, motor feedback, encoder interpretation, high-speed motion tracking, LED synchronization, experimental design, and repeatable data collection.
+Potential-energy landscapes, bio-inspired robot control, IMU-based feedback, compliant-obstacle traversal, mechatronic system integration, synchronized motion tracking, experimental design, and repeatable data collection.

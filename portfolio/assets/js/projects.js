@@ -42,34 +42,36 @@ window.PORTFOLIO_PROJECTS = [
     featured: true,
     thumbnail: "posts/project10/cockroach-robot.jpg",
     media: ["posts/project10/cockroach-robot.jpg"],
-    mediaAlt: {
-      en: "JHU cockroach-inspired free-running robot experimental platform",
-      zh: "JHU 仿蟑螂自由奔跑机器人实验平台"
-    },
-    title: {
-      en: "Cockroach-Inspired Free-Running Robot Research",
-      zh: "仿蟑螂自由奔跑机器人研究"
-    },
-    subtitle: {
-      en: "Johns Hopkins University research on repeatable locomotion experiments with a bio-inspired free-running robot.",
-      zh: "约翰斯·霍普金斯大学研究项目：面向仿生自由奔跑机器人的可重复运动实验。"
-    },
-    year: "2026",
-    tags: ["JHU Research", "Bio-Inspired Robotics", "Locomotion", "Mechatronics"],
+      mediaAlt: {
+        en: "LCSR JHU Robotics cockroach robot experimental platform",
+        zh: "LCSR JHU Robotics 蟑螂机器人实验平台"
+      },
+      title: {
+        en: "Cockroach Robot Beam Traversal Research",
+        zh: "蟑螂机器人柔性梁穿越研究"
+      },
+      subtitle: {
+        en: "LCSR JHU Robotics research applying potential-energy-landscape theory to IMU-controlled traversal of a flexible beam.",
+        zh: "LCSR JHU Robotics 在研项目：探索势能场理论在 IMU 控制蟑螂机器人穿越柔性梁中的应用。"
+      },
+      year: "2026",
+      tags: ["LCSR JHU Robotics", "Potential-Energy Landscapes", "IMU Control", "Experimental Robotics"],
     links: [{ label: "Details", url: "posts/project10/" }],
     body: {
-      en: [
-        "A Johns Hopkins University research project using a cockroach-inspired free-running robot as a physical platform for studying locomotion and mechanical interaction. The work focuses on making experiments repeatable enough to connect observed body motion with actuation, sensing, and recorded data.",
-        "The platform combines actuated leg and tail mechanisms, motor position control, mechanical calibration, high-speed camera tracking, LED synchronization markers, and experimental data collection. I worked at the boundary between hardware behavior and experimental operations: aligning mechanical references, interpreting encoder signals, and tracing behavior through the control and sensing stack.",
-        "The research is ongoing and a manuscript is in preparation. This portfolio presents the research direction and system-level contribution only; experimental protocols, detailed mechanisms, parameters, quantitative results, code, and unpublished data are intentionally withheld.",
-        "Research focus: bio-inspired locomotion, mechatronic system integration, actuator calibration, motor feedback, high-speed motion tracking, experimental synchronization, and repeatable data collection."
-      ],
-      zh: [
-        "约翰斯·霍普金斯大学研究项目：以仿蟑螂自由奔跑机器人为实体平台，研究运动行为与机械交互。核心目标是建立可重复的实验，使观测到的机体运动能够与驱动、传感和记录数据建立可靠关联。",
-        "平台集成腿部与尾部驱动机构、电机位置控制、机械标定、高速相机追踪、LED 同步标记和实验数据采集。我主要在硬件行为和实验运行的交界处开展工作：建立机械参考位置、解读编码器信号，并追踪运动表现与控制/传感链路之间的关系。",
-        "该研究仍在进行中，相关论文正在撰写。本作品集仅公开研究方向和系统级贡献；实验流程、机构细节、参数、定量结果、代码和未发表数据均不公开。",
-        "研究重点：仿生运动、机电系统集成、执行器标定、电机反馈、高速运动追踪、实验同步和可重复数据采集。"
-      ]
+        en: [
+          "An ongoing LCSR JHU Robotics research project investigating how potential-energy-landscape theory can guide robot control during compliant-obstacle traversal. The experiments use a physical cockroach robot negotiating a flexible beam, creating controlled and repeatable conditions for studying robot-obstacle interaction.",
+          "I built and integrated the physical experimental platform across its mechanical, embedded, sensing, firmware, and Python-automation layers. I developed IMU-based control to help the robot traverse the flexible beam reliably and support repeatable research trials.",
+          "The synchronized test system aligns robot motion, obstacle interaction, and system data from each trial. It provides the repeatable measurements required for potential-energy-landscape reconstruction and subsequent research analysis.",
+          "The research is active and a paper is in preparation. This portfolio intentionally withholds controller design details, parameters, protocols, datasets, code, and unpublished analyses.",
+          "Research focus: potential-energy landscapes, bio-inspired robot control, IMU-based feedback, compliant-obstacle traversal, experimental platform development, synchronized motion tracking, and data collection."
+        ],
+        zh: [
+          "这是 LCSR JHU Robotics 的在研项目，探索势能场理论如何用于机器人控制。实验使用真实的蟑螂机器人穿越柔性梁，在可控、可重复的条件下研究机器人与柔性障碍物的物理交互及其对穿越行为的影响。",
+          "我负责搭建并集成实体实验平台，覆盖机械、嵌入式、传感、固件和 Python 自动化等环节。我开发了基于 IMU 的控制，使机器人能够更可靠地穿越柔性梁，并支持可重复的研究试验。",
+          "同步测试系统将每次试验中的机器人运动、障碍物交互和系统数据对齐，为势能场重建和后续研究分析提供可重复的测量数据。",
+          "研究仍在进行中，相关论文正在撰写。本作品集不公开控制器设计细节、参数、实验流程、数据集、代码或未发表分析。",
+          "研究重点：势能场理论、仿生机器人控制、IMU 反馈、柔性障碍穿越、实验平台开发、同步运动追踪和数据采集。"
+        ]
     }
   },
   {
